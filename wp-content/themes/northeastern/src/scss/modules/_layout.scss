@@ -92,6 +92,10 @@
   }
 }
 
+.main__content--intro {
+  float: none;
+}
+
 .main__sidebar {
   @include mq(64em) {
     width: 30%;
@@ -102,4 +106,12 @@
 
 .main__sidebar--alt {
   margin-top: 2rem;
+}
+
+.main__narrow {
+  margin: 2rem 0;
+  @include mq(64em) {
+    width: 50%;
+    margin: 5rem 0;
+  }
 }

@@ -108,6 +108,37 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_633123b63c301": {
+                    "key": "layout_633123b63c301",
+                    "name": "talent_listing",
+                    "label": "Talent Listing",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_633123cf3c302",
+                            "label": "Talent Listing",
+                            "name": "talent_listing",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6331231a57f0f"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Module",
@@ -132,7 +163,8 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1566575212
+    "show_in_rest": 0,
+    "modified": 1664165662
 }

@@ -1,4 +1,5 @@
 $sprites: (
+    'arrow-up-right': "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 677 677'%3e %3cpath d='m0 608q0 31 18 50 20 19 54 19 31 0 50-19l412-413v133q0 31 20.5 51.5t51.5 20.5q30 0 50.5-21t20.5-51v-306q0-31-20.5-51.5t-50.5-20.5h-307q-30 0-50 20.5t-20 51.5q0 30 20 50t50 20h133l-414 414q-18 21-18 52z'/%3e %3c/svg%3e",
     'arrow': "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 23 9'%3e %3crect y='4' width='15' height='1'/%3e %3cpolygon id='Triangle' points='22.7%2c4.5 17%2c9 18%2c4.5 17%2c0 '/%3e %3c/svg%3e",
     'check': "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8.666 8.666'%3e%3cpath fill='%23D41B2C' d='M3.541 8.615a.703.703 0 0 1-.557-.276L.12 4.77a.698.698 0 0 1 1.111-.842L3.485 6.69 7.378.38a.696.696 0 1 1 1.182.736l-4.426 7.17a.701.701 0 0 1-.593.33z'/%3e%3c/svg%3e",
     'cross': "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 23.69 23.33'%3e %3cpolygon points='21.57%2c23.33 11.84%2c13.61 2.12%2c23.33 0%2c21.21 9.72%2c11.49 0.35%2c2.12 2.47%2c0 11.84%2c9.37 21.21%2c0 23.33%2c2.12 13.96%2c11.49 23.69%2c21.21 '/%3e %3c/svg%3e",
@@ -37,6 +38,10 @@ $sprites: (
 );
 
 $sizes: (
+    'arrow-up-right': (
+        'width': 677px,
+        'height': 677px
+    ),
     'arrow': (
         'width': 23px,
         'height': 9px

@@ -147,6 +147,13 @@
                 "operator": "==",
                 "value": "page--landing.php"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page--listing.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -158,7 +165,8 @@
         "the_content",
         "featured_image"
     ],
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1556043497
+    "show_in_rest": 0,
+    "modified": 1664165722
 }

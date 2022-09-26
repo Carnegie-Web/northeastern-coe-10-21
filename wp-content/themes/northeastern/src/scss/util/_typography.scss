@@ -210,3 +210,7 @@ hr + .h5 {
   letter-spacing: 0.68px;
   font-weight: $bold;
 }
+
+.text-small {
+  @include font-size(15);
+}

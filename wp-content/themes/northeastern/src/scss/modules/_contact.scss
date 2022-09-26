@@ -36,10 +36,25 @@
   @include link($red);
 }
 
+.contact__name--alt {
+  box-shadow: none !important;
+}
+
 .contact__title {
   font-weight: $bold;
   color: $red;
   @include link($red);
   text-decoration: none;
   @include font-size(15);
+}
+
+.contact__icon {
+  display: inline-block;
+  width: 1.5rem;
+  padding: 0.25rem;
+  margin-top: 0.25rem;
+  margin-right: 0.375rem;
+  border-radius: 0.25rem;
+  background: $red;
+  color: $white;
 }
