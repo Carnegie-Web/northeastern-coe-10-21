@@ -58,7 +58,7 @@ function coe_acf_json_load_point( $paths ) {
     // append path
     $paths[] = get_stylesheet_directory() . '/acf-json';
     // return
-    return $paths;   
+    return $paths;
 }
 
 
@@ -312,6 +312,43 @@ function ctax_organization_type() {
 }
 add_action('init', 'ctax_organization_type');
 
+// talent type custom taxonomy
+function ctax_talent_type() {
+  $args = [
+    'public' => false,
+    'hierarchical' => true,
+    'label' => 'Talent Types',
+    'show_ui' => true,
+  ];
+  register_taxonomy('talent_type', 'talent', $args);
+}
+add_action('init', 'ctax_talent_type');
+
+// talent discipline custom taxonomy
+function ctax_talent_discipline() {
+  $args = [
+    'public' => false,
+    'hierarchical' => true,
+    'label' => 'Talent Disciplines',
+    'show_ui' => true,
+  ];
+  register_taxonomy('talent_discipline', 'talent', $args);
+}
+add_action('init', 'ctax_talent_discipline');
+
+// talent custom post type
+function cpt_talent() {
+  $args = [
+    'public' => false,
+    'hierarchical' => true,
+    'label' => 'Talent',
+    'supports' => ['title', 'thumbnail', 'editor'],
+    'show_ui' => true,
+  ];
+  register_post_type('talent', $args);
+}
+add_action('init', 'cpt_talent');
+
 //filters
 
 // filter to disable reset password
@@ -320,7 +357,7 @@ add_action('init', 'ctax_organization_type');
 
 // filter query repeater field for user listing
 function user_posts_where( $user_query ) {
-  
+
   $user_query->query_where = str_replace("meta_key = 'roles_$", "meta_key LIKE 'roles_%", $user_query->query_where);
 
   return $user_query;
@@ -413,16 +450,16 @@ function coe_convert_role_to_standard_wp_meta($post_id) {
   $meta_key = 'role_wp';
   delete_user_meta($post_id, $meta_key);
   $saved_values = array();
-   
+
   // now we'll look at the repeater and save any values
   if (have_rows('roles', 'user_'.$post_id)) {
     while (have_rows('roles', 'user_'.$post_id)) {
       the_row();
-       
+
       // get the value of this row
       $role_position_type = get_sub_field('position_type');
       $role_dept = get_sub_field('department');
-       
+
       // see if this value has already been saved
       // note that I am using isset rather than in_array
       // the reason for this is that isset is faster than in_array
@@ -430,16 +467,16 @@ function coe_convert_role_to_standard_wp_meta($post_id) {
         // no need to save this one we already have it
         continue;
       }
-       
+
       // not already save, so add it using add_post_meta()
       // note that we are using false for the 4th parameter
       // this means that this meta key is not unique
       // and can have more then one value
       add_user_meta($post_id, $meta_key, $role_position_type.'-'.$role_dept, false);
-       
+
       // add it to the values we've already saved
       $saved_values[$role_position_type.'-'.$role_dept] = $role_position_type.'-'.$role_dept;
-       
+
     } // end while have rows
   } // end if have rows
 } // end function
@@ -844,14 +881,14 @@ add_action('future_to_pending', 'coe_send_emails_on_new_event');
 add_action('new_to_pending', 'coe_send_emails_on_new_event');
 add_action('draft_to_pending', 'coe_send_emails_on_new_event');
 add_action('auto-draft_to_pending', 'coe_send_emails_on_new_event');
- 
+
 function coe_send_emails_on_new_event($post) {
   if(get_post_type($post->ID) === 'news') {
     $emails = get_option('admin_email');
     $title = wp_strip_all_tags(get_the_title($post->ID));
     $url = get_permalink($post->ID);
     $message = "Link to news story: \n{$url}";
- 
+
     wp_mail($emails, "New news story pending review: {$title}", $message);
   }
   if (get_post_type($post->ID) === 'tribe_events') {
@@ -859,11 +896,11 @@ function coe_send_emails_on_new_event($post) {
     $title = wp_strip_all_tags(get_the_title($post->ID));
     $url = get_permalink($post->ID);
     $message = " \n{$url}";
- 
+
     wp_mail($emails, "New event pending review: {$title}", $message);
   }
-  
-} 
+
+}
 
 remove_action( 'template_redirect', 'maybe_redirect_404' );
 

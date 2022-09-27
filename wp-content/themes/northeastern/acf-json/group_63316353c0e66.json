@@ -1,12 +1,12 @@
 {
-    "key": "group_6331231a57f0f",
-    "title": "Module - Talent Listing",
+    "key": "group_63316353c0e66",
+    "title": "Post Type - Talent",
     "fields": [
         {
-            "key": "field_63315e25a0dab",
-            "label": "Items Per Page",
-            "name": "items_per_page",
-            "type": "number",
+            "key": "field_6331637e470f1",
+            "label": "Email",
+            "name": "email",
+            "type": "email",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -18,16 +18,13 @@
             "default_value": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "min": "",
-            "max": "",
-            "step": ""
+            "append": ""
         },
         {
-            "key": "field_633161856da91",
-            "label": "Footer Content",
-            "name": "footer_content",
-            "type": "wysiwyg",
+            "key": "field_63316397470f2",
+            "label": "LinkedIn",
+            "name": "linkedin",
+            "type": "url",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -37,10 +34,23 @@
                 "id": ""
             },
             "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
+            "placeholder": ""
+        },
+        {
+            "key": "field_633163ab470f3",
+            "label": "Personal Link",
+            "name": "personal_link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
         }
     ],
     "location": [
@@ -48,18 +58,18 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "post"
+                "value": "talent"
             }
         ]
     ],
     "menu_order": 0,
     "position": "normal",
-    "style": "default",
+    "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1664180665
+    "modified": 1664181459
 }
