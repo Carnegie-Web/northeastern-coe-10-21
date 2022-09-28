@@ -1603,6 +1603,16 @@ hr + .h5, hr + .subnav__toggle, hr + .tabbed__nav__button, hr + .contact__name, 
   }
 }
 
+.grid--5 > * {
+  margin-bottom: 1rem;
+}
+@media (min-width: 64em) {
+  .grid--5 > * {
+    margin-bottom: 0;
+    width: calc(20% - 2rem);
+  }
+}
+
 .grid--flush {
   margin-bottom: 0;
 }

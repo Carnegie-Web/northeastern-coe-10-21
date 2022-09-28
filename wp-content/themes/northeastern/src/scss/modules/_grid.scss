@@ -133,6 +133,16 @@
   }
 }
 
+.grid--5 {
+  > * {
+    margin-bottom: 1rem;
+    @include mq(64em) {
+      margin-bottom: 0;
+      width: calc(20% - 2rem);
+    }
+  }
+}
+
 .grid--flush {
   margin-bottom: 0;
 }

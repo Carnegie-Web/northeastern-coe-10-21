@@ -137,7 +137,7 @@ $pg_args = [
   </div>
 
   <div class="list">
-    <div class="grid grid--4">
+    <div class="grid grid--5">
 
       <?php while ($posts->have_posts()) : $posts->the_post(); ?>
         <?php
