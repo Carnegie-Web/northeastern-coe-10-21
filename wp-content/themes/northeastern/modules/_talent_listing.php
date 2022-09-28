@@ -190,7 +190,7 @@ $pg_args = [
 
   <hr>
 
-  <div class="main__narrow">
+  <div class="main__narrow text-small">
     <?php echo $footer_content; ?>
   </div>
 
