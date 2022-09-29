@@ -16,17 +16,23 @@
   <?php if ( !post_password_required() ) : ?>
     <div class="main container container--clear">
 
+      <aside class="main__sidebar main__sidebar--alt">
+        <?php get_template_part('modules/_subnav'); ?>
+        <?php while (have_rows('sidebar_modules')) : the_row(); ?>
+          <?php get_template_part('modules/_' . get_row_layout()); ?>
+        <?php endwhile; ?>
+      </aside>
 
-      <?php get_template_part('modules/_breadcrumb'); ?>
+      <div class="main__content">
+        <?php get_template_part('modules/_breadcrumb'); ?>
 
-      <?php if ( !($img && $imgMobile) ) : ?>
-      <h1>
-        <?php echo the_title(); ?>
-      </h1>
-      <?php endif; ?>
+        <?php if ( !($img && $imgMobile) ) : ?>
+        <h1>
+          <?php echo the_title(); ?>
+        </h1>
+        <?php endif; ?>
 
-      <?php if ( $intro_heading || $intro_text ) : ?>
-        <div class="main__content main__content--intro">
+        <?php if ( $intro_heading || $intro_text ) : ?>
           <?php if ( $intro_heading ) : ?>
             <h2>
               <?php echo $intro_heading; ?>
@@ -35,13 +41,14 @@
           <?php if ( $intro_text ) : ?>
             <?php echo $intro_text; ?>
           <?php endif; ?>
-        </div>
-      <?php endif; ?>
+        <?php endif; ?>
+      </div>
 
+    </div>
+    <div class="container">
       <?php while (have_rows('modules')) : the_row(); ?>
         <?php get_template_part('modules/_' . get_row_layout()); ?>
       <?php endwhile; ?>
-
     </div>
   <?php else : ?>
     <div class="main container container--clear">

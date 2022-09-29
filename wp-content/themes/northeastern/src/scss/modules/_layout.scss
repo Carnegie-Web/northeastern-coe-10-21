@@ -92,10 +92,6 @@
   }
 }
 
-.main__content--intro {
-  float: none;
-}
-
 .main__sidebar {
   @include mq(64em) {
     width: 30%;

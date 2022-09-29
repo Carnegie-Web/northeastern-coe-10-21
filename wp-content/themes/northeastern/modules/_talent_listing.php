@@ -68,10 +68,11 @@ if (!empty($tax_query)) {
 
 $posts = new WP_Query($args);
 $total = $posts->found_posts;
+$pages = ceil($total / $items_per_page);
 
 $pg_args = [
   'base' => $root_url,
-  'pages' => ceil($total / $items_per_page),
+  'pages' => $pages,
   'current' => $pg,
 ];
 ?>
@@ -117,7 +118,7 @@ $pg_args = [
   </form>
 
   <div class="list__search__group">
-    <span class="list__search__label label">Or Search by Letter:</span>
+    <span class="list__search__label label">Search by Letter of Last Name:</span>
     <?php foreach (range('a', 'z') as $val) : ?>
       <a href="<?php echo "$root_url?letter=$val"; ?>" class="list__search__link <?php if ($val === $letter) { echo 'active'; } ?>"><?php echo $val; ?></a>
     <?php endforeach; ?>
@@ -129,7 +130,7 @@ $pg_args = [
         <?php echo $total; ?> Items found
       </span>
     </div>
-    <?php if (ceil($total / $items_per_page) > 1) : ?>
+    <?php if ($pages > 1) : ?>
       <div id="pagination" class="pagination">
         <?php get_template_part('modules/_pagination', null, $pg_args); ?>
       </div>
@@ -182,7 +183,7 @@ $pg_args = [
     </div>
   </div>
 
-  <?php if (ceil($total / $items_per_page) > 1) : ?>
+  <?php if ($pages > 1) : ?>
     <div id="pagination" class="pagination block">
       <?php get_template_part('modules/_pagination', null, $pg_args); ?>
     </div>

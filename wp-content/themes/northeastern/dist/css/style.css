@@ -1174,10 +1174,6 @@ hr + .h5, hr + .subnav__toggle, hr + .tabbed__nav__button, hr + .contact__name, 
   }
 }
 
-.main__content--intro {
-  float: none;
-}
-
 @media (min-width: 64em) {
   .main__sidebar {
     width: 30%;
