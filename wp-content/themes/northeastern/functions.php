@@ -44,10 +44,10 @@ function theme_setup() {
 add_action('after_setup_theme', 'theme_setup');
 
 // only show acf menu item for local dev
-// function hide_acf_menu_item() {
-//   return !(strpos(get_bloginfo('url'), 'localhost') === false && strpos(get_bloginfo('url'), 'lndo.') === false);
-// }
-// add_filter('acf/settings/show_admin', 'hide_acf_menu_item');
+function hide_acf_menu_item() {
+  return !(strpos(get_bloginfo('url'), 'localhost') === false && strpos(get_bloginfo('url'), 'lndo.') === false);
+}
+add_filter('acf/settings/show_admin', 'hide_acf_menu_item');
 
 
 
