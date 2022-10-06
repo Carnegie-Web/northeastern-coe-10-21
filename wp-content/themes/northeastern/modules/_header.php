@@ -1,4 +1,5 @@
 <?php $find_faculty_link = get_field('find_faculty_link', 'option'); ?>
+<?php $industry_partnership_link = get_field('industry_partnership_link', 'option'); ?>
 <?php $search_url = get_field('search_url', 'option'); ?>
 <header class="header">
   <div class="header__small">
@@ -41,6 +42,9 @@
   <ul class="topbar__nav">
     <li class="topbar__nav__item">
         <a href="<?php echo $find_faculty_link['url'] ?>" class="topbar__nav__link" <?php link_target($find_faculty_link); ?>><?php echo $find_faculty_link['title']; ?></a>
+    </li>
+    <li class="topbar__nav__item">
+        <a href="<?php echo $industry_partnership_link['url'] ?>" class="topbar__nav__link" <?php link_target($industry_partnership_link); ?>><?php echo $industry_partnership_link['title']; ?></a>
     </li>
     <li class="topbar__nav__item">
       <button class="topbar__btn toggle-info">
