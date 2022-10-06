@@ -41,6 +41,9 @@
       <a href="#" class="topbar__nav__link">Find Faculty &amp; Staff</a>
     </li>
     <li class="topbar__nav__item">
+      <a href="#" class="topbar__nav__link">Find Faculty &amp; Staff</a>
+    </li>
+    <li class="topbar__nav__item">
       <button class="topbar__btn toggle-info">
         <span class="topbar__btn__text">Info For</span>
         
