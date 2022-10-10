@@ -1943,7 +1943,7 @@ hr + .h5, hr + .subnav__toggle, hr + .tabbed__nav__button, hr + .contact__name, 
 
 @media (min-width: 64em) {
   .topbar__nav__item + .topbar__nav__item {
-    margin-left: 2rem;
+    margin-left: 1.5rem;
   }
 }
 .topbar__nav__item:nth-child(2) {

@@ -46,10 +46,11 @@
 
 
 .topbar__nav__item {
+
   & + & {
     // position: relative;
     @include mq(64em) {
-      margin-left: 2rem;
+      margin-left: 1.5rem;
     }
   }
   &:nth-child(2) {
