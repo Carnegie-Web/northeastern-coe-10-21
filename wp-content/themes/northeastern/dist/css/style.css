@@ -1941,9 +1941,12 @@ hr + .h5, hr + .subnav__toggle, hr + .tabbed__nav__button, hr + .contact__name, 
   }
 }
 
+.topbar__nav__item:nth-child(1) {
+  margin-left: 2rem;
+}
 @media (min-width: 64em) {
   .topbar__nav__item + .topbar__nav__item {
-    margin-left: 1.5rem;
+    margin-left: 2rem;
   }
 }
 .topbar__nav__item:nth-child(2) {
