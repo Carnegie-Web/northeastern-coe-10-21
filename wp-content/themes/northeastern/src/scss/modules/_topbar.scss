@@ -63,9 +63,15 @@
   }
   &:nth-child(3) {
     @include mq(64em) {
-      margin-left: 1rem;
+      margin-left: .5rem;
     }
   }
+  &:nth-child(4) {
+    @include mq(64em) {
+      margin-left: .5rem;
+    }
+  }
+
   &:last-child {
     display: none;
     @include mq(64em) {
