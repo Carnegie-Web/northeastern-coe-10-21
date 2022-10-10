@@ -46,13 +46,14 @@
 
 
 .topbar__nav__item {
+  margin-left:1rem;
   &:nth-child(3){
     margin-left:1rem;
     @include mq(64em) {
       margin-left:2rem;
     }
   }
-  &:nth-child(3){
+  &:nth-child(4){
     margin-left:1rem;
     @include mq(64em) {
       margin-left:2rem;
