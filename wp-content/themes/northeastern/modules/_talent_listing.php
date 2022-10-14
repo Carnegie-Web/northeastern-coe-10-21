@@ -145,8 +145,7 @@ $pg_args = [
         $title = explode(', ', get_the_title(), 2);
         $name = "$title[1] $title[0]";
         $email = get_field('email');
-        $linkedin = get_field('linkedin');
-        $personal_link = get_field('personal_link');
+        $links = explode(', ', get_field('links'));
         ?>
         <div>
           <div class="block-small">
@@ -162,18 +161,18 @@ $pg_args = [
                 <a href="mailto:<?php echo $email; ?>" class="caption__link"><?php echo $email; ?></a>
               </li>
               <li>
-                <?php if ($linkedin) : ?>
-                  <a href="<?php echo $linkedin; ?>" class="contact__icon">
-                    <span class="hide">LinkedIn</span>
-                    <?php echo svgstore('linkedin', '', ''); ?>
+                <?php foreach ($links as $link) : ?>
+                  <?php
+                  $svg = 'arrow-up-right';
+                  if (str_contains($link, 'linkedin.com')) {
+                    $svg = 'linkedin';
+                  }
+                  ?>
+                  <a href="<?php echo $link; ?>" class="contact__icon">
+                    <span class="hide"><?php echo $link; ?></span>
+                    <?php echo svgstore($svg, '', ''); ?>
                   </a>
-                <?php endif; ?>
-                <?php if ($personal_link) : ?>
-                  <a href="<?php echo $personal_link; ?>" class="contact__icon">
-                    <span class="hide">Personal Link</span>
-                    <?php echo svgstore('arrow-up-right', '', ''); ?>
-                  </a>
-                <?php endif; ?>
+                <?php endforeach; ?>
               </li>
             </ul>
           </div>

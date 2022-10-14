@@ -21,10 +21,10 @@
             "append": ""
         },
         {
-            "key": "field_63316397470f2",
-            "label": "LinkedIn",
-            "name": "linkedin",
-            "type": "url",
+            "key": "field_634994ef12ffb",
+            "label": "Links",
+            "name": "links",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -34,23 +34,10 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": ""
-        },
-        {
-            "key": "field_633163ab470f3",
-            "label": "Personal Link",
-            "name": "personal_link",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -71,5 +58,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1664181459
+    "modified": 1665766657
 }
