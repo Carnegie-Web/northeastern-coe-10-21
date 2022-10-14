@@ -163,15 +163,20 @@ $pg_args = [
               <li>
                 <?php foreach ($links as $link) : ?>
                   <?php
+                  if (substr($link, 0, 4) !== 'http') {
+                    $link = "http://$link";
+                  }
                   $svg = 'arrow-up-right';
                   if (str_contains($link, 'linkedin.com')) {
                     $svg = 'linkedin';
                   }
                   ?>
-                  <a href="<?php echo $link; ?>" class="contact__icon">
-                    <span class="hide"><?php echo $link; ?></span>
-                    <?php echo svgstore($svg, '', ''); ?>
-                  </a>
+                  <?php if (wp_http_validate_url($link)) : ?>
+                    <a href="<?php echo $link; ?>" class="contact__icon">
+                      <span class="hide"><?php echo $link; ?></span>
+                      <?php echo svgstore($svg, '', ''); ?>
+                    </a>
+                  <?php endif; ?>
                 <?php endforeach; ?>
               </li>
             </ul>
