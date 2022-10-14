@@ -315,10 +315,10 @@ add_action('init', 'ctax_organization_type');
 // talent type custom taxonomy
 function ctax_talent_type() {
   $args = [
-    'public' => false,
+    'public' => true,
     'hierarchical' => true,
     'label' => 'Talent Types',
-    'show_ui' => true,
+    'publicly_queryable' => false,
   ];
   register_taxonomy('talent_type', 'talent', $args);
 }
@@ -327,10 +327,10 @@ add_action('init', 'ctax_talent_type');
 // talent discipline custom taxonomy
 function ctax_talent_discipline() {
   $args = [
-    'public' => false,
+    'public' => true,
     'hierarchical' => true,
     'label' => 'Talent Disciplines',
-    'show_ui' => true,
+    'publicly_queryable' => false,
   ];
   register_taxonomy('talent_discipline', 'talent', $args);
 }
@@ -339,11 +339,11 @@ add_action('init', 'ctax_talent_discipline');
 // talent custom post type
 function cpt_talent() {
   $args = [
-    'public' => false,
+    'public' => true,
     'hierarchical' => true,
     'label' => 'Talent',
     'supports' => ['title', 'thumbnail', 'editor'],
-    'show_ui' => true,
+    'publicly_queryable' => false,
   ];
   register_post_type('talent', $args);
 }
