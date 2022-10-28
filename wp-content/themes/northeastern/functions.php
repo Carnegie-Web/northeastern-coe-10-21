@@ -978,3 +978,27 @@ $conn->exec($sql);
 //echo "New record created successfully";
 
 }
+
+// add starts_with support to wp_query
+function posts_where_starts_with($where, $query) {
+  global $wpdb;
+  $starts_with = esc_sql($query->get('starts_with'));
+  if ($starts_with) {
+    $where .= " AND $wpdb->posts.post_title REGEXP '^$starts_with'";
+  }
+  return $where;
+}
+add_filter('posts_where', 'posts_where_starts_with', 10, 2);
+
+// change talent cpt title placeholder
+function talent_title_placeholder($title) {
+  $screen = get_current_screen();
+  if ($screen->post_type === 'talent') {
+    $title = 'Last Name, First Name';
+  }
+  return $title;
+}
+add_filter('enter_title_here', 'talent_title_placeholder');
+
+// gravity forms email domain validation
+require_once('gforms-edv.php');
