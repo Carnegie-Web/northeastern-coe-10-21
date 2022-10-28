@@ -1,0 +1,14 @@
+.image__container {
+  display: inline-block;
+  margin: 2rem 0;
+  max-width: 100%;
+}
+
+.image__caption, .wp-caption-text {
+  font-weight: $bold;
+  @include font-size(15);
+  line-height: 1.428;
+  margin-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 4px solid rgba($gray, .25%);
+}

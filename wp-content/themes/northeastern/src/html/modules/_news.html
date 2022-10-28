@@ -1,0 +1,39 @@
+{% if news.newsAlt %}
+<a href="#" class="card__item news__item">
+  <div class="card__image">
+    {{ ph('600x3:2') }}
+  </div>
+  <div class="card__content zero">
+
+    <div class="category">
+      October 12, 2018
+    </div>
+    <p>
+      NU's First Undergraduate Global Health Conference
+    </p>
+    {{ svgstore('arrow', '', 'card__arrow__icon') }}
+  </div>
+</a>
+{% else %}
+<div class="card__item news__item">
+  <div class="card__image">
+    {{ ph('600x3:2') }}
+  </div>
+  <div class="card__content zero">
+    {% if news.category %}
+    <div class="category">
+      Category
+    </div>
+    {% endif %}
+    <h4>
+      <a href="#">
+        People Tend to Live and Travel to Similar Racial and Socioeconomic Areas as Themselves
+      </a>
+    </h4>
+    <p>
+      CEE Assistant Professor Qi 'Ryan' Wang's article on "Urban mobility and neighborhood isolation in America’s 50 largest
+      cities" was published in the Proceedings of the National Academy of Sciences of the United States of America.
+    </p>
+  </div>
+</div>
+{% endif %}

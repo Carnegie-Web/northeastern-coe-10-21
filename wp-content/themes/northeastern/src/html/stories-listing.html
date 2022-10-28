@@ -1,0 +1,92 @@
+{% set page = {
+  title: 'Stories Listing Page'
+} %}
+
+{% extends "templates/default.html" %}
+
+{% block body %}
+
+<main id="main-content">
+  <div class="main container container--clear">
+    {% include "modules/_breadcrumb.html" %}
+    <h1>Stories</h1>
+    <p class="p-intro">
+      Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam tortor urna, rutrum vitae
+      consectetur sed, ornare quis massa. Nullam mollis vulputate purus et sollicitudin. Sed porttitor sagittis nisl, vel
+      vulputate libero congue non. Proin iaculis hendrerit tortor. Nam vel porta urna, vel ultricies nisi.
+    </p>
+    <br>
+    <a href="#" class="cta cta--red">Submit a Story</a>
+    <br>
+    <br>
+    <hr class="hr--small">
+    <div class="dropdown__filters">
+      <span class="dropdown__label label">Filter by:</span>
+      <label for="department" class="hide">Select department</label>
+      <select class="dropdown__select" id="department">
+        <option>Department</option>
+        <option>Praesentium, doloremque.</option>
+        <option>Temporibus, recusandae.</option>
+        <option>Quia, excepturi.</option>
+        <option>In, cumque.</option>
+        <option>Aspernatur, voluptatibus!</option>
+      </select>
+
+      <label for="program" class="hide">Select program</label>
+      <select class="dropdown__select" id="program">
+        <option>Program</option>
+        <option>Praesentium, doloremque.</option>
+        <option>Temporibus, recusandae.</option>
+        <option>Quia, excepturi.</option>
+        <option>In, cumque.</option>
+        <option>Aspernatur, voluptatibus!</option>
+      </select>
+
+      <label for="category" class="hide">Select Category</label>
+      <select class="dropdown__select" id="category">
+        <option>Category</option>
+        <option>Praesentium, doloremque.</option>
+        <option>Temporibus, recusandae.</option>
+        <option>Quia, excepturi.</option>
+        <option>In, cumque.</option>
+        <option>Aspernatur, voluptatibus!</option>
+      </select>
+
+      <label for="year" class="hide">Select Year</label>
+      <select class="dropdown__select" id="year">
+        <option>Year</option>
+        <option>2000</option>
+        <option>2001</option>
+        <option>2002</option>
+      </select>
+
+      <label for="month" class="hide">Select month</label>
+      <select class="dropdown__select" id="month">
+        <option>Month</option>
+        <option>February</option>
+        <option>March</option>
+      </select>
+
+      <div class="dropdown__filters__group">
+        <button class="cta cta--red">
+          Apply Filters
+        </button>
+        <br>
+        <a href="#" class="cta__link">
+          <span>Reset Filters</span>
+        </a>
+      </div>
+
+
+
+    </div>
+    <div class="block">
+      {% include "modules/_list.html" %}
+    </div>
+    <div class="block">
+      {% include "modules/_pagination.html" %}
+    </div>
+  </div>
+</main>
+
+{% endblock %}

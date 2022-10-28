@@ -1,0 +1,93 @@
+{% set page = {
+  title: 'Organizations Listing Page'
+} %}
+
+{% extends "templates/default.html" %}
+
+{% block body %}
+
+<main id="main-content">
+  <div class="main container container--clear">
+    {% include "modules/_breadcrumb.html" %}
+    <h1>Organizations</h1>
+    <p class="p-intro">The College of Engineering has over 50 unique organizations for students to get involved with, including honor
+      societies, competitions, professional societies, and affinity groups.
+      <a href="#">A full listing of student organizations on campus
+        is also available
+      </a>
+    </p>
+    <br>
+    <div class="dropdown__filters">
+      <span class="dropdown__label label">Filter by:</span>
+      <label for="organization" class="hide">Select Organization</label>
+      <select class="dropdown__select" id="organization">
+        <option>Organization Type</option>
+        <option>Praesentium, doloremque.</option>
+        <option>Temporibus, recusandae.</option>
+        <option>Quia, excepturi.</option>
+        <option>In, cumque.</option>
+        <option>Aspernatur, voluptatibus!</option>
+      </select>
+    </div>
+
+    <div class="list__search__group">
+      <span class="list__search__label label">Search by Letter:</span>
+
+      <a href="#" class="list__search__link active">A</a>
+      <a href="#" class="list__search__link">B</a>
+      <a href="#" class="list__search__link">C</a>
+      <a href="#" class="list__search__link">D</a>
+      <a href="#" class="list__search__link">E</a>
+      <a href="#" class="list__search__link">F</a>
+      <a href="#" class="list__search__link">G</a>
+      <a href="#" class="list__search__link">H</a>
+      <a href="#" class="list__search__link">I</a>
+      <a href="#" class="list__search__link">J</a>
+      <a href="#" class="list__search__link">K</a>
+      <a href="#" class="list__search__link">L</a>
+      <a href="#" class="list__search__link">M</a>
+      <a href="#" class="list__search__link">N</a>
+      <a href="#" class="list__search__link">O</a>
+      <a href="#" class="list__search__link">P</a>
+      <a href="#" class="list__search__link">Q</a>
+      <a href="#" class="list__search__link">R</a>
+      <a href="#" class="list__search__link">S</a>
+      <a href="#" class="list__search__link">T</a>
+      <a href="#" class="list__search__link">U</a>
+      <a href="#" class="list__search__link">V</a>
+      <a href="#" class="list__search__link">W</a>
+      <a href="#" class="list__search__link">X</a>
+      <a href="#" class="list__search__link">Y</a>
+      <a href="#" class="list__search__link">Z</a>
+    </div>
+    <div class="list__result">
+      <span>
+        157 Items found
+      </span>
+    </div>
+    <div class="list">
+      <div class="list__item">
+        <div class="list__image">
+          <img src="//placehold.it/300x200" alt="">
+        </div>
+        <div class="list__content">
+          <p class="list__meta">
+            <a href="#">Bioengineering</a>
+          </p>
+          <h2 class="list__title h4">
+            <a href="#">Studying the Long-Term Health Hazards of E-Cigarettes</a>
+          </h2>
+          <p>BioE Assistant Professors Jessica Oakes and Chiara Bellini are studying the health effects of vaping versus
+            traditional combustible cigarettes.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="block">
+      {% include "modules/_pagination.html" %}
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}

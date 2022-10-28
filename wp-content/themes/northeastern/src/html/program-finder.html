@@ -1,0 +1,168 @@
+{% set page = {
+  title: 'Program Finder'
+} %}
+
+{% set header = {
+  alt: true
+} %}
+
+{% extends "templates/default.html" %}
+
+{% block body %}
+
+<main id="main-content">
+  <div class="main container container--clear">
+    {% include "modules/_breadcrumb.html" %}
+
+    <div class="finder">
+
+      <div class="finder__intro">
+        <div class="finder__intro__title">
+          <h1>Academic Programs</h1>
+        </div>
+        <div class="finder__intro__text">
+          <p>The College of Engineering offers more than 65 degree programs at the BS, MS, and PhD level, as well as a wide range of minors and graduate certificates. In addition to our Boston campus, some graduate programs are offered at regional campuses. Flexible graduate program formats include on-campus, online and hybrid courses, and full- and part-time options to meet individual needs.</p>
+        </div>
+      </div>
+
+      <div class="finder__container">
+
+        <div class="finder__side">
+
+          <div class="finder__tabs">
+            <button class="finder__tab finder__tab--filter finder__tab--active">Filter</button>
+            <button class="finder__tab finder__tab--search">Search</button>
+          </div>
+
+          <div class="finder__filter finder__filter--active">
+            <div class="finder__group">
+              <h2 class="h5">Undergraduate</h2>
+              <label class="filter__label">
+                <input type="checkbox" value="BS" data-filter="level">
+                <span class="filter__checkbox">Bachelor of Science (BS)</span>
+              </label>
+              <label class="filter__label">
+                <input type="checkbox" value="Minor" data-filter="level">
+                <span class="filter__checkbox">Minor</span>
+              </label>
+              <label class="filter__label">
+                <input type="checkbox" value="BS/MS" data-filter="level">
+                <span class="filter__checkbox">BS/MS</span>
+              </label>
+              <label class="filter__label">
+                <input type="checkbox" value="BS/JD" data-filter="level">
+                <span class="filter__checkbox">BS/JD</span>
+              </label>
+              <label class="filter__label">
+                <input type="checkbox" value="PlusOne" data-filter="level">
+                <span class="filter__checkbox">PlusOne</span>
+              </label>
+              <h2 class="h5">Graduate</h2>
+              <label class="filter__label">
+                <input type="checkbox" value="MS" data-filter="level">
+                <span class="filter__checkbox">Master of Science (MS)</span>
+              </label>
+              <label class="filter__label">
+                <input type="checkbox" value="PhD" data-filter="level">
+                <span class="filter__checkbox">PhD</span>
+              </label>
+              <label class="filter__label">
+                <input type="checkbox" value="Certificate" data-filter="level">
+                <span class="filter__checkbox">Certificate</span>
+              </label>
+            </div>
+            <div class="finder__group">
+              <h2 class="h5">Departments</h2>
+              <label class="filter__label">
+                <input type="radio" name="department" value="" data-filter="department" checked>
+                <span class="filter__radio">All</span>
+              </label>
+              <label class="filter__label">
+                <input type="radio" name="department" value="Bioengineering" data-filter="department">
+                <span class="filter__radio">Bioengineering</span>
+              </label>
+              <label class="filter__label">
+                <input type="radio" name="department" value="Chemical Engineering" data-filter="department">
+                <span class="filter__radio">Chemical Engineering</span>
+              </label>
+              <label class="filter__label">
+                <input type="radio" name="department" value="Civil & Environmental Engineering" data-filter="department">
+                <span class="filter__radio">Civil & Environmental Engineering</span>
+              </label>
+              <label class="filter__label">
+                <input type="radio" name="department" value="Electrical & Computer Engineering" data-filter="department">
+                <span class="filter__radio">Electrical & Computer Engineering</span>
+              </label>
+              <label class="filter__label">
+                <input type="radio" name="department" value="Mechanical & Industrial Engineering" data-filter="department">
+                <span class="filter__radio">Mechanical & Industrial Engineering</span>
+              </label>
+              <label class="filter__label">
+                <input type="radio" name="department" value="Software, Data, and Network Systems" data-filter="department">
+                <span class="filter__radio">Software, Data, and Network Systems</span>
+              </label>
+            </div>
+            <div class="finder__group">
+              <h2 class="h5">Format</h2>
+              <label class="filter__label">
+                <input type="checkbox" value="Online" data-filter="format">
+                <span class="filter__checkbox">Online (Full or Partial)</span>
+              </label>
+            </div>
+            <div class="finder__group">
+              <h2 class="h5">Regional Campuses</h2>
+              <label class="filter__label">
+                <input type="radio" name="campus" value="" data-filter="campus" checked>
+                <span class="filter__radio">All</span>
+              </label>
+              <label class="filter__label">
+                <input type="radio" name="campus" value="Seattle, WA" data-filter="campus">
+                <span class="filter__radio">Seattle, WA</span>
+              </label>
+              <label class="filter__label">
+                <input type="radio" name="campus" value="Silicon Valley, CA" data-filter="campus">
+                <span class="filter__radio">Silicon Valley, CA</span>
+              </label>
+            </div>
+            <div class="finder__related">
+              <h2 class="h4">Related Links</h2>
+              <ul class="finder__links">
+                <li><a href="#">Business, Entrepreneurship, and Leadership Programs</a></li>
+                <li><a href="#">Honors Programs</a></li>
+                <li><a href="#">Non-COE Minors</a></li>
+                <li><a href="#">Undergraduate Curriculum Sheets</a></li>
+                <li><a href="#">About Online/Hybrid Courses</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="finder__search">
+            <div class="finder__group">
+              <label class="finder__hidden" for="finder__input">What are you interested in?</label>
+              <input id="finder__input" class="finder__input" type="search" placeholder="What are you interested in?">
+              <h2 class="h5">Popular search terms</h2>
+              <div class="finder__popular">
+                <button class="finder__suggestion">Artificial Intelligence</button>
+                <button class="finder__suggestion">Blockchain</button>
+                <button class="finder__suggestion">Robotics</button>
+                <button class="finder__suggestion">Internet of Things</button>
+                <button class="finder__suggestion">Energy</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="finder__main">
+          <div class="finder__info"></div>
+          <div class="finder__results"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,223 @@
+<strong>48.01</strong> 20211105
+
+New add-on: <a href="https://broadcast.plainviewplugins.com/addon/rebroadcaster/">Rebroadcaster</a>: Periodically and automatically rebroadcast specific posts.
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: More fixing of featured images not broadcasting when processing via cron with the Publishpress Revisions plugin active.
+
+<strong>47.13</strong> 20211007
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Fix featured images not broadcasting when processing via cron with the Publishpress Revisions plugin active.
+
+<strong>47.08</strong> 20210613
+
+<a href="https://broadcast.plainviewplugins.com/addon/new-blog-broadcast/">New Blog Broadcast</a>: Fix fatal error when broadcasting manually.
+
+<strong>47.06</strong> 20210412
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Add CLI command: broadcast_queue process
+
+<strong>47.05</strong> 20210325
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Add option to enable queue locking, which only the largest networks might need. Queue locking is disabled per default.
+
+<strong>47.04</strong> 20210318
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Fix unlocking of the queue.
+
+<strong>47.02</strong> 20210216
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Fix posts not being queued.
+
+<strong>47.01</strong> 20210210
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Add support for queueing post actions, such as linking done after cloning.
+
+<strong>46.09</strong> 2020708
+
+<a href="https://broadcast.plainviewplugins.com/addon/new-blog-broadcast/">New Blog Broadcast</a>: Hook into the wp_initialize_site action instead.
+
+<strong>46.08</strong> 2020608
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Fix warning about AUTH_KEY, by using wp_salt().
+
+<strong>46.06</strong> 20200429
+
+<a href="https://broadcast.plainviewplugins.com/addon/blog-groups-2/">Blog Groups 2</a>: Fix double creation of groups found in Bulk Cloner spreadsheets.
+
+<strong>46.05</strong> 20200324
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Fix queue unlocking function.
+
+<strong>46.04</strong> 20200323
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Apply queue locking during ajax processing, not only during http processing.
+
+<strong>46.01</strong> 20200116
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Fix retry / attempt counter for partially broadcasted WooCommerce variations. Affects those with products that have more variations than the queue retry limit.
+
+<strong>45.06</strong> 20191116
+
+<a href="https://broadcast.plainviewplugins.com/addon/blog-groups-2/">Blog Groups 2</a>: Add support for assigning groups in the Bulk Cloner.
+
+<strong>45.01</strong> 20190828
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Use file locking to prevent cron processing from being run multiple times.
+
+<strong>44.04</strong> 20190621
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Add broadcast_queue_menu_access filter to allow non-super admins access to the settings.
+
+<strong>44.02</strong> 20190423
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Fix queue not working due to the upgrade process not upgrading the add-on's tables.
+
+<strong>44.01</strong> 20190415
+
+Version bump to maintain compatibility with basic Broadcast plugin.
+
+<strong>43.17</strong> 20190402
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: For developers, queue items now have priorities assigned, allowing for faster processing of specific queue item types.
+
+<strong>43.12</strong> 20181127
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Add broadcast_queue_clean_queue filter to prevent database cleanup.
+
+43.6 20180625
+
+<a href="https://broadcast.plainviewplugins.com/addon/send-to-many/">Send To Many</a>: Update to work with fixed Broadcast roles.
+
+43.4 20180506
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Add developer actions for adding and removing items from the queue.
+
+43 20180226
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Fix support for queue on newer MariaDB databases. ROWS is apparently a reserved word.
+
+42.4 20180129
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Fix blog names not showing for queued posts in overview.
+
+42.3 20180115
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Added setting to prevent the queue from being trimmed when rebroadcasting a post that is already in the queue.
+
+42.2 20171213
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Fix race condition fatal error where trying to delete non-existing data.
+
+42 20171130
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Please test your queue after updating. If it doesn't work, deactivate and reactivate the add-on.
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Trim off existing queued items when requeuing posts. This stops the post from being doubly broadcasted, the first time unnecessarily.
+
+41 20171030
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Try to avoid packet size errors by compressing the data stored in the database.
+
+40 20170922
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Show an error if the queue fails to add the original data item.
+
+39 20170802
+
+Version bump to maintain compatibility with basic Broadcast plugin.
+
+38.1 20170410
+
+<a href="https://broadcast.plainviewplugins.com/addon/new-blog-broadcast/">New Blog Broadcast</a>: Fix fatal error when editing a broadcast. This appeared when the code was converted to using the new Wordpress translation functions.
+
+38 20170406
+
+Finally dropped the "ThreeWP" prefix from the plugin name! The code remains the same, just the name has become simpler: Broadcast...
+
+<a href="https://broadcast.plainviewplugins.com/addon/rebroadcast/">Rebroadcast</a>: Allow posts to be queued when rebroadcasting.
+
+37.1 20170322
+
+<a href="https://broadcast.plainviewplugins.com/addon/find-some-unlinked-children/">Find Some Unlinked Children</a>: Add menu option to ignore post status when finding unlinked children.
+
+37 20170316
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Fix items per process setting not being saved.
+
+36.2 20170307
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Added maximum queue items per process setting that defines how many items to process during a HTTP process event. Also added smarter queue handling that now takes the following into account: the previously mentioned items per process event setting, the PHP time limit and how long, on average, each queue item takes to process. The processing rules are detailed on the queue add-on's page.
+
+36 20170303
+
+<a href="https://broadcast.plainviewplugins.com/addon/find-some-unlinked-children/">Find Some Unlinked Children</a>: Like the normal Find Unlinked Children bulk action, find children that have the same status.
+
+35.7 20170127
+
+<a href="https://broadcast.plainviewplugins.com/addon/duplicate-attachments/">Duplicate Attachments</a>: Fix setting of attached filename on some hosts, which caused problems with returning of the image filename on disk (especially with Update Attachments).
+
+35.6 20170117
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Fix fatal error after HTTP process call. The error is harmless but results in an unnecessary entry in the webserver error log.
+
+35.5 20170113
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Only process one item at a time. This is because some posts are really, really large and can cause timeouts getting caught just above the 25% time limit. Safer to not try to guess how long a post will take to broadcast.
+
+35.3 20170106
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Only clean the queue 1 in 10 times. This alleviates problems with slow SQL servers.
+
+35 20161206
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Added support for partial broadcasts. Currently only the WooCommerce add-on uses this functionality.
+
+34.4 20161107
+
+<a href="https://broadcast.plainviewplugins.com/addon/new-blog-broadcast/">New Blog Broadcast</a>: Also listen to gform_site_created actions sent from Gravity Forms to detect when a new blog has been created.
+
+34.2 20161006
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Optimize tables after cleaning to reduce fragmentation.
+
+34 20160925
+
+<a href="https://broadcast.plainviewplugins.com/addon/duplicate-attachments/">Duplicate Attachments</a>: Force renaming of attachment post_names to coincide with the attachment fix in the base version of Broadcast. This fixes the attachment duplication bug/feature in Wordpress.
+<a href="https://broadcast.plainviewplugins.com/addon/new-blog-broadcast/">New Blog Broadcast</a>: Allow queuing of posts.
+
+33 20160817
+
+Version bump to maintain compatibility with basic Broadcast plugin.
+
+32 20160715
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Obey broadcasting_data->high_priority property from BC v32. This will solve problems with complicated broadcasts that subbroadcast things (like ACF post relations and Download Monitor shortcodes).
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Fix allowing normal users to ajax process posts on the post overview screen.
+
+31 20160705
+
+<a href="https://broadcast.plainviewplugins.com/addon/queue/">Queue</a>: Assume a max execution time of 30s when a max time of -1 is encountered. Workaround for bug in wpallexport pro.
+
+30 20160606
+
+Version bump to maintain compatibility with basic Broadcast plugin.
+
+29 20160405
+
+Queue: During broadcasting, don't queue any broadcast requests, to prevent some add-ons from not being able to receive new post numbers during broadcast.
+
+All packs now have RedHat / CentOS SSL workaround for updates automatically enabled.
+
+28.3 20160314
+
+<a href="https://plainviewplugins.com/threewp-broadcast-premium-pack/rebroadcast-broadcast-plugin/">Rebroadcast</a>: Plugin added. Rebroadcast / update selected parent posts by using a bulk action.
+
+28 20160118
+
+Version bump to maintain compatibility with basic Broadcast plugin.
+
+27 20151124
+
+Blog Groups 2: Add method for other plugins to quickly select blogs from blog select inputs.
+
+26 20151102
+
+Initial version.

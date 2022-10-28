@@ -1,0 +1,17 @@
+<div class="accordion">
+  <button class="accordion__toggle{% if accordion.active %} accordion__toggle--active{% endif %}">
+    {{ svgstore('cross', 'Toggle Accordion', 'accordion__toggle__icon') }}
+    <span class="accordion__toggle__text">
+      Accordion
+    </span>
+  </button>
+  <div class="accordion__content{% if accordion.active %} accordion__content--active{% endif %}">
+    <div class="accordion__interior zero">
+      <p>
+        Vestibulum feugiat nunc mi, <a href="#">bibendum congue</a> tortor ut augue lacinia, at viverra est semper. Sed sapien metus, scelerisque nec pharetra id, tempor a
+        tortor.
+      </p>
+      {% include "modules/_table.html" %}
+    </div>
+  </div>
+</div>

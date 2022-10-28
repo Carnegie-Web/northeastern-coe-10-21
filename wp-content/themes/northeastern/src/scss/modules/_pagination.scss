@@ -1,0 +1,38 @@
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination__link,
+.pagination__current, 
+.page-numbers {
+  margin: 0.5rem;
+  font-size: 0.9375rem;
+  font-weight: bold;
+}
+
+.pagination__link,
+.page-numbers {
+  color: $black;
+}
+
+.pagination__current,
+.page-numbers.current {
+  color: $red;
+}
+
+.pagination__hidden {
+  @include hide;
+}
+
+.pagination__icon {
+  display: block;
+  width: 1.5rem;
+  color: $red;
+}
+
+.pagination__icon--flip {
+  transform: rotate(180deg);
+}

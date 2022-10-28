@@ -1,0 +1,28 @@
+{% from "util/macros.html" import ph %}
+{% from "util/macros.html" import svgstore %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <title>{{ page.title }} - Template</title>
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700%7CLato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+  <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5c82cc7a4c495400114fe99d&product=custom-share-buttons"></script>
+</head>
+
+<body class="{% if page.dept %}dept{% endif %}{% if page.program %} program{% endif %}">
+  <nav aria-label="Skip Navigation"><a class="skip-link" href="#main-content">Skip Navigation</a></nav>
+
+  <div class="canvas">
+    {% include "modules/_header.html" %}
+    {% block body %}{% endblock %}
+    {% include "modules/_footer.html" %}
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+
+</html>

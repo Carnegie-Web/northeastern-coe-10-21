@@ -1,0 +1,514 @@
+<?php
+global $wp;
+//setup variables
+$user_meta_query = '';
+$departments_base = '';
+$department_theme_base = '';
+$research_initiatives_base = '';
+$position_types_base = '';
+$position_types_tags = '';
+$type_base = '';
+$department_tags = '';
+$department_theme_tags = '';
+$research_tags = '';
+$type = '';
+$keyword = '';
+$alpha = '';
+$display = '';
+$hide_research_areas_filter = '';
+
+$current_url = home_url( add_query_arg( array(), $wp->request ) );
+$current_fullurl = home_url() . $_SERVER['REQUEST_URI'];
+$blog_id = get_current_blog_id();
+//get default number of items
+$display_count = get_sub_field('number');
+$display_count = $display_count ? $display_count : 8;
+
+// get field object select options for position type
+$position_type_field = get_field_object('field_5d2ca61338096');
+$position_types = $position_type_field['choices'];
+
+// get labels
+$filters_helper_test = get_sub_field( 'filters_helper_text' );
+$filter_by_text = get_sub_field('filter_by_textText') ? get_sub_field('filter_by_textText') : 'Filter By' ; 
+$apply_filters_text = get_sub_field('apply_filters_text') ? get_sub_field('apply_filters_text') : 'Apply Filters' ; 
+$reset_filters_text = get_sub_field('reset_filters_text') ? get_sub_field('reset_filters_text') : 'Reset Filters' ;
+$search_by_letter_text = get_sub_field('search_by_letter_text') ? get_sub_field('search_by_letter_text') : 'Search By Letter' ;
+
+
+// get base filter
+$departments_base = get_sub_field('departments');
+$department_theme_base = get_sub_field('department_theme');
+$research_initiatives_base = get_sub_field('research_initiatives');
+$type_base = get_sub_field('type');
+$position_types_base = get_sub_field('position_type');
+
+// get filter options
+$hide_research_areas_filter = get_sub_field('hide_research_areas_filter');
+
+// paging variables
+$url_params_regex = '/\?.*?$/';
+preg_match($url_params_regex, get_pagenum_link(), $url_params);
+
+$base   = !empty($url_params[0]) ? preg_replace($url_params_regex, '', get_pagenum_link()).'%_%/'.$url_params[0] : get_pagenum_link().'%_%';
+$format = 'page/%#%';
+$display_var = strpos($current_fullurl, '?') ? '&display=all' : '?display=all';
+
+if (is_multisite()) { switch_to_blog(1); }
+
+// setup departments
+$departments = get_terms([
+  'taxonomy' => 'page_department',
+  'hide_empty' => false,
+]);
+
+// setup department themes
+$department_themes = get_terms([
+  'taxonomy' => 'department_themes',
+  'hide_empty' => false,
+  'meta_query' => array(
+     array(
+          'key' => 'related_department', 
+          'value' => $departments_base, 
+          'compare' => 'LIKE'
+     )
+   )
+]);
+
+// setup research_initiatives
+$research_initiatives = get_terms([
+  'taxonomy' => 'research_initiatives',
+  'hide_empty' => false,
+]);
+
+
+if (isset($_GET['research'])) {
+  $research_tags  = sanitize_text_field($_GET['research']);
+}
+
+if (isset($_GET['pt'])) {
+  $position_types_tags  = sanitize_text_field($_GET['pt']);
+}
+
+if (isset($_GET['dept'])) {
+  $department_tags  = sanitize_text_field($_GET['dept']);
+}
+
+if (isset($_GET['dt'])) {
+  $department_theme_tags  = sanitize_text_field($_GET['dt']);
+}
+
+if (isset($_GET['type'])) {
+  $type  = sanitize_text_field($_GET['type']);
+}
+
+if (isset($_GET['q'])) {
+  $keyword  = sanitize_text_field($_GET['q']);
+}
+
+if (isset($_GET['alpha'])) {
+  $alpha  = sanitize_text_field($_GET['alpha']);
+}
+
+if (isset($_GET['display'])) {
+  $display  = sanitize_text_field($_GET['display']);
+}
+
+if ($display == 'all') {
+  $display_count = '1000';
+}
+// Next, get the current page
+$paged = ( get_query_var('paged')) ? get_query_var('paged') : 1;
+// After that, calculate the offset
+$offset = ( $paged - 1 ) * $display_count;
+
+// build meta query
+if ($keyword) {
+  $user_meta_query = array(
+    'relation' => 'AND',
+    array(
+      'relation' => 'OR',
+      array(
+        'key' => 'first_name',
+        'value' => $keyword,
+        'compare' => 'LIKE'
+      ),
+      array(
+        'key' => 'last_name',
+        'value' => $keyword,
+        'compare' => 'LIKE'
+      ),
+      array(
+        'key' => 'description',
+        'value' => $keyword,
+        'compare' => 'LIKE'
+      ),
+    ),
+    array( 
+        'key'=> 'type', 
+        'value'   => [ 'Faculty', 'Staff' ],
+        'compare' => 'IN'
+    ),
+    array(
+      'last_name_clause'  => [
+          'key'     => 'last_name',
+          'compare' => 'EXISTS'
+      ],
+      'first_name_clause' => [
+          'key'     => 'first_name',
+          'compare' => 'EXISTS'
+      ],
+    )
+  );
+}
+elseif ($alpha) {
+  $user_meta_query = array(
+    'relation' => 'AND',
+    array(
+      'key' => 'last_name',
+      'value' => '^' . $alpha,
+      'compare' => 'REGEXP'
+    ),
+    array( 
+          'key'=> 'type', 
+          'value'   => [ 'Faculty', 'Staff' ],
+          'compare' => 'IN'
+    ),
+    array(
+      'last_name_clause'  => [
+          'key'     => 'last_name',
+          'compare' => 'EXISTS'
+      ],
+      'first_name_clause' => [
+          'key'     => 'first_name',
+          'compare' => 'EXISTS'
+      ],
+    )
+  );
+}
+elseif ($research_tags || $position_types_tags ||$department_tags || $department_theme_tags || $type) {
+  $user_meta_query = array(
+    'relation' => 'AND',
+    array( 
+          'key'=> 'type', 
+          'value'   => [ 'Faculty', 'Staff' ],
+          'compare' => 'IN'
+    ),
+    array(
+      'last_name_clause'  => [
+          'key'     => 'last_name',
+          'compare' => 'EXISTS'
+      ],
+      'first_name_clause' => [
+          'key'     => 'first_name',
+          'compare' => 'EXISTS'
+      ],
+    )
+  );
+
+  //Match position types by role or just position type
+  if ($position_types_tags && $departments_base) {
+    $user_meta_query[][] = array('key' => 'role_wp', 'value' => $position_types_tags."-".$departments_base, 'compare' => '=');
+  }
+  elseif ($position_types_tags && $department_tags) {
+    $user_meta_query[][] = array('key' => 'role_wp', 'value' => $position_types_tags."-".$department_tags, 'compare' => '=');
+  }
+  elseif ($position_types_tags) {
+    $user_meta_query[][] = array('relation' => 'OR',array('key' => 'roles_$_position_type', 'value' => $position_types_tags, 'compare' => '='));
+  };
+
+  if ($research_tags) {
+    $user_meta_query[][] = array('key' => 'research_initiatives', 'value' => $research_tags, 'compare' => 'LIKE');
+  };
+  if ($department_tags) {
+    $user_meta_query[][] = array('key' => 'departments', 'value' => $department_tags, 'compare' => 'LIKE');
+  };
+  if ($department_theme_tags) {
+    $user_meta_query[][] = array('key' => 'department_theme', 'value' => $department_theme_tags, 'compare' => 'LIKE');
+  };
+  if ($type) {
+    $user_meta_query[][] = array('key' => 'type', 'value' => $type, 'compare' => 'LIKE');
+  };
+}
+else {
+  $user_meta_query = array(
+    'relation' => 'AND',
+    array( 
+          'key'=> 'type', 
+          'value'   => [ 'Faculty', 'Staff' ],
+          'compare' => 'IN'
+    ),
+    array(
+      'last_name_clause'  => [
+          'key'     => 'last_name',
+          'compare' => 'EXISTS'
+      ],
+      'first_name_clause' => [
+          'key'     => 'first_name',
+          'compare' => 'EXISTS'
+      ],
+    )
+  );
+}
+
+if ($research_initiatives_base) {
+  $user_meta_query[] = array('key' => 'research_initiatives', 'value' => $research_initiatives_base, 'compare' => 'LIKE');
+};
+if ($departments_base) {
+  $user_meta_query[] = array('key' => 'departments', 'value' => $departments_base, 'compare' => 'LIKE');
+};
+if ($department_theme_base) {
+  $user_meta_query[] = array('key' => 'department_theme', 'value' => $department_theme_base, 'compare' => 'LIKE');
+};
+if ($type_base) {
+  $user_meta_query[] = array('key' => 'type', 'value' => $type_base, 'compare' => 'LIKE');
+};
+if ($position_types_base) {
+  $user_meta_query[] = array('relation' => 'OR',array('key' => 'roles_$_position_type', 'value' => $position_types_tags, 'compare' => '='));
+};
+
+
+if ($user_meta_query) {
+  $args = array(
+    'orderby' => [
+        'last_name_clause'  => 'ASC',
+        'first_name_clause' => 'ASC',
+    ],
+    'paged' => $paged,
+    'number' => $display_count,
+    'offset'     =>  $offset,
+    'meta_query' => $user_meta_query
+  );
+}
+else {
+  $args = array(
+    'meta_key' => 'last_name',
+    'orderby' => 'meta_value',
+    'order' => 'ASC',
+    'paged' => $paged,
+    'number' => $display_count,
+    'offset'     =>  $offset
+  );
+}
+
+
+$user_query = new WP_User_Query( $args );
+
+$total_users = $user_query->total_users;
+$total_pages = ceil($total_users / $display_count);
+
+?>
+
+<div class="people-listing">
+  <form id="people_search_keyword" method="get" action="<?php echo $current_url; ?>">
+    <input type="hidden" name="paged" value="1"/>
+    <label for="people-search" class="hide">Search</label>
+    <input id="people-search" name="q" class="list__input" type="search" placeholder="Search">  
+  </form>
+  
+  <hr class="hr--small">
+  <?php if ( $filters_helper_test ) : ?>
+    <?php echo esc_html( $filters_helper_test ); ?>
+  <?php endif; ?>
+  <form id="people_search" method="get" action="<?php echo $current_url; ?>">
+    <input type="hidden" name="paged" value="1"/>
+    <div class="dropdown__filters">
+      <span class="dropdown__label label"><?php echo $filter_by_text; ?>:</span>
+      <?php if (!$position_types_base) : ?>
+        <label for="position" class="hide">Select position type</label>
+        <select class="dropdown__select" name="pt" id="position">
+          <option value="">Position Type</option>
+          <?php foreach ($position_types as $value => $label) : ?>
+              <option value="<?php echo $value; ?>"<?php if($position_types_tags == $value){ echo" selected";} ?>><?php echo $label; ?></option>
+          <?php endforeach; ?>
+        </select>
+      <?php endif; ?>
+      <?php if (!$departments_base) : ?>
+        <label for="department" class="hide">Select department</label>
+        <select class="dropdown__select" name="dept" id="department">
+          <option value="">Department</option>
+          <?php foreach ($departments as $term) : ?>
+              <option value="<?php echo $term->term_id; ?>"<?php if($department_tags == $term->term_id){ echo" selected";} ?>><?php echo $term->name; ?></option>
+          <?php endforeach; ?>
+        </select>
+      <?php endif; ?>
+      <?php if (is_multisite()) { restore_current_blog(); } ?>
+        <?php if ( !$department_theme_base && !$hide_research_areas_filter ) : ?>
+          <label for="dt" class="hide">Select research area</label>
+          <select class="dropdown__select" name="dt" id="dt">
+            <option value="">Dept. Research Areas</option>
+            <?php foreach ($department_themes as $term) : ?>
+                <option value="<?php echo $term->term_id; ?>"<?php if($department_theme_tags == $term->term_id){ echo" selected";} ?>><?php echo $term->name; ?></option>
+            <?php endforeach; ?>
+          </select>
+        <?php endif; ?>
+      <?php if (is_multisite()) { switch_to_blog(1); } ?>
+      <?php if (!$type_base) : ?>
+        <label for="faculty-staff" class="hide">Select faculty/staff</label>
+        <select class="dropdown__select" name="type" id="faculty-staff">
+          <option value="">Faculty/Staff</option>
+          <option value="Faculty"<?php if($type == 'Faculty'){ echo" selected";} ?>>Faculty</option>
+          <option value="Staff"<?php if($type == 'Staff'){ echo" selected";} ?>>Staff</option>
+        </select>
+      <?php endif; ?>
+      <?php if (!$research_initiatives_base) : ?>
+        <label for="research-initiative" class="hide">Select research initiative</label>
+        <select class="dropdown__select" name="research" id="research-initiative">
+          <option value="">Research Initiatives</option>
+          <?php foreach ($research_initiatives as $term) : ?>
+              <option value="<?php echo $term->term_id; ?>"<?php if($research_tags == $term->term_id){ echo" selected";} ?>><?php echo $term->name; ?></option>
+          <?php endforeach; ?>
+        </select>
+      <?php endif; ?>
+      <div class="dropdown__filters__group">
+        <button type='submit' class="cta cta--red">
+          <?php echo $apply_filters_text; ?>
+        </button>
+        <br>
+        <a href="<?php echo $current_url; ?>" class="cta__link">
+          <span><?php echo $reset_filters_text; ?></span>
+        </a>
+      </div>
+    </div>
+  </form>
+  <div class="list__search__group">
+    <span class="list__search__label label"><?php echo $search_by_letter_text; ?>:</span>
+
+    <a href="<?php echo $current_url; ?>?alpha=a" class="list__search__link">A</a>
+    <a href="<?php echo $current_url; ?>?alpha=b" class="list__search__link">B</a>
+    <a href="<?php echo $current_url; ?>?alpha=c" class="list__search__link">C</a>
+    <a href="<?php echo $current_url; ?>?alpha=d" class="list__search__link">D</a>
+    <a href="<?php echo $current_url; ?>?alpha=e" class="list__search__link">E</a>
+    <a href="<?php echo $current_url; ?>?alpha=f" class="list__search__link">F</a>
+    <a href="<?php echo $current_url; ?>?alpha=g" class="list__search__link">G</a>
+    <a href="<?php echo $current_url; ?>?alpha=h" class="list__search__link">H</a>
+    <a href="<?php echo $current_url; ?>?alpha=i" class="list__search__link">I</a>
+    <a href="<?php echo $current_url; ?>?alpha=j" class="list__search__link">J</a>
+    <a href="<?php echo $current_url; ?>?alpha=k" class="list__search__link">K</a>
+    <a href="<?php echo $current_url; ?>?alpha=l" class="list__search__link">L</a>
+    <a href="<?php echo $current_url; ?>?alpha=m" class="list__search__link">M</a>
+    <a href="<?php echo $current_url; ?>?alpha=n" class="list__search__link">N</a>
+    <a href="<?php echo $current_url; ?>?alpha=o" class="list__search__link">O</a>
+    <a href="<?php echo $current_url; ?>?alpha=p" class="list__search__link">P</a>
+    <a href="<?php echo $current_url; ?>?alpha=q" class="list__search__link">Q</a>
+    <a href="<?php echo $current_url; ?>?alpha=r" class="list__search__link">R</a>
+    <a href="<?php echo $current_url; ?>?alpha=s" class="list__search__link">S</a>
+    <a href="<?php echo $current_url; ?>?alpha=t" class="list__search__link">T</a>
+    <a href="<?php echo $current_url; ?>?alpha=u" class="list__search__link">U</a>
+    <a href="<?php echo $current_url; ?>?alpha=v" class="list__search__link">V</a>
+    <a href="<?php echo $current_url; ?>?alpha=w" class="list__search__link">W</a>
+    <a href="<?php echo $current_url; ?>?alpha=x" class="list__search__link">X</a>
+    <a href="<?php echo $current_url; ?>?alpha=y" class="list__search__link">Y</a>
+    <a href="<?php echo $current_url; ?>?alpha=z" class="list__search__link">Z</a>
+  </div>
+  <div class="grid grid--2">
+    <div class="list__result">
+      <span>
+        <?php echo $total_users; ?> Items found
+      </span>
+    </div>
+    <?php
+      if ($display != 'all') {
+  echo '<div id="pagination" class="pagination">';
+    $current_page = max(1, get_query_var('paged'));
+    echo paginate_links(array(
+      'base' => $base,
+      'format' => $format,
+      'current' => $current_page,
+      'total' => $total_pages,
+      'prev_next'          => true,
+      'prev_text'          => __('« Previous'),
+      'next_text'          => __('Next »'),
+      'type'         => 'plain',
+      ));
+  if ($total_pages > 1) {
+    echo '<a href="' . $current_fullurl . $display_var . '&paged=1" class="page-numbers">View All</a>';
+  }
+  echo '</div>';
+  }
+  ?>
+  </div>
+  <div class="list">
+    <div class="grid grid--4">
+
+    <?php if ( ! empty( $user_query->results ) ) {
+    foreach ( $user_query->results as $user ) {
+      $author_info = get_userdata( $user->ID );
+      $image = get_field('profile_image', 'user_'.$user->ID); 
+      $email = get_field('preferred_email', 'user_'.$user->ID); 
+      $research = get_field('research_intro', 'user_'.$user->ID); 
+      $preferred_email = $email ? $email : $author_info->user_email;
+      ?>
+      <!--start faculty block-->
+      <div>
+        <div class="block-small">
+          <?php echo wp_get_attachment_image($image, 'faculty-listing', false, array( "class" => "block-smaller-bottom" )); ?>
+          <h2 class="list__contact__headline">
+            <a href="<?php echo get_author_posts_url( $user->ID, get_the_author_meta( 'user_nicename', $user->ID ) ); ?>" class="contact__name"><?php echo get_the_author_meta( 'display_name', $user->ID ); ?></a>
+          </h2>
+          <?php if(have_rows('roles', 'user_'.$user->ID)): ?>
+            <?php $i = 0; ?>
+            <br>
+            <?php while( have_rows('roles', 'user_'.$user->ID) ): the_row(); ?>
+              <?php if ($i == 0) : ?>
+                <div class="caption">
+                  <?php echo get_sub_field('role'); ?>,&nbsp;
+                </div>
+                <?php $link = get_sub_field('link'); ?>
+                <?php $link2 = get_sub_field('link_2'); ?>
+                <?php $link3 = get_sub_field('link_3'); ?>
+                <?php $separator = $link3 ? ', ' : ' & '; ?>
+                <?php if ( $link2 ) : ?>
+                  <span class="caption"><?php echo 'jointly appointed in '; ?></span>
+                <?php endif; ?>
+                <a href="<?php echo $link['url']; ?>" <?php link_target($link); ?> class="contact__title"><?php echo $link['title']; ?></a><?php if ( $link2 ) : ?><span class="caption"><?php echo $separator; ?></span> <a href="<?php echo $link2['url']; ?>" <?php link_target($link2); ?> class="contact__title"><?php echo $link2['title']; ?></a>
+                <?php endif; ?>
+                  <?php if ( $link3 ) : ?>
+                    <span class="caption">&</span> <a href="<?php echo $link3['url']; ?>" <?php link_target($link3); ?> class="contact__title"><?php echo $link3['title']; ?></a>
+                  <?php endif; ?>
+                  <br/>
+                <?php $i++; ?>
+              <?php endif; ?>
+            <?php endwhile; ?>
+            <br>
+          <?php endif; ?>
+          <?php if ( $research ) : ?>
+            <div class="caption"><?php echo strip_tags($research); ?></div>
+          <?php endif; ?>
+          <ul class="caption caption__link__list--alt">
+            <li><a href="mailto:<?php echo $preferred_email; ?>" class="caption__link"><?php echo $preferred_email; ?></a></li>
+            <li><?php echo get_field('office_phone','user_'. $user->ID); ?></li>
+          </ul>
+        </div>
+      </div>
+      <!--end faculty block-->
+    <?php
+        }
+    } 
+    ?>
+    </div>
+  </div>
+
+    <?php
+    if ($display != 'all') {
+echo '<div id="pagination" class="pagination block">';
+$current_page = max(1, get_query_var('paged'));
+echo paginate_links(array(
+  'base' => $base,
+  'format' => $format,
+  'current' => $current_page,
+  'total' => $total_pages,
+  'prev_next'          => true,
+  'prev_text'          => __('« Previous'),
+  'next_text'          => __('Next »'),
+  'type'         => 'plain',
+  ));
+if ($total_pages > 1) {
+  echo '<a href="' . $current_fullurl . $display_var . '&paged=1" class="page-numbers">View All</a>';
+}
+
+echo '</div>';
+}
+?>
+<?php if (is_multisite()) { restore_current_blog(); } ?>
+</div>

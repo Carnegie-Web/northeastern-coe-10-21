@@ -1,0 +1,128 @@
+// Font sizing
+// @include font-size(21);
+@mixin font-size($sizeValue: 16) {
+  font-size: ($sizeValue / 16) + rem;
+}
+
+@mixin font-smooth {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Fluid type for width dimensions
+// @include fluid-type(font-size, $minScreen, $maxScreen, 30px, 40px);
+@mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
+  @each $property in $properties {
+    #{$property}: $min-value;
+  }
+
+  @media screen and (min-width: $min-vw) {
+    @each $property in $properties {
+      #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
+    }
+  }
+
+  @media screen and (min-width: $max-vw) {
+    @each $property in $properties {
+      #{$property}: $max-value;
+    }
+  }
+}
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin container {
+  width: 100%;
+  max-width: 80rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  @include mq(48em) {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+
+// clearfix
+@mixin clear {
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+// Clear margin and padding
+@mixin clean {
+  margin: 0;
+  padding: 0;
+}
+
+// visually hidden, but not from screenreaders
+@mixin hide {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+// min-width media query
+@mixin mq($min: 0, $max: 0) {
+  @if ($min > 0 and $max > 0) {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  }
+  @else if ($min > 0) {
+    @media (min-width: $min) {
+      @content;
+    }
+  }
+  @else if ($max > 0) {
+    @media (max-width: $max) {
+      @content;
+    }
+  }
+}
+
+@mixin underline($color, $height) {
+  background-image: linear-gradient(180deg,transparent $height, $color 0);
+  padding-bottom: 2px;
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size .4s ease;
+}
+
+@mixin link($color) {
+  box-shadow: 0 1px 0 0 transparent;
+  transition: box-shadow $transition;
+  &:hover {
+    box-shadow: 0 1px 0 0 $color;
+  }
+}
+
+@mixin fill($name) {
+  $sprite: map-get($sprites, $name);
+  background-image: url($sprite);
+}
+
+// zero margins
+@mixin zero {
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}

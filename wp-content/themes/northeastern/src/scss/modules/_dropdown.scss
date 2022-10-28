@@ -1,0 +1,82 @@
+.dropdown__filters {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  @include mq(48em) {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+  }
+}
+
+.dropdown__select {
+  padding-left: 1rem;
+  padding-right: 2rem;
+  @include fill('dropdown-red');
+  background-position: calc(100% - 0.65rem) center;
+  background-repeat: no-repeat;
+  background-size: 0.65rem 0.65rem;
+  appearance: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  border-radius: 0;
+  border: 2px solid rgba($gray, 0.25);
+  height: 46px;
+  background-color: transparent;
+  @include font-size(14);
+  font-weight: $bold;
+  letter-spacing: 0.68px;
+  margin-bottom: 1rem;
+  @include mq(48em) {
+    // margin-bottom: 0;
+    margin-right: 1rem;
+    max-width: 12rem;
+  }
+  &::-ms-expand {
+    display: none;
+  }
+  option {
+    font-style: normal;
+  }
+}
+
+.dropdown__label {
+  position: relative;
+  margin-right: 1rem;
+  padding: 0.75rem 0 0.75rem 2.25rem;
+  letter-spacing: 0.68px;
+  font-weight: $bold;
+  align-self: flex-start;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    transform: translateY(-50%);
+    @include fill('filter');
+
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+
+.dropdown__filters__group {
+  .cta {
+    margin-bottom: 0.75rem;
+  }
+}
+
+.people-listing .dropdown__select {
+  @include mq(48em) {
+    // margin-bottom: 0;
+    margin-right: 1rem;
+    max-width: 13rem;
+  }
+}
+

@@ -1,0 +1,523 @@
+{% set page = {
+  title: 'Program Page',
+  dept: true,
+  program: true
+} %}
+
+{% extends "templates/default.html" %}
+
+{% block body %}
+
+
+<main id="main-content">
+  {% set hero = {img: true} %}
+  {% include "modules/_hero.html" %}
+  {% include "modules/_program-sticky.html" %}
+  <section class="container" aria-label="overview">
+    <div class="block container--clear">
+      <div class="main__content">
+        <div class="zero">
+          <h2>Overview</h2>
+          <p class="p-intro">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed arcu dictum, tristique felis id, commodo
+            nisl. Praesent tempus nibh eu tincidunt ullamcorper. Curabitur non dictum augue. Etiam rhoncus lorem non diam cursus
+            porta. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra.
+          </p>
+          <div class="grid grid--2">
+            <div class="button-group button-group-alt">
+              <a href="#" class="button button--black-red">
+                <span class="button__text">Program Details</span>
+                <span class="button__arrow">
+                  {{ svgstore('arrow') }}
+                </span>
+              </a>
+              <a href="#" class="button button--black-red">
+                <span class="button__text">Admissions Information</span>
+                <span class="button__arrow">
+                  {{ svgstore('arrow') }}
+                </span>
+              </a>
+            </div>
+            <div class="button-group button-group-alt">
+              <a href="#" class="button button--black-red">
+                <span class="button__text">Degree Requirements</span>
+                <span class="button__arrow">
+                  {{ svgstore('arrow') }}
+                </span>
+              </a>
+              <a href="#" class="button button--black-red">
+                <span class="button__text">Tuition & Financial Aid</span>
+                <span class="button__arrow">
+                  {{ svgstore('arrow') }}
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main__sidebar zero">
+        <figure class="image__container media__image">
+          <div class="image">
+            {{ ph('380x255') }}
+            <a href="https://www.youtube.com/watch?v=Uy6xjAK_jb8" class="media__btn" data-minimodal>
+              {{ svgstore('play', 'Play Video', 'media__btn__icon') }}
+            </a>
+          </div>
+          <figcaption class="image__caption">
+            Optional Caption Information
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="container--beige" aria-label="flexible heading">
+    <div class="container">
+      <div class="block-spacing container--clear">
+        <div class="main__content zero">
+          <h2>Flexible Heading</h2>
+          <p>
+            The Master of Science in Robotics (MSROB) program is a multidisciplinary program with the following three
+            concentrations, 1) MS in Robotics with Concentration in Mechanical Engineering, 2) MS in Robotics with Concentration in
+            Electrical Engineering, and 3) MS in Robotics with Concentration in Computer Science. Each student will be required to
+            take a total of 32 SHs of coursework that includes four core courses covering the fundamentals of robotics, and four
+            elective courses from a variety of areas in both COE and CCIS, and across the university, to explore fundamental
+            robotics disciplines and technical applications. A minimum GPA of 3.0 will be required for degree completion. MSROB
+            graduates will be well positioned to get engineering or management jobs in the growing field of robotics or to progress
+            into doctoral degrees in robotics or related areas.
+          </p>
+          {% set accordion = {active: true} %}
+          {% include "modules/_accordion.html" %}
+        </div>
+        <div class="main__sidebar">
+          <div class="sidebar__panel">
+            <div class="h5">
+              Affiliated Student Groups
+            </div>
+            <ul class="caption__link__list">
+              <li><a href="#" class="caption__link">AIChE: American Institute of Chemical Engineers, NU Student Chapter</a></li>
+              <li><a href="#" class="caption__link">BMES: Biomedical Engineering Society, NU Student Chapter</a></li>
+              <li><a href="#" class="caption__link">ChemE Car</a></li>
+              <li><a href="#" class="caption__link">ISPE: International Society of Pharmaceutical Engineers, NU Student Chapter</a></li>
+            </ul>
+          </div>
+          <div class="sidebar__panel">
+            <div class="h5">Spotlight Stories</div>
+            <ul class="caption__link__list">
+              <li><a href="#" class="caption__link">Emma Chory<br>BS, Chemical Engineering ’12</a></li>
+
+              <li><a href="#" class="caption__link">Jason Crater<br>BS, Chemical Engineering ’10</a></li>
+
+              <li><a href="#" class="caption__link">Jason Crater<br>BS, Chemical Engineering ’10</a></li>
+            </ul>
+          </div>
+          <br>
+          <a href="#" class="cta__link">
+            {{ svgstore('download', '', 'cta__link__icon') }}
+            <span>DOWNLOAD Fact SHEET</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="two column">
+    <div class="container">
+      <div class="block">
+        <div class="grid grid--2">
+          <div>
+            <hr>
+            <div class="h5">Two Column List Option</div>
+            <ul class="caption__link__list">
+              <li><a href="#" class="caption__link">AIChE: American Institute of Chemical Engineers, NU Student Chapter</a></li>
+              <li><a href="#" class="caption__link">BMES: Biomedical Engineering Society, NU Student Chapter</a></li>
+              <li><a href="#" class="caption__link">ChemE Car</a></li>
+              <li><a href="#" class="caption__link">ISPE: International Society of Pharmaceutical Engineers, NU Student Chapter</a></li>
+            </ul>
+          </div>
+          <div>
+            <hr>
+            <div class="h5">Two column list option</div>
+            <ul class="caption__link__list">
+              <li><a href="#" class="caption__link">Emma Chory<br>BS, Chemical Engineering ’12</a></li>
+
+              <li><a href="#" class="caption__link">Jason Crater<br>BS, Chemical Engineering ’10</a></li>
+
+              <li><a href="#" class="caption__link">Jason Crater<br>BS, Chemical Engineering ’10</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container--border" aria-label="three column">
+    <div class="container">
+      <div class="block-spacing">
+        <div class="grid">
+          <div>
+            <hr>
+            <div class="h5">Three Column List Option</div>
+            <ul class="caption__link__list">
+              <li><a href="#" class="caption__link">AIChE: American Institute of Chemical Engineers, NU Student Chapter</a></li>
+              <li><a href="#" class="caption__link">BMES: Biomedical Engineering Society, NU Student Chapter</a></li>
+              <li><a href="#" class="caption__link">ChemE Car</a></li>
+              <li><a href="#" class="caption__link">ISPE: International Society of Pharmaceutical Engineers, NU Student Chapter</a></li>
+            </ul>
+          </div>
+          <div>
+            <hr>
+            <div class="h5">Three column list option</div>
+            <ul class="caption__link__list">
+              <li><a href="#" class="caption__link">Emma Chory<br>BS, Chemical Engineering ’12</a></li>
+
+              <li><a href="#" class="caption__link">Jason Crater<br>BS, Chemical Engineering ’10</a></li>
+
+              <li><a href="#" class="caption__link">Jason Crater<br>BS, Chemical Engineering ’10</a></li>
+            </ul>
+          </div>
+          <div>
+            <hr>
+            <div class="h5">Three column list option</div>
+            <p class="caption">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus facilisis risus quis rutrum. Pellentesque ut
+              dui eu orci tincidunt iaculis ac quis mi. Vestibulum mauris elit, tincidunt sed risus sed, faucibus bibendum arcu. Sed
+              luctus id nibh quis maximus. Etiam eu efficitur diam. Etiam est quam, convallis nec dolor ut, porttitor auctor massa.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="Concentrations">
+    <div class="container">
+      <div class="block">
+        <h2>Concentrations</h2>
+        <p>Students accepted to the Master of Science in Bioengineering program have four concentrations from which to choose:</p>
+
+        <div class="grid grid--2">
+          <div>
+            <hr>
+            <div class="h5">Bioimaging & Signal Processing</div>
+            <p>This concentration is appropriate for students interested in biomedical imaging and processing of a wide array of
+              signals from biological systems and biomedical instruments. Two courses (EECE 7200, Linear Systems Analysis, and EECE
+              7204, Applied Probability and Stochastic Processes) are required of all students choosing this option. Extensive
+              additional options are available as approved technical electives.
+            </p>
+          </div>
+          <div>
+            <hr>
+            <div class="h5">Cell &amp; Tissue Engineering</div>
+            <p>The cell and tissue engineering concentration is appropriate for students interested in molecular, cell, and tissue
+              engineering. Two courses (BIOE 5410, Molecular Bioengineering, and BIOE 5380, Advanced Biomolecular Dynamics and
+              Control) are required of all cell and tissue engineering students. There is an extensive list of approved technical
+              electives to choose from to complete the degree.
+            </p>
+          </div>
+        </div>
+        <div class="grid grid--2 grid--push">
+          <div>
+            <hr>
+            <div class="h5">Biomechanics</div>
+            <p>
+              This concentration is appropriate for students interested in biomedical imaging and processing of a wide array of
+              signals from biological systems and biomedical instruments. Two courses (EECE 7200, Linear Systems Analysis, and EECE
+              7204, Applied Probability and Stochastic Processes) are required of all students choosing this option. Extensive
+              additional options are available as approved technical electives.
+            </p>
+          </div>
+          <div>
+            <hr>
+            <div class="h5">Biomedical Devices</div>
+            <p>
+              This concentration is appropriate for students interested in biomedical imaging and processing of a wide array of
+              signals from biological systems and biomedical instruments. Two courses (EECE 7200, Linear Systems Analysis, and EECE
+              7204, Applied Probability and Stochastic Processes) are required of all students choosing this option. Extensive
+              additional options are available as approved technical electives.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid--push">
+          <hr>
+          <div class="grid grid--3-2 grid--push">
+
+            <div>
+              {{ ph('375x250') }}
+            </div>
+            <div>
+              <div class="h5">Concentration Title (with Image)</div>
+              <p>
+                This concentration is appropriate for students interested in biomedical imaging and processing of a wide array of
+                signals from biological systems and biomedical instruments. Two courses (EECE 7200, Linear Systems Analysis, and EECE
+                7204, Applied Probability and Stochastic Processes) are required of all students choosing this option. Extensive
+                additional options are available as approved technical electives.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="grid--push">
+          <hr>
+          <div class="grid grid--3-2 grid--push">
+
+            <div>
+              {{ ph('375x250') }}
+            </div>
+            <div>
+              <div class="h5">Concentration Title (with Image)</div>
+              <p>
+                This concentration is appropriate for students interested in biomedical imaging and processing of a wide array
+                of
+                signals from biological systems and biomedical instruments. Two courses (EECE 7200, Linear Systems Analysis,
+                and EECE
+                7204, Applied Probability and Stochastic Processes) are required of all students choosing this option.
+                Extensive
+                additional options are available as approved technical electives.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container--border" aria-label="experiential learning">
+    <div class="container">
+      <div class="block-spacing">
+        <div class="grid grid--2">
+          <div class="zero block-small-bottom">
+            <h2>Experiential Learning</h2>
+            <p>
+              You’ll gain crucial hands-on experience desired by employers by designing and developing robotics projects in both
+              individual and group settings, as well as alongside our top faculty.
+            </p>
+            <p>
+              Our classes incorporate direct interaction with a variety of robotic systems, including:
+            </p>
+            <ul>
+              <li>An autonomous Lincoln MKZ car</li>
+              <li>Multiple deep-rated autonomous underwater vehicles</li>
+              <li>Dozens of unmanned aerial and ground robotic systems</li>
+              <li>commercial and research manipulators</li>
+              <li>Biologically inspired robots</li>
+            </ul>
+          </div>
+          <div class="zero">
+            <figure class="image__container media__image">
+              <div class="image">
+                {{ ph('586x3:2') }}
+                <a href="https://www.youtube.com/watch?v=Uy6xjAK_jb8" class="media__btn" data-minimodal>
+                  {{ svgstore('play', 'Play Video', 'media__btn__icon') }}
+                </a>
+              </div>
+              <figcaption class="image__caption">
+                Optional Caption Information
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container--black" aria-label="flexible space">
+    <div class="container">
+      <div class="block-spacing zero">
+        <h2>
+          Flexible Feature Space
+        </h2>
+        <div class="container--narrow">
+          <p class="text-white">This area can be used to highlight student/alumni/faculty success stories, experiential learning opportunities,
+            facilities, research, news etc.
+          </p>
+        </div>
+
+        <div class="grid grid--push grid--feature grid--slider">
+          <div class="feature__item">
+            <div class="feature__image">
+              {{ ph('768x3:2') }}
+            </div>
+            <div class="feature__content">
+              <p class="text-white caption">
+                The M.S. Program in Bioengineering will provide significant opportunities for student research in the department's core
+                research areas, including biocomputing, cell and tissue engineering, and bioimaging and signal processing.
+              </p>
+              <a href="#" class="button button--inline-block">
+                <span class="button__text text-white">Read more</span>
+                <span class="button__arrow button__arrow--red">
+                  {{ svgstore('arrow') }}
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="feature__item">
+            <div class="feature__image">
+              {{ ph('768x3:2') }}
+            </div>
+            <div class="feature__content">
+              <p class="text-white caption">
+                Typical Co-op jobs include research and development, medical device design, instrumentation design, and lab technician.
+              </p>
+              <a href="#" class="card__video__group">
+                {{ svgstore('video', '', 'card__video__icon') }}
+                <span class="card__video__text">Watch</span>
+              </a>
+            </div>
+          </div>
+          <div class="feature__item">
+            <div class="feature__image">
+              {{ ph('768x3:2') }}
+            </div>
+            <div class="feature__content">
+              <p class="text-white caption">
+                Students participating in Co-op have worked for employers in a variety of fields including biotechnology, nano
+                medicine, pharmaceuticals, and tissue engineering.
+              </p>
+              <a href="#" class="button button--inline-block">
+                <span class="button__text text-white">Read more</span>
+                <span class="button__arrow button__arrow--red">
+                  {{ svgstore('arrow') }}
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="program contacts" class="expand__container--contacts">
+    <div class="container expand__container__group">
+      <div class="block">
+        <div class="grid grid--3-2">
+          <div class="zero">
+            <h2>Program<br>Contacts</h2>
+          </div>
+          <div>
+            {% include "modules/_contact.html" %}
+            {% include "modules/_contact.html" %}
+            {% include "modules/_contact.html" %}
+            {% include "modules/_contact.html" %}
+            {% include "modules/_contact.html" %}
+
+            <div class="block-small-top">
+              <a href="#" class="button button--black-red button--inline-block">
+                <span class="button__text">View all faculty</span>
+                <span class="button__arrow">
+                  {{ svgstore('arrow') }}
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="expand__btn expand__btn--contacts">
+      {{ svgstore('plus', 'Expand Section', 'expand__button--open') }}
+      {{ svgstore('minus', 'Collapse Section', 'expand__button--close') }}
+    </button>
+  </section>
+
+  <section class="container--border" aria-label="program outcomes">
+    <div class="container">
+      <div class="block-spacing">
+        <div class="grid grid--3-2">
+          <div class="zero">
+            <h2>Program<br>Outcomes</h2>
+          </div>
+          <div>
+            <div class="h5">Career Outlook</div>
+            <p>
+              According to a report by McKinsey, the economic impact of advanced robotics by 2025 could be between $1.7 and $4.5
+              trillion. The Boston area is a hub for robotics research and industry—including Amazon Robotics, Teradyne, and Bluefin
+              Robotics—and Northeastern is proud to play a large role in educating tomorrow’s leaders in this emerging area.
+            </p>
+            <p>
+              After completing the M.S. in Robotics program at Northeastern, you will be equipped with an interdisciplinary skillset
+              that can evolve over time to suit your changing research and career interests, as well as an ever-evolving industry.
+            </p>
+            <div class="block-small-top">
+              <div class="h5">Learning Outcomes</div>
+              <p>
+                The M.S. programs' student learning outcome is the ability to use basic engineering concepts flexibly in a variety of
+                contexts.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container--border" aria-label="Admissions and aid">
+    <div class="container">
+      <div class="block-spacing">
+        <div class="grid grid--3-2">
+          <div class="zero">
+            <h2>Admissions<br>& Aid</h2>
+          </div>
+          <div>
+            <p>
+              Ready to take the next step? Review Degree Requirements to see courses needed to complete this degree. Then, explore
+              ways to pay for your education. Finally, review Admissions Information to see our deadlines and gather the materials
+              you need to apply.
+            </p>
+            <div class="grid grid--2">
+              <div class="button-group button-group-alt">
+                <a href="#" class="button button--black-red">
+                  <span class="button__text">Program Details</span>
+                  <span class="button__arrow">
+                    {{ svgstore('arrow') }}
+                  </span>
+                </a>
+                <a href="#" class="button button--black-red">
+                  <span class="button__text">Admissions Information</span>
+                  <span class="button__arrow">
+                    {{ svgstore('arrow') }}
+                  </span>
+                </a>
+              </div>
+              <div class="button-group button-group-alt">
+                <a href="#" class="button button--black-red">
+                  <span class="button__text">Degree Requirements</span>
+                  <span class="button__arrow">
+                    {{ svgstore('arrow') }}
+                  </span>
+                </a>
+                <a href="#" class="button button--black-red">
+                  <span class="button__text">Tuition & Financial Aid</span>
+                  <span class="button__arrow">
+                    {{ svgstore('arrow') }}
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="news">
+    <div class="container">
+      <div class="block">
+        <h2>News</h2>
+        <div class="grid grid--4">
+          <div>
+            {% set news = {newsAlt: true} %}
+            {% include "modules/_news.html" %}
+          </div>
+          <div>
+            {% include "modules/_news.html" %}
+          </div>
+          <div>
+            {% include "modules/_news.html" %}
+          </div>
+          <div>
+            {% include "modules/_news.html" %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+{% endblock %}

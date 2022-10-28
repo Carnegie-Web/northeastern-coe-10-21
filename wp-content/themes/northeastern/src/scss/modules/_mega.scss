@@ -1,0 +1,137 @@
+.mega {
+  background-color: $black;
+  padding-bottom: 3rem;
+  position: fixed;
+  top: 125px;
+  left: 0;
+  transform: translateX(100%);
+  width: 100%;
+  height: calc(100vh - 125px);
+  overflow-y: auto;
+  z-index: 1;
+  .info-active & {
+    transform: translateX(0);
+  }
+  @include mq(64em) {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: auto;
+    background-color: $red;
+    order: -1;
+    padding-top: 3rem;
+    transform: none;
+    opacity: 0;
+    visibility: hidden;
+    .info-active & {
+      visibility: visible;
+      animation: fadeIn 500ms ease-in-out forwards;
+    }
+  }
+}
+
+.mega__list {
+  @include clean;
+  list-style: none;
+  @include mq(64em) {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    max-width: 865px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.mega__item {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0;
+  border-top: 1px solid $red;
+  &:last-child {
+    border-bottom: 1px solid $red;
+  }
+  @include mq(64em) {
+    padding: 0;
+    border: 0;
+  }
+}
+
+.mega__link {
+  &:hover,
+  &:focus {
+    .mega__link__icon {
+      color: $white;
+    }
+    .mega__link__text {
+      border-color: $white;
+      color: $red;
+      box-shadow: 0 1px 0 0 $red;
+      @include mq(64em) {
+        color: $white;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+.mega__link__text {
+  font-weight: $regular;
+  @include font-size(20);
+  color: $white;
+  letter-spacing: -0.17px;
+  transition: box-shadow $transition;
+  @include mq(64em) {
+    @include font-size(14);
+    font-weight: $bold;
+    letter-spacing: 0.68px;
+    color: $white;
+    @include font-smooth;
+    border-bottom: 1px solid transparent;
+  }
+}
+
+.mega__link__icon {
+  display: none;
+  @include mq(64em) {
+    flex-shrink: 0;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+    width: 1.5rem;
+    color: transparent;
+  }
+}
+
+.mega__btn {
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0;
+  text-align: left;
+
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  @include mq(64em) {
+    display: none;
+  }
+}
+
+.mega__btn__icon {
+  display: block;
+  width: 0.5rem;
+  color: $red;
+  transform: rotate(90deg);
+}
+
+.mega__btn__text {
+  font-weight: $bold;
+  color: $gray-med;
+  @include font-size(14);
+  letter-spacing: 1.68px;
+  margin-left: 0.5rem;
+  text-transform: uppercase;
+}

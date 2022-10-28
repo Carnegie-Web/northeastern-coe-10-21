@@ -1,0 +1,267 @@
+{% set page = {
+  title: 'Program Page Alt',
+  dept: true,
+  program: true
+} %}
+
+{% extends "templates/default.html" %}
+
+{% block body %}
+
+
+<main id="main-content">
+  {% include "modules/_hero.html" %}
+  {% include "modules/_program-sticky.html" %}
+  <section class="container" aria-label="overview">
+    <div class="block container--clear">
+      <div class="main__content">
+        <div class="zero">
+          <h2>Overview</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed arcu dictum, tristique felis id, commodo
+            nisl. Praesent tempus nibh eu tincidunt ullamcorper. Curabitur non dictum augue.
+          </p>
+        </div>
+      </div>
+      <div class="main__sidebar">
+        <div class="button-group">
+          <a href="#" class="button button--black-red">
+            <span class="button__text">Undergraduate</span>
+            <span class="button__arrow">
+              {{ svgstore('arrow') }}
+            </span>
+          </a>
+          <a href="#" class="button button--black-red">
+            <span class="button__text">Masters</span>
+            <span class="button__arrow">
+              {{ svgstore('arrow') }}
+            </span>
+          </a>
+          <a href="#" class="button button--black-red">
+            <span class="button__text">PHD</span>
+            <span class="button__arrow">
+              {{ svgstore('arrow') }}
+            </span>
+          </a>
+          <a href="#" class="button button--black-red">
+            <span class="button__text">Certificate</span>
+            <span class="button__arrow">
+              {{ svgstore('arrow') }}
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container--beige" aria-label="flexible heading">
+    <div class="container">
+      <div class="block-spacing container--clear">
+        <div class="main__content zero">
+          <h2>Flexible Heading</h2>
+          <p>
+            The Master of Science in Robotics (MSROB) program is a multidisciplinary program with the following three
+            concentrations, 1) MS in Robotics with Concentration in Mechanical Engineering, 2) MS in Robotics with
+            Concentration in
+            Electrical Engineering, and 3) MS in Robotics with Concentration in Computer Science. Each student will be
+            required to
+            take a total of 32 SHs of coursework that includes four core courses covering the fundamentals of robotics,
+            and four
+            elective courses from a variety of areas in both COE and CCIS, and across the university, to explore
+            fundamental
+            robotics disciplines and technical applications. A minimum GPA of 3.0 will be required for degree completion.
+            MSROB
+            graduates will be well positioned to get engineering or management jobs in the growing field of robotics or
+            to progress
+            into doctoral degrees in robotics or related areas.
+          </p>
+        </div>
+        <div class="main__sidebar">
+          <div class="sidebar__panel">
+            <div class="h5">
+              Affiliated Student Groups
+            </div>
+            <ul class="caption__link__list">
+              <li><a href="#" class="caption__link">AIChE: American Institute of Chemical Engineers, NU Student Chapter</a></li>
+              <li><a href="#" class="caption__link">BMES: Biomedical Engineering Society, NU Student Chapter</a></li>
+              <li><a href="#" class="caption__link">ChemE Car</a></li>
+              <li><a href="#" class="caption__link">ISPE: International Society of Pharmaceutical Engineers, NU Student
+                Chapter</a>
+              </li>
+            </ul>
+          </div>
+          <br>
+          <a href="#" class="button button--black-red button--block">
+            <span class="button__text">View the Curriculum Guide</span>
+            <span class="button__arrow">
+              {{ svgstore('arrow') }}
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section aria-label="experiential learning">
+    <div class="container">
+      <div class="block">
+        <div class="grid grid--2">
+          <div class="zero block-small-bottom">
+            <h2>Experiential Learning</h2>
+            <p>
+              You’ll gain crucial hands-on experience desired by employers by designing and developing robotics projects
+              in both
+              individual and group settings, as well as alongside our top faculty.
+            </p>
+            <p>
+              Our classes incorporate direct interaction with a variety of robotic systems, including:
+            </p>
+            <ul>
+              <li>An autonomous Lincoln MKZ car</li>
+              <li>Multiple deep-rated autonomous underwater vehicles</li>
+              <li>Dozens of unmanned aerial and ground robotic systems</li>
+              <li>commercial and research manipulators</li>
+              <li>Biologically inspired robots</li>
+            </ul>
+          </div>
+          <div>
+            <figure class="image__container media__image">
+              <div class="image">
+                {{ ph('586x3:2') }}
+                <a href="https://www.youtube.com/watch?v=Uy6xjAK_jb8" class="media__btn" data-minimodal>
+                  {{ svgstore('play', 'Play Video', 'media__btn__icon') }}
+                </a>
+              </div>
+              <figcaption class="image__caption">
+                Optional Caption Information
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container--border" aria-label="three column">
+    <div class="container">
+      <div class="block-spacing">
+        <div class="grid">
+          <div>
+            <hr>
+            <div class="h5">Three Column List Option</div>
+            <ul class="caption__link__list">
+              <li><a href="#" class="caption__link">AIChE: American Institute of Chemical Engineers, NU Student Chapter</a></li>
+              <li><a href="#" class="caption__link">BMES: Biomedical Engineering Society, NU Student Chapter</a></li>
+              <li><a href="#" class="caption__link">ChemE Car</a></li>
+              <li><a href="#" class="caption__link">ISPE: International Society of Pharmaceutical Engineers, NU Student
+                Chapter</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <hr>
+            <div class="h5">Three column list option</div>
+            <ul class="caption__link__list">
+              <li><a href="#" class="caption__link">Emma Chory<br>BS, Chemical Engineering ’12</a></li>
+
+              <li><a href="#" class="caption__link">Jason Crater<br>BS, Chemical Engineering ’10</a></li>
+
+              <li><a href="#" class="caption__link">Jason Crater<br>BS, Chemical Engineering ’10</a></li>
+            </ul>
+          </div>
+          <div>
+            <hr>
+            <div class="h5">Three column list option</div>
+            <p class="caption">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus facilisis risus quis rutrum.
+              Pellentesque ut
+              dui eu orci tincidunt iaculis ac quis mi. Vestibulum mauris elit, tincidunt sed risus sed, faucibus
+              bibendum arcu. Sed
+              luctus id nibh quis maximus. Etiam eu efficitur diam. Etiam est quam, convallis nec dolor ut, porttitor
+              auctor massa.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container--border expand__container--contacts" aria-label="program contacts">
+    <div class="container expand__container__group">
+      <div class="block-spacing">
+        <div class="grid grid--3-2">
+          <div class="zero">
+            <h2>Program<br>Contacts</h2>
+          </div>
+          <div>
+            {% include "modules/_accordion.html" %}
+            {% include "modules/_contact.html" %}
+            {% include "modules/_contact.html" %}
+            {% include "modules/_contact.html" %}
+            <div class="block-small-top">
+              <a href="#" class="button button--black-red button--inline-block">
+                <span class="button__text">View all faculty</span>
+                <span class="button__arrow">
+                  {{ svgstore('arrow') }}
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <button class="expand__btn">
+        {{ svgstore('plus', 'Expand Section', 'expand__button--open') }}
+        {{ svgstore('minus', 'Collapse Section', 'expand__button--close') }}
+      </button>
+  </section>
+  <section aria-label="Admissions and aid">
+    <div class="container">
+      <div class="block">
+        <div class="grid grid--3-2">
+          <div class="zero">
+            <h2>Admissions<br>& Aid</h2>
+          </div>
+          <div class="zero">
+            <p>
+              Ready to take the next step? Review Degree Requirements to see courses needed to complete this degree.
+              Then, explore
+              ways to pay for your education. Finally, review Admissions Information to see our deadlines and gather the
+              materials
+              you need to apply.
+            </p>
+            <div class="grid grid--2">
+              <div class="button-group button-group-alt">
+                <a href="#" class="button button--black-red">
+                  <span class="button__text">Program Details</span>
+                  <span class="button__arrow">
+                    {{ svgstore('arrow') }}
+                  </span>
+                </a>
+                <a href="#" class="button button--black-red">
+                  <span class="button__text">Admissions Information</span>
+                  <span class="button__arrow">
+                    {{ svgstore('arrow') }}
+                  </span>
+                </a>
+              </div>
+              <div class="button-group button-group-alt">
+                <a href="#" class="button button--black-red">
+                  <span class="button__text">Degree Requirements</span>
+                  <span class="button__arrow">
+                    {{ svgstore('arrow') }}
+                  </span>
+                </a>
+                <a href="#" class="button button--black-red">
+                  <span class="button__text">Tuition & Financial Aid</span>
+                  <span class="button__arrow">
+                    {{ svgstore('arrow') }}
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+{% endblock %}

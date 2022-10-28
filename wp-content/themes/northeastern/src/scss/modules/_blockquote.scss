@@ -1,0 +1,33 @@
+.blockquote {
+  border-left: 3px solid $red;
+  margin: 0;
+  padding-left: 2rem;
+  q {
+    color: $black;
+    display: block;
+    &::before, &::after {
+      content: none;
+    }
+  }
+  cite {
+    margin-top: 1rem;
+    display: block;
+    font-style: normal;
+    font-weight: $bolder;
+    @include font-size(11);
+    font-size: 11px;
+    color: $gray-med;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+}
+
+.blockquote__slide {
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  @include mq(48em) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}

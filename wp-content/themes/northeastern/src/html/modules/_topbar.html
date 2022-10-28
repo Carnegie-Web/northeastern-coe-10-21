@@ -1,0 +1,29 @@
+<div class="topbar">
+  <ul class="topbar__nav">
+    <li class="topbar__nav__item">
+      <a href="#" class="topbar__nav__link">Find Faculty &amp; Staff</a>
+    </li>
+    <li class="topbar__nav__item">
+      <button class="topbar__btn toggle-info">
+        <span class="topbar__btn__text">Info For</span>
+        {{ svgstore('dropdown', 'Toggle Info', 'topbar__btn__icon--dropdown') }}
+      </button>
+      {% include "modules/_mega.html" %}
+    </li>
+    <li class="topbar__nav__item">
+      <button class="topbar__btn toggle-search">
+        <span class="topbar__btn__text">Search</span>
+        {{ svgstore('search', 'Open Search', 'topbar__btn__search--open') }}
+        {{ svgstore('cross', 'Close Search', 'topbar__btn__search--close') }}
+      </button>
+
+    </li>
+  </ul>
+  <ul class="topbar__cta">
+    <li class="topbar__cta__item"><a href="#" class="topbar__link">Request Info</a></li>
+    <li class="topbar__cta__item"><a href="#" class="topbar__link">Visit</a></li>
+    <li class="topbar__cta__item"><a href="#" class="topbar__link">Apply</a></li>
+    <li class="topbar__cta__item"><a href="#" class="topbar__link">Give</a></li>
+  </ul>
+
+</div>

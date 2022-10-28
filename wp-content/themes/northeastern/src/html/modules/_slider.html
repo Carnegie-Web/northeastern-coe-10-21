@@ -1,0 +1,30 @@
+<div class="slider__item">
+  <div class="slider__content">
+    <h3>World-Renowned Cooperative Education</h3>
+    <p class="slider__text">
+      With Northeastern's signature cooperative education program, you gain valuable industry experience as part of the
+      academic curriculum. BS, MS, and PhD students have the opportunity to work with more than 700 leading employer partners
+      around the world.
+    </p>
+
+    <div>
+      <a href="#" class="button button--inline-block">
+        <span class="button__text text-white">Discover Co-op</span>
+        <span class="button__arrow">
+          {{ svgstore('arrow') }}
+        </span>
+      </a>
+    </div>
+
+  </div>
+  <div class="slider__media">
+    <div class="slider__image {% if slider.video %} slider__media__gradient{% endif %}">
+      {{ ph('768x3:2') }}
+      {% if slider.video %}
+      <a href="#" class="media__btn">
+        {{ svgstore('play', 'Play Video', 'media__btn__icon') }}
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<a href="#" class="card__item event__item">
+  <div class="card__content">
+    <div class="event__date">
+      <span class="text-red">September 12</span> / 1:00pm
+    </div>
+    {% if events.img %}
+    <div class="event__image">
+      {{ ph('600x400') }}
+    </div>
+    {% endif %}
+    <div class="card__bottom">
+      <span class="event__title">
+        {{ events.title }}
+      </span>
+      {{ svgstore('arrow', '', 'card__arrow__icon') }}
+
+    </div>
+
+
+
+  </div>
+</a>

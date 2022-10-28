@@ -1,0 +1,116 @@
+.list {
+  margin: 3rem 0;
+}
+
+.list__item {
+  margin-top: 2rem;
+  padding: 0 0 2rem;
+  border-bottom: 0.25rem solid rgba($gray, 0.25);
+
+  @include mq(48em) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.list__image {
+  margin-bottom: 1.5rem;
+
+  @include mq(48em) {
+    order: 1;
+    flex-shrink: 0;
+    max-width: 33.333%;
+    margin-left: 3rem;
+  }
+}
+
+.list__content {
+  max-width: 48rem;
+}
+
+.list__meta {
+  margin-bottom: 1.5rem;
+  color: $red;
+  font-size: 0.6875rem;
+  font-weight: bold;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+}
+
+.list__meta--news {
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 0.125rem;
+}
+
+.list__date {
+  font-size: 0.9375rem;
+  font-weight: bold;
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase;
+}
+
+.list__title {
+  max-width: 38rem;
+  margin-top: 0;
+}
+
+.list__search__group {
+  margin-bottom: 4rem;
+  padding-top: 2rem;
+  border-top: 2px solid rgba($gray, 0.25);
+}
+
+.list__search__label {
+  margin-right: 2rem;
+}
+
+.list__search__link {
+  color: $black;
+  @include font-size(15);
+  font-weight: $bold;
+  line-height: 1.2;
+  text-transform: uppercase;
+  padding-right: 1rem;
+  transition: color $transition;
+  &:hover,
+  &.active {
+    color: $red;
+  }
+}
+
+.list__result {
+  span {
+    display: inline-block;
+    background-color: $gray-light;
+    border-radius: 2px;
+    padding: 0.75rem 1rem;
+    @include font-size(15);
+    font-weight: $bold;
+  }
+}
+
+.list__input {
+  @include fill('search');
+  margin: 2rem 0 1rem;
+  padding: 0.75rem 3.25rem 0.75rem 1rem;
+  border: 0.25rem solid rgba($gray, 0.25);
+  background-position: calc(100% - 1rem) center;
+  background-repeat: no-repeat;
+  background-size: 1.25rem 1.25rem;
+}
+
+.list__heading {
+  margin-top: 2rem;
+  @include font-size(13);
+  font-weight: $bold;
+  color: $red;
+  text-transform: uppercase;
+  letter-spacing: 0.88px;
+}
+
+.list__contact__headline {
+  font-size: inherit;
+  margin: 0;
+}

@@ -1,0 +1,212 @@
+body {
+  font-family: $sans-serif;
+  @include font-size(18);
+  color: $black;
+  line-height: $baseline;
+}
+
+h1, .h1 {
+  font-family: $serif;
+  font-weight: $regular;
+  @include fluid-type(font-size, $minSize, $maxSize, 34px ,62px);
+  color: $red;
+  line-height: 1.08;
+}
+
+h2, .h2 {
+  font-family: $serif;
+  font-weight: $regular;
+  @include fluid-type(font-size, $minSize, $maxSize, 34px, 42px);
+  color: $red;
+  line-height: 1.07;
+}
+
+h3, .h3 {
+  font-family: $sans-serif;
+  font-weight: $bold;
+  @include font-size(28);
+  color: $red;
+  line-height: 1.07;
+}
+
+h4, .h4 {
+  font-family: $sans-serif;
+  font-weight: $regular;
+  @include font-size(21);
+  color: $red;
+  line-height: 1.142;
+
+}
+
+.h4-border {
+  border-top: 4px solid $red;
+  padding-top: 1rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  @include mq(48em) {
+    padding-bottom: 1rem;
+  }
+  @include mq(64em) {
+    padding-bottom: 0;
+  }
+}
+
+h5, .h5 {
+  @include font-size(15);
+  font-family: $sans-serif;
+  font-weight: $bold;
+  color: $red;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+h6, .h6, .caption {
+  font-weight: $bold;
+  @include font-size(15);
+  line-height: 1.333;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:not([class]) {
+  color: $red;
+  @include link($red);
+  text-decoration: none;
+}
+
+.list__link {
+  font-weight: $bold;
+  @include font-size(15);
+  color: $black;
+  letter-spacing: 0.5px;
+  line-height: 1.28;
+  &:hover {
+    color: $red;
+  }
+}
+
+ul:not([class]),
+ol:not([class]) {
+  padding-left: 1.25rem;
+}
+
+//.main__content li {
+//  margin-bottom: 0.75rem;
+//}
+
+li {
+  margin-bottom: 0.75rem;
+}
+
+p {
+  margin-top: 18px;
+}
+
+.p-intro {
+  font-family: $sans-serif;
+  @include font-size(22);
+  color: $black;
+  line-height: 1.318;
+}
+
+hr {
+  border: 0;
+  margin: 1rem 0;
+  height: 4px;
+  background-color: rgba($gray, 0.25);
+}
+
+.hr--small {
+  border: 0;
+  margin: 1rem 0;
+  height: 2px;
+  background-color: rgba($gray, 0.25);
+}
+
+hr + .h5 {
+  margin-top: 1.5rem;
+}
+
+.category {
+  font-weight: $bolder;
+  @include font-size(11);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.vertical-line-desktop {
+  @include mq(64em) {
+    border-left: 3px solid $red;
+    padding-left: 2rem;
+  }
+}
+
+.vertical-line-desktop--narrow {
+  @include mq(64em) {
+    padding-left: 1rem;
+  }
+}
+
+.caption__link {
+  font-weight: $bold;
+  @include font-size(15);
+  color: $black;
+  line-height: 1.42;
+  box-shadow: 0 1px 0 0 rgba($gray, .25);
+  transition: box-shadow $transition;
+  &:hover {
+    box-shadow: 0 1px 0 0 $red;
+    color: $red;
+  }
+}
+
+.caption__link__list {
+  padding-left: 0;
+  list-style: none;
+  li {
+    margin-bottom: 1rem;
+  }
+}
+
+.caption__link__list--alt {
+  @extend .caption__link__list;
+  li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.cta__link {
+  font-weight: $bold;
+  @include font-size(14);
+  color: $black;
+  letter-spacing: 0.5px;
+  line-height: 1.428;
+  text-transform: uppercase;
+  span:not([class]) {
+    @include underline($red, 95%);
+  }
+  &:hover {
+    color: $red;
+    span:not([class]) {
+      background-size: 100% 100%;
+    }
+  }
+}
+
+.cta__link__icon {
+  width: 1.25rem;
+  display: inline-block;
+  vertical-align: middle;
+  color: $red;
+  margin-right: 1rem;
+}
+
+.label {
+  @include font-size(14);
+  letter-spacing: 0.68px;
+  font-weight: $bold;
+}

@@ -1,0 +1,17 @@
+{% set page = {
+  title: 'Faculty',
+  dept: true
+} %}
+
+{% extends "templates/default.html" %}
+
+{% block body %}
+
+<main id="main-content">
+  {% include "modules/_faculty.html" %}
+  <div class="main container container--mid container--clear">
+    {% include "modules/_tabbed-faculty.html" %}
+  </div>
+</main>
+
+{% endblock %}

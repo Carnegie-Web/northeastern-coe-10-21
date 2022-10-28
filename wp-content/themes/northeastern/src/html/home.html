@@ -1,0 +1,428 @@
+{% set page = {
+  title: 'Homepage',
+  home: true
+} %}
+
+{% extends "templates/default.html" %}
+
+{% block body %}
+
+<main id="main-content">
+  {% include "modules/_hero.html" %}
+  <section class="container" aria-label="Path">
+    <div class="block">
+      <div class="grid grid--2-3">
+        <div class="zero">
+          <h2>Personalize <span class="text-black">your path.</span></h2>
+          <p>
+            To address the complex challenges facing society, the next generation of engineering leaders need multiple areas of
+            expertise. At Northeastern, you will benefit from an interdisciplinary and experiential education, expanding your
+            window of knowledge and fueling innovation, while enabling you to personalize your journey.
+          </p>
+        </div>
+
+        <div>
+          <div class="button-group">
+            <a href="#" class="button button--black-red">
+              <span class="button__text">Undergraduate</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+            <a href="#" class="button button--black-red">
+              <span class="button__text">Masters</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+            <a href="#" class="button button--black-red">
+              <span class="button__text">PHD</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+            <a href="#" class="button button--black-red">
+              <span class="button__text">Certificate</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container--beige" aria-label="stories">
+    <div class="container">
+      <div class="block-spacing">
+        <div class="grid grid--2-3 grid--middle">
+          <div class="zero">
+            <h2>Become a multifaceted, global engineer <span class="text-black">capable of addressing 21st century challenges–and beyond.</span></h2>
+          </div>
+          <div class="button-text-right">
+            <a href="#" class="button button--black-red button--block">
+              <span class="button__text">More Spotlight Stories</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="block--top">
+          <div class="grid grid--slider">
+            <div class="animate-In">
+              {% set card = {
+                arrow: true,
+                profile: true,
+                category: "Faculty",
+                name: "James Madison",
+                title: "Mechanical & Industrial Engineering"
+              } %}
+              {% include "modules/_card.html" %}
+            </div>
+            <div class="animate-In">
+              {% set card = {
+                profile: true,
+                video: true,
+                category: "Student",
+                name: "Deborah Sampson, ’20",
+                title: "BS, Bioengineering"
+              } %}
+              {% include "modules/_card.html" %}
+            </div>
+            <div class="animate-In">
+              {% set card = {
+                arrow: true,
+                profile: true,
+                category: "Alumni",
+                name: "Antonio Rufo, ’17",
+                title: "ME, Electrical & Computer Engineering"
+              } %}
+              {% include "modules/_card.html" %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container--black" aria-label="Research">
+    <div class="container">
+      <div class="block-spacing">
+        <div class="grid grid--2-3 grid--middle">
+          <div class="zero">
+            <h2>Participate in groundbreaking research <span class="text-white">to find solutions to the world's most pressing challenges.</span></h2>
+          </div>
+          <div class="button-text-right">
+            <a href="#" class="button button--block">
+              <span class="button__text text-white">Faculty Research</span>
+              <span class="button__arrow button__arrow--red">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="block--top">
+          <ul class="button__grid">
+            <li><a href="#" class="button button--solid">
+              <span class="button__text button__text--lg">BioMachine Integration</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a></li>
+            <li><a href="#" class="button button--solid">
+              <span class="button__text button__text--lg">Research Centers of Excellence</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a></li>
+            <li><a href="#" class="button button--solid">
+              <span class="button__text button__text--lg">Engineered Water, Sustainability and Health</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a></li>
+            <li><a href="#" class="button button--solid">
+              <span class="button__text button__text--lg">Critical Infrastructure Sustainability and Security</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a></li>
+            <li><a href="#" class="button button--solid">
+              <span class="button__text button__text--lg">Integrated Modeling, Inference, and Computing</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a></li>
+            <li><a href="#" class="button button--solid">
+              <span class="button__text button__text--lg">Security, Sensing and Surveillance</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a></li>
+            <li><a href="#" class="button button--solid">
+              <span class="button__text button__text--lg">Advancing Nanotechnology through Innovation in Materials Engineering</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a></li>
+            <li><a href="#" class="button button--solid">
+              <span class="button__text button__text--lg">Engineered Cyber-Social-Physical Systems</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container--beige" aria-label="Experience">
+    <div class="container">
+      <div class="block-spacing">
+        <div class="container--narrow block-center text-center zero">
+          <h2>Distinguish yourself <span class="text-black">with extensive industry experience.</span>
+          </h2>
+        </div>
+        <div class="feature feature--slider">
+          {% set feature = {
+            video: true,
+            headline: '<h3 class="text-white">World-Renowned Cooperative Education</h3>',
+            red: true
+          } %}
+          {% include "modules/_feature.html" %}
+          {% set feature = {
+            video: false,
+            headline: '<h3 class="text-white">World-Renowned Cooperative Education</h3>',
+            red: true
+          } %}
+          {% include "modules/_feature.html" %}
+          {% include "modules/_feature.html" %}
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container" aria-label="Programs">
+    <div class="block-spacing">
+      <div class="container--narrow zero">
+        <h2>Immerse yourself <span class="text-black">in our academic departments and innovative programs.</span></h2>
+      </div>
+      <div class="block">
+        <div class="button-group button-group-alt">
+          <a href="#" class="button button--solid-red animate-In">
+            <span class="button__text--xlg">Bioengineering</span>
+            <span class="button__arrow">
+              {{ svgstore('arrow') }}
+            </span>
+          </a>
+          <a href="#" class="button button--solid-red animate-In">
+            <span class="button__text--xlg">Chemical Engineering</span>
+            <span class="button__arrow">
+              {{ svgstore('arrow') }}
+            </span>
+          </a>
+          <a href="#" class="button button--solid-red animate-In">
+            <span class="button__text--xlg">Civil &amp; Environmental Engineering</span>
+            <span class="button__arrow">
+              {{ svgstore('arrow') }}
+            </span>
+          </a>
+          <a href="#" class="button button--solid-red animate-In">
+            <span class="button__text--xlg">Electrical &amp; Computer Engineering</span>
+            <span class="button__arrow">
+              {{ svgstore('arrow') }}
+            </span>
+          </a>
+          <a href="#" class="button button--solid-red animate-In">
+            <span class="button__text--xlg">Mechanical &amp; Industrial Engineering</span>
+            <span class="button__arrow">
+              {{ svgstore('arrow') }}
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="grid grid--4">
+        <div class="animate-In">
+          {% set card = {
+            rectangle: true,
+            program: true,
+            button: "Undergraduate Studies"
+          } %}
+          {% include "modules/_card.html" %}
+        </div>
+        <div class="animate-In">
+          {% set card = {
+            rectangle: true,
+            program: true,
+            button: "Graduate Studies"
+          } %}
+          {% include "modules/_card.html" %}
+        </div>
+        <div class="animate-In">
+          {% set card = {
+            rectangle: true,
+            program: true,
+            button: "Business & Leadership"
+          } %}
+          {% include "modules/_card.html" %}
+        </div>
+        <div class="animate-In">
+          {% set card = {
+            rectangle: true,
+            program: true,
+            button: "Commitment to Diversity"
+          } %}
+          {% include "modules/_card.html" %}
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container--beige" aria-label="stories">
+    <div class="container">
+      <div class="block-spacing">
+        <div class="grid grid--2-3 grid--middle">
+          <div class="zero">
+            <h2>Impact tomorrow, <span class="text-black">today.</span>
+            </h2>
+            <p>Experiential learning is the heart of a Northeastern education. Through a range of hands-on opportunities local and
+              afar you will grow personally and intellectually, and be prepared to succeed.
+            </p>
+          </div>
+          <div class="button-text-right">
+            <a href="#" class="button button--black-red button--block">
+              <span class="button__text">More Spotlight Stories</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="block--top">
+          <div class="card--stories">
+            <div class="grid grid--2">
+              <div class="grid grid--2 card--stories-first card__story--show">
+                <div>
+                  {% set card = {
+                    stories: true,
+                    headline: "Growing a Business from the Ground Up",
+                    name: "Matt Alto",
+                    title: "BS, Mechanical Engineering",
+                    arrow: true
+                  } %}
+                  {% include "modules/_card.html" %}
+                </div>
+                <div>
+                  {% set card = {
+                    stories: true,
+                    headline: "Engineering for Rural Development in India",
+                    name: "Matt Alto",
+                    title: "BS, Mechanical Engineering",
+                    arrow: true
+                  } %}
+                  {% include "modules/_card.html" %}
+                </div>
+              </div>
+              <div class="card__story--show">
+                {% set card = {
+                  stories: true,
+                  rectangleAlt: true,
+                  absolute: true,
+                  headline: "Growing a Business from the Ground Up",
+                  name: "Matt Alto",
+                  title: "BS, Mechanical Engineering",
+                  arrow: true
+                } %}
+                {% include "modules/_card.html" %}
+
+                <div class="block-small-top card__story--hide animate-In">
+                  {% set card = {
+                    horizontal: true,
+                    stories: true,
+                    headline: "Growing a Business from the Ground Up",
+                    name: "Matt Alto",
+                    title: "BS, Mechanical Engineering",
+                    arrow: true
+                  } %}
+                  {% include "modules/_card.html" %}
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid--2 card__story--hide">
+              <div>
+                <div class="block-small-top animate-In">
+                  {% set card = {
+                  horizontal: true,
+                  stories: true,
+                  headline: "Growing a Business from the Ground Up",
+                  name: "Matt Alto",
+                  title: "BS, Mechanical Engineering",
+                  arrow: true
+                  } %}
+                  {% include "modules/_card.html" %}
+                </div>
+              </div>
+              <div>
+                <div class="block-small-top animate-In">
+                  {% set card = {
+                  horizontal: true,
+                  stories: true,
+                  headline: "Growing a Business from the Ground Up",
+                  name: "Matt Alto",
+                  title: "BS, Mechanical Engineering",
+                  arrow: true
+                  } %}
+                  {% include "modules/_card.html" %}
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container">
+    <div class="block-spacing">
+      {% set feature = {
+        headline: '<h2 class="text-white"><span class="text-black">Go</span> further.</h2>',
+        swap: true,
+        links: true,
+        red: true
+      } %}
+      {% include "modules/_feature.html" %}
+
+      <div class="block--top">
+        <div class="grid grid--2-3 grid--middle">
+          <div class="zero">
+            <h2>Join the next generation of<br><span class="text-black">engineering leaders.</span></h2>
+          </div>
+
+          <div>
+            <div class="button-group">
+              <a href="#" class="button button--black-red">
+                <span class="button__text">Request Info</span>
+                <span class="button__arrow">
+                  {{ svgstore('arrow') }}
+                </span>
+              </a>
+              <a href="#" class="button button--black-red">
+                <span class="button__text">Visit Northeastern</span>
+                <span class="button__arrow">
+                  {{ svgstore('arrow') }}
+                </span>
+              </a>
+              <a href="#" class="button button--black-red">
+                <span class="button__text">Apply to Northeastern</span>
+                <span class="button__arrow">
+                  {{ svgstore('arrow') }}
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+{% endblock %}

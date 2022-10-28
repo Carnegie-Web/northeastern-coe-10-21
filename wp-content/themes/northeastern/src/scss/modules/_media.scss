@@ -1,0 +1,36 @@
+.media__btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  &:hover {
+    .media__btn__icon {
+      color: $red;
+    }
+  }
+}
+
+.media__btn__icon {
+  display: block;
+  width: 7rem;
+  color: $white;
+  .media__image & {
+    width: 3.5rem;
+  }
+}
+
+.media__image {
+  .image {
+    position: relative;
+    &::before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(37,36,36,0.30);
+    }
+  }
+}

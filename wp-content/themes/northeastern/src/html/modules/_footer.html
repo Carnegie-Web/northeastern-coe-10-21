@@ -1,0 +1,77 @@
+<footer class="footer">
+  {% if page.dept %}
+  <div class="footer__top footer__top--dept">
+    <div class="container">
+      <div class="grid grid--tight">
+        <div class="footer__top__grid">
+          <h3 class="text-white">Department of Civil & Environmental Engineering</h3>
+          <ul class="footer__social">
+            <li class="footer__social__item"><a href="#" class="footer__social__link">{{ svgstore('facebook', 'Facebook')
+            }}</a></li>
+            <li class="footer__social__item"><a href="#" class="footer__social__link">{{ svgstore('twitter', 'Twitter')
+            }}</a></li>
+            <li class="footer__social__item"><a href="#" class="footer__social__link">{{ svgstore('instagram', 'Instagram') }}</a></li>
+            <li class="footer__social__item"><a href="#" class="footer__social__link">{{ svgstore('linkedin', 'LinkedIn')
+            }}</a></li>
+            <li class="footer__social__item"><a href="#" class="footer__social__link">{{ svgstore('youtube', 'YouTube')
+            }}</a></li>
+            <li class="footer__social__item"><a href="#" class="footer__social__link">{{ svgstore('weibo', 'Weibo') }}</a></li>
+          </ul>
+        </div>
+        <div class="footer__top__grid">
+          <a href="#" class="text-white button footer__link">
+            <span class="button__text">Department Directory</span>
+          </a>
+
+          <a href="#" class="text-white button footer__link">
+            <span class="button__text">Contact Us
+            </span>
+          </a>
+        </div>
+        <div class="footer__top__grid">
+          <a href="#" class="button button--outline text-white">
+            <span class="button__text">College of Engineering</span>
+            <span class="button__arrow">
+              {{ svgstore('arrow') }}
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <div class="footer__top">
+    <div class="container">
+      <div class="grid grid--tight">
+        <div class="footer__top__grid">
+          <h3 class="text-white">College of Engineering</h3>
+        </div>
+        <div class="footer__top__grid">
+          <span class="category text-white">Connect with COE</span>
+
+          <ul class="footer__social">
+            <li class="footer__social__item"><a href="#" class="footer__social__link">{{ svgstore('facebook', 'Facebook') }}</a></li>
+            <li class="footer__social__item"><a href="#" class="footer__social__link">{{ svgstore('twitter', 'Twitter') }}</a></li>
+            <li class="footer__social__item"><a href="#" class="footer__social__link">{{ svgstore('instagram', 'Instagram') }}</a></li>
+            <li class="footer__social__item"><a href="#" class="footer__social__link">{{ svgstore('linkedin', 'LinkedIn') }}</a></li>
+            <li class="footer__social__item"><a href="#" class="footer__social__link">{{ svgstore('youtube', 'YouTube') }}</a></li>
+            <li class="footer__social__item"><a href="#" class="footer__social__link">{{ svgstore('weibo', 'Weibo') }}</a></li>
+          </ul>
+        </div>
+        <div class="footer__top__grid">
+          <a href="#" class="button button--inline-block text-white">
+            <span class="button__text">
+              Social Media Directory
+            </span>
+            <span class="button__arrow">
+              {{ svgstore('arrow') }}
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  <div class="footer__bottom">
+  </div>
+</footer>

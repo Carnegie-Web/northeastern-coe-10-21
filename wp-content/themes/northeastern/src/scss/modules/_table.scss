@@ -1,0 +1,35 @@
+.table {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  table {
+    width: calc(100% + 0.25rem);
+    margin-right: -0.125rem;
+    margin-left: -0.125rem;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-bottom: 4px solid rgba($gray, .25);
+  }
+  th,
+  td {
+    padding: 1rem;
+  }
+  th {
+    @extend .h5;
+    color: $white;
+    @include font-smooth;
+    text-align: left;
+    background-color: $red;
+    border-left: 1px solid $white;
+    &:first-child {
+      border-left: 0;
+    }
+  }
+  tbody {
+    tr {
+      background-color: $white
+    }
+    tr:nth-child(even) {
+      background-color: $beige;
+    }
+  }
+}

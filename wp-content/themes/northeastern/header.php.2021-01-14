@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <?php wp_head(); ?>
+  <link rel='stylesheet' id='utilitynav-css-css'  href='https://www.northeastern.edu/nuglobalutils/common/css/headerfooter.css' media='all' />
+</head>
+<?php $blog_id = get_current_blog_id(); ?>
+<body <?php body_class(); ?>>
+	  <nav aria-label="Skip Navigation"><a class="skip-link" href="#main-content">Skip Navigation</a></nav>
+	  <?php get_template_part('modules/_university_header'); ?>
+  <div class="canvas">
+    <?php if ( $blog_id == '1' ) : ?>
+      <?php get_template_part('modules/_header'); ?>
+    <?php else : ?>
+      <?php get_template_part('modules/_header_department'); ?>
+    <?php endif; ?>
+  
+    

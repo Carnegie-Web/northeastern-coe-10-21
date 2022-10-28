@@ -1,0 +1,138 @@
+{
+    "key": "group_5d08e4498ce1a",
+    "title": "Modules - Listing",
+    "fields": [
+        {
+            "key": "field_5d08e45250045",
+            "label": "Modules",
+            "name": "modules",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "5d08e46274d64": {
+                    "key": "5d08e46274d64",
+                    "name": "people_listing",
+                    "label": "People Listing",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5d08e49750046",
+                            "label": "People Listing",
+                            "name": "people_listing",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5d080a9c4bedb"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5d28fff2f1bb0": {
+                    "key": "layout_5d28fff2f1bb0",
+                    "name": "organization_listing",
+                    "label": "Organization Listing",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5d28fffef1bb1",
+                            "label": "Organization Listing",
+                            "name": "organization_listing",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5d28fed940c38"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5d2a0676fa919": {
+                    "key": "layout_5d2a0676fa919",
+                    "name": "news_listing",
+                    "label": "News Listing",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5d2a0680fa91a",
+                            "label": "News Listing",
+                            "name": "news_listing",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5d2a00a40ffb3"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Add Module",
+            "min": "",
+            "max": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page--listing.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1566575212
+}

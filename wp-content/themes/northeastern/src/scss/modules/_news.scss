@@ -1,0 +1,10 @@
+.news__item {
+  &:hover {
+    p {
+      color: $black;
+    }
+  }
+  .category {
+    color: $red;
+  }
+}

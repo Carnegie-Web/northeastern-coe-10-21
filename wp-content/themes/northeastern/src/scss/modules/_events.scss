@@ -1,0 +1,126 @@
+.event__item {
+  &:hover {
+    .event__date {
+      color: $black;
+    }
+    .event__title {
+      box-shadow: 0 1px 0 0 $red;
+    }
+    .card__content {
+      background-color: $white;
+      border-color: transparent;
+    }
+  }
+  .card__content {
+    background-color: $beige;
+    padding: 1.625rem;
+    overflow: auto;
+    .container--beige & {
+      background-color: $white;
+    }
+  }
+}
+
+.event_feed_module_item {
+  margin-bottom: 2rem;
+}
+
+.event__date {
+  font-weight: $bold;
+  @include font-size(14);
+  letter-spacing: 0.5px;
+  line-height: 1.428;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+}
+
+.event__title {
+  @include font-size(18);
+  line-height: 1.444;
+  transition: box-shadow $transition;
+}
+
+.event__date + .event__image {
+  margin-top: -3rem;
+}
+.event__image {
+  flex-shrink: 0;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.tribe-events-tooltip h3 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
+
+.tribe-event-url {
+  color: $red;
+}
+
+.type-tribe_events {
+    margin-top: 2rem !important;
+    padding: 0 0 2rem !important;
+    border-bottom: 0.25rem solid rgba(151, 151, 151, 0.25) !important;
+}
+
+.type-tribe_events:last-of-type {
+  border-bottom: none !important;
+}
+
+#tribe-events .tribe-events-button, 
+#tribe-events .tribe-events-button:hover, 
+#tribe_events_filters_wrapper input[type=submit], 
+.tribe-events-button, .tribe-events-button.tribe-active:hover, 
+.tribe-events-button.tribe-inactive, .tribe-events-button:hover, 
+.tribe-events-calendar td.tribe-events-present div[id*=tribe-events-daynum-], 
+.tribe-events-calendar td.tribe-events-present div[id*=tribe-events-daynum-]>a {
+  background-color: $red;
+}
+
+#tribe-events-pg-template {
+  margin-bottom: 2rem;
+}
+
+#tribe-bar-form {
+  background: $beige;
+}
+
+.tribe-events-calendar thead th {
+  background-color: $red;
+}
+
+.tribe-events-day .tribe-events-day-time-slot .tribe-events-day-time-slot-heading {
+  background: $red;
+  font-size: 0.9375rem;
+  font-family: $sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  padding: 1rem;
+}
+
+.tribe-events-calendar .tribe-events-tooltip { margin-bottom: 40px; }
+
+.tribe-events-month-event-title .url {
+  color: $red;
+}
+
+.tribe-events-calendar div[id*=tribe-events-daynum-], .tribe-events-calendar div[id*=tribe-events-daynum-] a {
+  background-color: #666;
+}
+
+.tribe-events-schedule {
+  color: $black;
+}
+
+.single-tribe_events .tribe-events-schedule h2 {
+    color: $black;
+    font-weight: bold;
+}
+
+.single-tribe_events .tribe-events-single-event-title, .single-tribe_events .tribe-events-schedule h2 {
+  font-family: $sans-serif !important;
+}

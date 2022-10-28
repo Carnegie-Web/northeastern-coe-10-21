@@ -1,0 +1,110 @@
+.align-right {
+  margin-bottom: 1rem;
+  @include mq(48em) {
+    margin-left: 1.25rem;
+    float: right;
+    max-width: 40%;
+  }
+}
+
+.align-left {
+  margin-bottom: 1rem;
+  @include mq(48em) {
+    margin-right: 1.25rem;
+    float: left;
+    max-width: 40%;
+  }
+}
+
+.text-red {
+  color: $red;
+}
+
+.text-black {
+  color: $black;
+}
+
+.text-white {
+  color: $white;
+  @include font-smooth;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.block-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.zero {
+  @include zero;
+}
+
+.skip-link {
+  position: absolute;
+  left: -10000rem;
+  top: -2rem;
+  width: .1rem;
+  height: .1rem;
+  overflow: hidden;
+  z-index: 100;
+  color: $white;
+  outline: 0;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  border-bottom-right-radius: .3rem;
+  transition: top 1s ease-out;
+  font-family: $sans-serif;
+  color: $white;
+  @include font-smooth;
+  &:focus,
+  &:hover {
+    left: 0;
+    top: 0;
+    width: auto;
+    height: auto;
+    background: $black;
+    transition: top .1s ease-in;
+    color: $white;
+  }
+}
+
+.full-width {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.hide,
+.screen-reader-text {
+  @include hide;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+.dept-header-offset {
+  margin-top: 5rem;
+
+  @include mq(64em) {
+    margin-top: 14.4375rem;
+  }
+}
+
+.list-spaced {
+  margin: 3rem 0;
+
+  li {
+    margin: 1rem 0;
+  }
+}

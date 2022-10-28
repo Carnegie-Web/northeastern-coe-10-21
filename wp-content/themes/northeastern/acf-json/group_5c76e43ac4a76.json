@@ -1,0 +1,267 @@
+{
+    "key": "group_5c76e43ac4a76",
+    "title": "Sidebar Modules",
+    "fields": [
+        {
+            "key": "field_5c76e4532e746",
+            "label": "Sidebar Modules",
+            "name": "sidebar_modules",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "5c76e45a42323": {
+                    "key": "5c76e45a42323",
+                    "name": "sidebar_feature",
+                    "label": "Sidebar Feature",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5c76e4952e747",
+                            "label": "Sidebar Feature",
+                            "name": "sidebar_feature",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5c76e3654d0db"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5c79bab3a7b8a": {
+                    "key": "layout_5c79bab3a7b8a",
+                    "name": "download_link",
+                    "label": "Download LInk",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5c79bacda7b8d",
+                            "label": "Download Link",
+                            "name": "download_link",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5c75d86da8773"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5c79babba7b8b": {
+                    "key": "layout_5c79babba7b8b",
+                    "name": "blockquote",
+                    "label": "Blockquote",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5c79bae3a7b8e",
+                            "label": "Blockquote",
+                            "name": "blockquote",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5c75d38a29c96"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5c79bac3a7b8c": {
+                    "key": "layout_5c79bac3a7b8c",
+                    "name": "feature_callout",
+                    "label": "Feature Callout",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5c79baf9a7b8f",
+                            "label": "Feature Callout",
+                            "name": "feature_callout",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5c75d77779a89"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5c82d40964683": {
+                    "key": "layout_5c82d40964683",
+                    "name": "share_buttons",
+                    "label": "Share Buttons",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5c82d41164684",
+                            "label": "Share Buttons",
+                            "name": "share_buttons",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5c82d3bd0c778"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5d02c63f9128e": {
+                    "key": "layout_5d02c63f9128e",
+                    "name": "social_links",
+                    "label": "Social Links",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5d02c6469128f",
+                            "label": "Social Links",
+                            "name": "social_links",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5d02c508d9b60"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5c82d438d1844": {
+                    "key": "layout_5c82d438d1844",
+                    "name": "visual_editor",
+                    "label": "Visual Editor",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5c82d440d1845",
+                            "label": "Visual Editor",
+                            "name": "visual_editor",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5c75d2c81d334"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Add Module",
+            "min": "",
+            "max": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page--tertiary.php"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "organization"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1565961940
+}

@@ -1,0 +1,63 @@
+// colors
+$black: #000;
+$gray-light: #D8D8D8;
+$gray: #979797;
+$gray-med: #707070;
+$gray-dark: #626362;
+$gray-darker: #282828;
+$white: #fff;
+$white-trans: rgba($white, 0.44);
+$red: #D41B2C;
+$beige: #F9F6EE;
+$maroon: #6F0000;
+
+$shadow: 0 0 24px 0 rgba($black, 0.22);
+
+// fonts
+$serif: 'Playfair Display', serif;
+$sans-serif: 'Lato', sans-serif;
+$baseline: 1.444;
+
+$light: 300;
+$regular: 400;
+$bold: 700;
+$bolder: 900;
+
+// transitions
+$transition-speed: 300ms;
+$transition-easing: ease;
+$transition: $transition-speed $transition-easing;
+
+// mobile/desktop
+$minSize: 320px;
+$maxSize: 1440px;
+
+// animations
+@keyframes fadeUpIn {
+  from {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-In {
+  opacity: 0;
+}
+
+.animated-In {
+  animation: fadeUpIn 300ms forwards;
+}

@@ -1,0 +1,16 @@
+      <?php
+
+        $url = 'https://www.northeastern.edu/resources/includes/?r=footer';
+
+        $response = wp_remote_get( $url );
+        if ( is_array( $response ) ) {
+          echo '<div id="nu__global-footer">';
+          $header = $response['headers']; // array of http header lines
+          $body = $response['body']; // use the content
+          echo $body;
+          echo '</div>';
+        }
+
+      ?>
+
+  <script type="text/javascript" src="https://www.northeastern.edu/nuglobalutils/common/js/navigation.js"></script>

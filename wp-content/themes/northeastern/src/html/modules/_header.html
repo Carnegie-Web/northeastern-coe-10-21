@@ -1,0 +1,21 @@
+<header class="header">
+  <div class="header__small">
+    <a href="#" class="header__logo">
+      {% if page.dept %}
+      Civil & Environmental Engineering
+      {% else %}
+      {{ svgstore('logo', 'Northeastern University College of Engineering') }}
+      {% endif %}
+    </a>
+    <button class="header__small__btn toggle-menu">
+      <span></span>
+    </button>
+  </div>
+  <div class="header__menu">
+    <div class="header__menu__container">
+      {% include "modules/_search.html" %}
+      {% include "modules/_menu.html" %}
+      {% include "modules/_topbar.html" %}
+    </div>
+  </div>
+</header>

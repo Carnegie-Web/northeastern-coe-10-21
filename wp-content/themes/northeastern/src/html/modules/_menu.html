@@ -1,0 +1,167 @@
+<div class="menu">
+  {% if page.dept %}
+  <div class="menu__top__group">
+    <div class="menu__headline">Civil & Environmental Engineering</div>
+    <a href="#" class="menu__logo--dept">{{ svgstore('logo-small','Northeastern University College of Engineering') }}</a>
+  </div>
+  {% else %}
+  <a href="#" class="menu__logo">
+    {{ svgstore('logo', 'Northeastern University College of Engineering') }}
+  </a>
+  {% endif %}
+
+  {% if page.dept %}
+  <ul class="menu__list">
+    <li class="menu__item">
+      <a href="#" class="menu__link">
+        <span class="menu__link__text">About</span>
+      </a>
+      <button class="menu__btn">{{ svgstore('dropdown', 'Toggle Menu', 'menu__btn__icon') }}</button>
+      <ul class="menu__list--sub">
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Message from the Dean
+        </a></li>
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">College Leadership
+        </a></li>
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Diversity at COE
+        </a></li>
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Accreditation</a></li>
+      </ul>
+    </li>
+    <li class="menu__item">
+      <a href="#" class="menu__link">
+        <span class="menu__link__text">Academics</span>
+      </a>
+      <button class="menu__btn">{{ svgstore('dropdown', 'Toggle Menu', 'menu__btn__icon') }}</button>
+      <ul class="menu__list--sub">
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 1</a></li>
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 2</a></li>
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 3</a></li>
+      </ul>
+    </li>
+    <li class="menu__item">
+      <a href="#" class="menu__link">
+        <span class="menu__link__text">Experiential Learning</span>
+      </a>
+      <button class="menu__btn">{{ svgstore('dropdown', 'Toggle Menu', 'menu__btn__icon') }}</button>
+      <ul class="menu__list--sub">
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 1</a></li>
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 2</a></li>
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 3</a></li>
+      </ul>
+    </li>
+    <li class="menu__item">
+      <a href="#" class="menu__link">
+        <span class="menu__link__text">Research
+        </span>
+      </a>
+      <button class="menu__btn">{{ svgstore('dropdown', 'Toggle Menu', 'menu__btn__icon') }}</button>
+      <ul class="menu__list--sub">
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 1</a></li>
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 2</a></li>
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 3</a></li>
+      </ul>
+    </li>
+    <li class="menu__item">
+      <a href="#" class="menu__link">
+        <span class="menu__link__text">Faculty
+        </span>
+      </a>
+      <button class="menu__btn">{{ svgstore('dropdown', 'Toggle Menu', 'menu__btn__icon') }}</button>
+      <ul class="menu__list--sub">
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 1</a></li>
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 2</a></li>
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 3</a></li>
+      </ul>
+    </li>
+    <li class="menu__item">
+      <a href="#" class="menu__link">
+        <span class="menu__link__text">Community
+        </span>
+      </a>
+      <button class="menu__btn">{{ svgstore('dropdown', 'Toggle Menu', 'menu__btn__icon') }}</button>
+      <ul class="menu__list--sub">
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 1</a></li>
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 2</a></li>
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 3</a></li>
+      </ul>
+    </li>
+    <li class="menu__item">
+      <a href="#" class="menu__link">
+        <span class="menu__link__text">News + Events
+        </span>
+      </a>
+      <button class="menu__btn">{{ svgstore('dropdown', 'Toggle Menu', 'menu__btn__icon') }}</button>
+      <ul class="menu__list--sub">
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 1</a></li>
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 2</a></li>
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 3</a></li>
+      </ul>
+    </li>
+  </ul>
+  {% else %}
+  <ul class="menu__list">
+    <li class="menu__item">
+      <a href="#" class="menu__link">
+        <span class="menu__link__text">About</span>
+      </a>
+      <button class="menu__btn">{{ svgstore('dropdown', 'Toggle Menu', 'menu__btn__icon') }}</button>
+      <ul class="menu__list--sub">
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Message from the Dean
+        </a></li>
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">College Leadership
+        </a></li>
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Diversity at COE
+        </a></li>
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Accreditation</a></li>
+      </ul>
+    </li>
+    <li class="menu__item">
+      <a href="#" class="menu__link">
+        <span class="menu__link__text">Academics +<span class="break"></span> Experiential Learning</span>
+      </a>
+      <button class="menu__btn">{{ svgstore('dropdown', 'Toggle Menu', 'menu__btn__icon') }}</button>
+      <ul class="menu__list--sub">
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 1</a></li>
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 2</a></li>
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 3</a></li>
+      </ul>
+    </li>
+    <li class="menu__item">
+      <a href="#" class="menu__link">
+        <span class="menu__link__text">Research
+        </span>
+      </a>
+      <button class="menu__btn">{{ svgstore('dropdown', 'Toggle Menu', 'menu__btn__icon') }}</button>
+      <ul class="menu__list--sub">
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 1</a></li>
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 2</a></li>
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 3</a></li>
+      </ul>
+    </li>
+    <li class="menu__item">
+      <a href="#" class="menu__link">
+        <span class="menu__link__text">Faculty
+        </span>
+      </a>
+      <button class="menu__btn">{{ svgstore('dropdown', 'Toggle Menu', 'menu__btn__icon') }}</button>
+      <ul class="menu__list--sub">
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 1</a></li>
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 2</a></li>
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 3</a></li>
+      </ul>
+    </li>
+    <li class="menu__item">
+      <a href="#" class="menu__link">
+        <span class="menu__link__text">News + Events
+        </span>
+      </a>
+      <button class="menu__btn">{{ svgstore('dropdown', 'Toggle Menu', 'menu__btn__icon') }}</button>
+      <ul class="menu__list--sub">
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 1</a></li>
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 2</a></li>
+        <li class="menu__item--sub"><a href="#" class="menu__link--sub">Link 3</a></li>
+      </ul>
+    </li>
+  </ul>
+  {% endif %}
+</div>

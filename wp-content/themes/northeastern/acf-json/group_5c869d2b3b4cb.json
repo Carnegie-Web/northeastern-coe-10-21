@@ -1,0 +1,256 @@
+{
+    "key": "group_5c869d2b3b4cb",
+    "title": "News Fields",
+    "fields": [
+        {
+            "key": "field_5c869d3aef7c8",
+            "label": "News Type",
+            "name": "news_type",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "news": "News",
+                "story": "Spotlight Story",
+                "inthemedia": "In the Media"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5c869d98ef7c9",
+            "label": "Faculty Members",
+            "name": "faculty_members",
+            "type": "user",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "role": "",
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "id"
+        },
+        {
+            "key": "field_5c869de1ef7ca",
+            "label": "News Image",
+            "name": "image",
+            "type": "image",
+            "instructions": "Image Dimensions 600x400",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5ca2214fc0a28",
+            "label": "Redirect Link",
+            "name": "redirect_link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c869d3aef7c8",
+                        "operator": "==",
+                        "value": "inthemedia"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5c9e677979926",
+            "label": "Spotlight Fields",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5c9e67fc79927",
+            "label": "Spotlight Image",
+            "name": "spotlight_image",
+            "type": "image",
+            "instructions": "Image Dimensions 600x600",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": 600,
+            "min_height": 600,
+            "min_size": "",
+            "max_width": 600,
+            "max_height": 600,
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5c9e6b3779928",
+            "label": "Spotlight Image Wide",
+            "name": "spotlight_image_wide",
+            "type": "image",
+            "instructions": "Image Dimensions 600x285",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": 600,
+            "min_height": 285,
+            "min_size": "",
+            "max_width": 600,
+            "max_height": 285,
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5ccc4e69a42e3",
+            "label": "Spotlight Category",
+            "name": "spotlight_category",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5c9e6c0079929",
+            "label": "Spotlight Heading",
+            "name": "spotlight_heading",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5c9e6c0e7992a",
+            "label": "Spotlight Subheading",
+            "name": "spotlight_subheading",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5c9e6c507992b",
+            "label": "Spotlight Video Url",
+            "name": "spotlight_video",
+            "type": "text",
+            "instructions": "For YouTube urls the following format should be used: https:\/\/www.youtube.com\/watch?v=Uy6xjAK_jb8",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "news"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1565989550
+}

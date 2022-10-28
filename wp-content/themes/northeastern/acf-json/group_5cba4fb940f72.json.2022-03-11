@@ -1,0 +1,183 @@
+{
+    "key": "group_5cba4fb940f72",
+    "title": "Module - Event Feed",
+    "fields": [
+        {
+            "key": "field_5cedb786dc481",
+            "label": "Feed Style",
+            "name": "feed_style",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "standard": "Standard",
+                "no-images": "No Images"
+            },
+            "default_value": [
+                "standard"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5d76d2217df41",
+            "label": "Number",
+            "name": "number",
+            "type": "number",
+            "instructions": "Number of events to display (default is 3)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_5cba4fc377831",
+            "label": "Heading",
+            "name": "heading",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5d5ebc84af147",
+            "label": "Department",
+            "name": "department",
+            "type": "select",
+            "instructions": "filter by custom department field",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Bioengineering": "Bioengineering",
+                "Civil and Environmental Engineering": "Civil and Environmental Engineering",
+                "Chemical Engineering": "Chemical Engineering",
+                "Electrical and Computer Engineering": "Electrical and Computer Engineering",
+                "Gordon Engineering Leadership Program": "Gordon Engineering Leadership Program",
+                "Mechanical and Industrial Engineering": "Mechanical and Industrial Engineering",
+                "Multidisciplinary Masters (IT areas)": "Multidisciplinary Masters (IT areas)"
+            },
+            "default_value": [],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5d5ecdc665413",
+            "label": "Topics",
+            "name": "topics",
+            "type": "select",
+            "instructions": "filter by custom topics field",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Undergraduate Admissions": "Undergraduate Admissions",
+                "Graduate Admissions": "Graduate Admissions",
+                "Co-op": "Co-op",
+                "Research": "Research",
+                "Seminar": "Seminar",
+                "MS\/PhD Thesis Defense": "MS\/PhD Thesis Defense",
+                "Faculty Awards": "Faculty Awards",
+                "Staff Awards": "Staff Awards",
+                "Student Awards": "Student Awards"
+            },
+            "default_value": [],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5d5ecde665414",
+            "label": "Audience",
+            "name": "categories",
+            "type": "select",
+            "instructions": "Filter by custom categories field",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Prospective Students": "Prospective Students",
+                "Undergraduate": "Undergraduate",
+                "Graduate": "Graduate",
+                "Alumni": "Alumni",
+                "Student Groups": "Student Groups",
+                "Faculty": "Faculty",
+                "Staff": "Staff"
+            },
+            "default_value": [],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1570033754
+}

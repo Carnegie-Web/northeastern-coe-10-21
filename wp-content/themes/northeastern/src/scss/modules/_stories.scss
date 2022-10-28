@@ -1,0 +1,42 @@
+.stories__block {
+  @include mq($max: 64em) {
+    width: 100%;
+    & + & {
+      margin-top: 2rem;
+    }
+  }
+}
+
+.stories__image {
+  margin-bottom: 1rem;
+  @include mq(48em) {
+    float: left;
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+}
+
+.stories__content {
+}
+
+.stories__headline {
+  @extend .h5;
+  margin-bottom: 2rem;
+  &::after {
+    display: block;
+    position: relative;
+    content: '';
+    height: 3px;
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: 1rem;
+    width: 100%;
+    background-color: $red;
+    @include mq(48em) {
+      width: 80%;
+    }
+    @include mq(64em) {
+      width: 70%;
+    }
+  }
+}

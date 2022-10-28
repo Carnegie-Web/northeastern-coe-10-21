@@ -1,0 +1,259 @@
+.topbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  @include mq(64em) {
+    flex-direction: row;
+    background-color: $white;
+    order: -1;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-bottom: 1px solid rgba($gray, 0.21);
+    .dept & {
+      background-color: transparent;
+    }
+  }
+}
+
+.topbar__cta,
+.topbar__nav {
+  @include clean;
+  list-style: none;
+  @include mq(64em) {
+    display: flex;
+  }
+}
+
+.topbar__cta {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  @include clear;
+  @include mq(64em) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    order: -1;
+  }
+}
+
+
+.topbar__nav__item {
+  & + & {
+    // position: relative;
+    @include mq(64em) {
+      margin-left: 2rem;
+    }
+  }
+  &:nth-child(2) {
+    margin-top: 1rem;
+    @include mq(64em) {
+      margin-top: 0;
+    }
+  }
+  &:last-child {
+    display: none;
+    @include mq(64em) {
+      display: block;
+    }
+  }
+  .dept & {
+    &:nth-child(1),
+    &:nth-child(2) {
+      display: none;
+    }
+  }
+}
+
+.topbar__cta__item {
+  width: 50%;
+  padding: 0.5rem;
+  float: left;
+  @include mq(64em) {
+    float: none;
+    width: auto;
+    padding: 0;
+    & + & {
+      position: relative;
+      margin-left: 2rem;
+      &::before {
+        position: absolute;
+        display: block;
+        content: '';
+        top: 50%;
+        left: -1rem;
+        transform: translateX(-50%);
+        @include sprite('dot');
+        width: 4px;
+        height: 4px;
+      }
+    }
+  }
+}
+
+
+.topbar__link {
+  font-weight: $bold;
+  @include font-size(14);
+  color: $white;
+  letter-spacing: 0.68px;
+  text-align: center;
+  border: 4px solid rgba($gray, .25);
+  padding: 0.5rem;
+  display: block;
+  &:hover {
+    background-color: $red;
+    border-color: transparent;
+  }
+  @include mq(64em) {
+    display: inline-block;
+    padding: 0;
+    border: 0;
+    text-align: left;
+    @include font-size(12);
+    color: $gray-med;
+    letter-spacing: 1.68px;
+    text-transform: uppercase;
+    // transition: box-shadow $transition;
+    @include underline($black, 95%);
+    .dept & {
+      color: $white;
+      @include underline(#9B9B9B, 95%);
+    }
+    &:hover,
+    &:focus {
+      color: $black;
+      background-size: 100% 100%;
+      background-color: transparent;
+      // box-shadow: 0 1px 0 0 $black;
+      .dept & {
+        color: #9B9B9B;
+      }
+    }
+  }
+}
+
+.topbar__nav__link {
+  font-weight: $bold;
+  @include font-size(14);
+  color: $gray-med;
+  letter-spacing: 1.68px;
+  text-transform: uppercase;
+  // transition: box-shadow $transition;
+  @include underline($white, 95%);
+  padding-top: 1px;
+  padding-bottom: 1px;
+  &:hover {
+    color: $white;
+    // box-shadow: 0 1px 0 0 $white;
+    background-size: 100% 100%;
+  }
+  @include mq(64em) {
+    @include font-size(12);
+    @include underline($black, 95%);
+    .dept & {
+      color: $white;
+    }
+    &:hover {
+      color: $black;
+      // box-shadow: 0 1px 0 0 $black;
+      background-size: 100% 100%;
+    }
+  }
+}
+
+.topbar__nav {}
+
+.topbar__btn {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  @include mq($max: 64em) {
+    &:hover {
+      .topbar__btn__text {
+        color: $white;
+        background-size: 100% 100%;
+        // box-shadow: 0 1px 0 0 $white;
+        .dept & {
+          color: $red;
+          background-size: 100% 100%;
+        }
+      }
+    }
+  }
+}
+
+.topbar__btn__text {
+  margin-right: 0.5rem;
+  font-weight: $bold;
+  @include font-size(14);
+  color: $gray-med;
+  letter-spacing: 1.68px;
+  text-transform: uppercase;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  // transition: box-shadow $transition;
+  @include underline($white, 95%)
+  @include mq(64em) {
+    @include font-size(12);
+    @include underline($black, 95%);
+    .dept & {
+      @include underline(#9B9B9B, 95%)
+      color: $white;
+    }
+    &:hover,
+    &:focus {
+      color: $black;
+      // box-shadow: 0 1px 0 0 $black;
+      background-size: 100% 100%;
+      .dept & {
+        color: #9B9B9B;
+      }
+    }
+  }
+}
+
+.topbar__btn__icon--dropdown {
+  width: 0.75rem;
+  color: $red;
+  display: inline-block;
+  transform: rotate(-90deg);
+  @include mq(64em) {
+    transform: none;
+  }
+  .info-active & {
+    transform: rotate(180deg);
+  }
+}
+
+.topbar__btn__search--open,
+.topbar__btn__search--close {
+  width: 1rem;
+  color: $red;
+}
+
+
+.topbar__btn__search--open {
+  display: inline-block;
+  vertical-align: middle;
+  .search-active & {
+    display: none;
+  }
+}
+
+.topbar__btn__search--close {
+  display: none;
+  .search-active & {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+

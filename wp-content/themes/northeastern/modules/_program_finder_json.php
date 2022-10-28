@@ -1,0 +1,107 @@
+<?php 
+$the_query = new WP_Query( array( 'post_type' => 'program', 'posts_per_page' => -1 ) );
+
+header('Content-Type: application/json');
+$data['json_string'] = "{\"programs\":[";  //open Json string
+?>
+<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post();
+	//Get degree links
+	$bs_link = get_field('bs_link');
+	$minor_link = get_field('minor_link');
+	$bsms_link = get_field('bsms_link');
+	$bsjd_link = get_field('bsjd_link');
+	$plusone_link = get_field('plusone_link');
+	$ms_link = get_field('ms_link');
+	$phd_link = get_field('phd_link');
+	$certificate_link = get_field('certificate_link');
+	$keywords = get_field('keywords');
+
+	$data['json_string'] .= "{";
+
+	$data['json_string'] .= "\"title\": \"" . get_field('heading') ."\",";
+
+	$data['json_string'] .= "\"search\": \"" . $keywords ."\",";
+
+	$data['json_string'] .= "\"level\": [";
+
+	$level = '';
+
+	if ($bs_link) {
+		$level .= "{";
+		$level .= "\"name\": \"BS\", \"url\": \"". $bs_link['url'] ."\"";
+		$level .= "},"; 
+	}
+
+	if ($minor_link) {
+		$level .= "{";
+		$level .= "\"name\": \"Minor\", \"url\": \"". $minor_link['url'] ."\"";
+		$level .= "},"; 
+	}
+
+	if ($bsms_link) {
+		$level .= "{";
+		$level .= "\"name\": \"BS/MS\", \"url\": \"". $bsms_link['url'] ."\"";
+		$level .= "},"; 
+	}
+
+	if ($bsjd_link) {
+		$level .= "{";
+		$level .= "\"name\": \"BS/JD\", \"url\": \"". $bsjd_link['url'] ."\"";
+		$level .= "},"; 
+	}
+
+	if ($plusone_link) {
+		$level .= "{";
+		$level .= "\"name\": \"PlusOne\", \"url\": \"". $plusone_link['url'] ."\"";
+		$level .= "},"; 
+	}
+
+	if ($ms_link) {
+		$level .= "{";
+		$level .= "\"name\": \"MS\", \"url\": \"". $ms_link['url'] ."\"";
+		$level .= "},"; 
+	}
+
+	if ($certificate_link) {
+		$level .= "{";
+		$level .= "\"name\": \"Graduate Certificate\", \"url\": \"". $certificate_link['url'] ."\"";
+		$level .= "},"; 
+	}
+
+	if ($phd_link) {
+		$level .= "{";
+		$level .= "\"name\": \"PhD\", \"url\": \"". $phd_link['url'] ."\"";
+		$level .= "},"; 
+	}
+
+	$level = rtrim( $level, ',' );
+
+	$data['json_string'] .= $level;
+
+	$data['json_string'] .= "],"; 
+
+	$data['json_string'] .= "\"department\": [";
+
+	$data['json_string'] .= html_entity_decode(get_delimited_taxonomy('page_department', get_the_ID()));
+
+	$data['json_string'] .= "],"; 
+
+	$data['json_string'] .= "\"format\": [";
+
+	$data['json_string'] .= get_delimited_taxonomy('format', get_the_ID());
+
+	$data['json_string'] .= "],"; 
+
+	$data['json_string'] .= "\"campus\": [";
+
+	$data['json_string'] .= get_delimited_taxonomy('regional_campuses', get_the_ID());
+
+	$data['json_string'] .= "]"; 
+
+	$data['json_string'] .= "},"; 
+	?>
+<?php endwhile; else: ?> <p>Sorry, there are no posts to display</p> <?php endif; ?>
+<?php wp_reset_query();
+$data['json_string'] = rtrim( $data['json_string'], ',' );
+$data['json_string'] .= "]}";  //close Json string
+echo $data['json_string'];

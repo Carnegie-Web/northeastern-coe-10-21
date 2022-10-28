@@ -1,0 +1,65 @@
+
+<div class="feature__item{% if feature.swap %} feature__item--swap{% endif %}">
+  <div class="feature__content{% if feature.red %} container--red{% endif %}{% if feature.white %} container--white{% endif %} animate-In">
+    {{ feature.headline|safe }}
+
+    {% if feature.links %}
+    <div class="button-group">
+      <a href="#" class="button text-white">
+        <span class="button__text">Clubs &amp; Organizations</span>
+        <span class="button__arrow">
+          {{ svgstore('arrow') }}
+        </span>
+      </a>
+      <a href="#" class="button text-white">
+        <span class="button__text">Student Research</span>
+        <span class="button__arrow">
+          {{ svgstore('arrow') }}
+        </span>
+      </a>
+      <a href="#" class="button text-white">
+        <span class="button__text">Global Experiences</span>
+        <span class="button__arrow">
+          {{ svgstore('arrow') }}
+        </span>
+      </a>
+    </div>
+    {% else %}
+    <p class="feature__text">
+      With Northeastern's signature cooperative education program, you gain valuable industry experience as part of the
+      academic curriculum. BS, MS, and PhD students have the opportunity to work with more than 700 leading employer
+      partners
+      around the world.
+    </p>
+
+    <div>
+      <a href="#" class="button button--inline-block{% if feature.white %} button--black-red{% endif %}">
+        {% if feature.video %}
+
+        <span class="button__video">
+          {{ svgstore('video') }}
+        </span>
+        <span class="button__text {% if feature.red %}text-white{% endif %}">Watch the video</span>
+        {% else %}
+        <span class="button__text {% if feature.red %}text-white{% endif %}">Discover Co-op</span>
+        <span class="button__arrow">
+          {{ svgstore('arrow') }}
+        </span>
+    {% endif %}
+      </a>
+
+    </div>
+    {% endif %}
+
+  </div>
+  <div class="feature__media animate-In">
+    <div class="feature__image {% if feature.video %} feature__media__gradient{% endif %}">
+      {{ ph('768x3:2') }}
+      {% if feature.video %}
+      <a href="https://www.youtube.com/watch?v=Uy6xjAK_jb8" class="media__btn" data-minimodal>
+        {{ svgstore('play', 'Play Video', 'media__btn__icon') }}
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</div>

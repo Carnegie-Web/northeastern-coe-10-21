@@ -1,0 +1,215 @@
+{% if page.home %}
+<section class="hero hero--home" aria-label="Hero">
+  <div class="hero__background" id="background-1">
+    <picture>
+      <source srcset="../img/01_NUCOE_desktop.jpg" media="(min-width: 64em)" />
+      <source srcset="../img/01_NUCOE_tablet.jpg" media="(min-width: 48em)" />
+      <img src="../img/01_NUCOE_mobile.jpg" alt="placeholder" />
+    </picture>
+  </div>
+  <div class="hero__background" id="background-2">
+    <picture>
+      <source srcset="../img/02_NUCOE_desktop.jpg" media="(min-width: 64em)" />
+      <source srcset="../img/02_NUCOE_tablet.jpg" media="(min-width: 48em)" />
+      <img src="../img/02_NUCOE_mobile.jpg" alt="placeholder" />
+    </picture>
+  </div>
+  <div class="hero__background" id="background-3">
+    <picture>
+      <source srcset="../img/03_NUCOE_desktop.jpg" media="(min-width: 64em)" />
+      <source srcset="../img/03_NUCOE_tablet.jpg" media="(min-width: 48em)" />
+      <img src="../img/03_NUCOE_mobile.jpg" alt="placeholder" />
+    </picture>
+  </div>
+  <div class="hero__container container--relative container">
+    {% if page.home %}
+    <div class="hero__headline">
+      Boldly innovating to impact society and transform the world.
+    </div>
+    <ul class="hero__nav">
+      <li class="hero__item">
+        <a href="#" class="hero__link" data-id="background-1">
+          <span class="hero__category">Robotics</span>
+          <span class="hero__text__wrap">
+            <span class="hero__text">Giving Robots a Lighter Touch</span>
+            {{ svgstore('arrow', '', 'hero__link__icon') }}
+          </span>
+        </a>
+      </li>
+      <li class="hero__item">
+        <a href="#" class="hero__link" data-id="background-2">
+          <span class="hero__category">Health, Environment</span>
+          <span class="hero__text__wrap">
+            <span class="hero__text">Engineering a Solution to Dirty Water</span>
+            {{ svgstore('arrow', '', 'hero__link__icon') }}
+          </span>
+        </a>
+      </li>
+      <li class="hero__item">
+        <a href="#" class="hero__link" data-id="background-3">
+          <span class="hero__category">Bioengineering</span>
+          <span class="hero__text__wrap">
+            <span class="hero__text">Helping Babies Breathe</span>
+            {{ svgstore('arrow', '', 'hero__link__icon') }}
+          </span>
+        </a>
+      </li>
+    </ul>
+
+    {% else %}
+    {% endif %}
+  </div>
+</section>
+
+{% elif hero.slider %}
+<section class="hero hero--slider" aria-label="Hero">
+  <div class="hero__slide">
+    <div class="hero__image">
+      <picture>
+        <source srcset="../img/Department01.jpg" media="(min-width: 48em)" />
+
+        <img src="../img/Department01-Mobile.jpg" alt="placeholder" />
+      </picture>
+    </div>
+
+    <div class="hero__content">
+      <div class="hero__container container">
+        <div class="hero__headline-alt">
+          Flexible Headline
+        </div>
+        <p class="hero__paragraph">There are three options that can be used over the image. A flexible headline, space for supporting copy below it and
+          the option for a link to watch a video which will open up as a modal. Each can be turned on or off as needed.
+        </p>
+        <a href="https://www.youtube.com/watch?v=Uy6xjAK_jb8" class="hero__btn" data-minimodal>
+          {{ svgstore('video', '', 'hero__btn__icon') }}
+          <span class="hero__btn__text">Watch the Video</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+  <div class="hero__slide">
+    <div class="hero__image">
+      <picture>
+        <source srcset="../img/Department02.jpg" media="(min-width: 48em)" />
+
+        <img src="../img/Department02-Mobile.jpg" alt="placeholder" />
+      </picture>
+    </div>
+
+    <div class="hero__content">
+      <div class="hero__container container">
+        <p class="hero__paragraph">Dolor sit amet, consectetur adipiscing elit. Proin faucibus risus vitae tortor consequat, non dignissim neque vehicula.
+          Praesent vel arcu non mi accumsan venenatis.
+        </p>
+      </div>
+    </div>
+
+  </div>
+  <div class="hero__slide hero__slide-no-gradient">
+    <div class="hero__image">
+      <picture>
+        <source srcset="../img/Department03.jpg" media="(min-width: 48em)" />
+
+        <img src="../img/Department03-Mobile.jpg" alt="placeholder" />
+      </picture>
+    </div>
+
+    <div class="hero__content">
+      <div class="hero__container container">
+        <a href="https://www.youtube.com/watch?v=Uy6xjAK_jb8" class="hero__btn hero__btn--black" data-minimodal>
+          {{ svgstore('video', '', 'hero__btn__icon') }}
+          <span class="hero__btn__text">Watch the Video</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+  <div class="hero__slide hero__slide-no-gradient">
+    <div class="hero__image">
+      <picture>
+        <source srcset="../img/Department04.jpg" media="(min-width: 48em)" />
+
+        <img src="../img/Department04-Mobile.jpg" alt="placeholder" />
+      </picture>
+    </div>
+  </div>
+</section>
+
+{% elif hero.video %}
+<section class="hero hero--video" aria-label="Hero">
+
+  <div class="hero__image">
+    <picture>
+      <source srcset="../img/Department01.jpg" media="(min-width: 48em)" />
+
+      <img src="../img/Department01-Mobile.jpg" alt="placeholder" />
+    </picture>
+    <div class="hero__video">
+      <video muted loop autoplay playsinline>
+        <source src="javascript:void(0)" data-src="img/video.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </div>
+
+
+  <div class="hero__content">
+    <div class="hero__container container">
+      <div class="hero__headline-alt">
+        Background Video Option
+      </div>
+    </div>
+  </div>
+</section>
+
+{% elif hero.landing %}
+<section class="hero hero--landing" aria-label="Hero">
+  <div class="hero__image">
+    {% if hero.img %}
+    <picture>
+      <source srcset="//placehold.mstoner.com/1440x400" media="(min-width: 32em)" />
+      {{ ph('480x700') }}
+    </picture>
+    {% endif %}
+  </div>
+  <div class="hero__content">
+    <div class="hero__container container">
+      <div class="hero__headline">
+        Academics + Experiential Learning
+      </div>
+    </div>
+  </div>
+</section>
+
+{% else %}
+
+<section class="hero" aria-label="Hero">
+
+  <div class="hero__image hero__image-alt">
+    {% if hero.img %}
+    <picture>
+      <source srcset="//placehold.mstoner.com/1440x700" media="(min-width: 32em)" />
+      {{ ph('480x700') }}
+    </picture>
+    {% endif %}
+  </div>
+  <div class="hero__content-alt">
+    <div class="hero__container">
+      <div class="container">
+        {% include "modules/_breadcrumb.html" %}
+        <h2 class="h1 text-white">Master of Science in Robotics</h2>
+      </div>
+      <div class="hero__cta">
+        <a href="#" class="cta cta--red cta-half">Request Info</a>
+        <a href="#" class="cta cta--red cta-half">Apply</a>
+        <a href="#" class="cta cta--black cta-full">
+          {{ svgstore('filter', '', 'cta__icon') }}
+          View All Programs
+        </a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+{% endif %}

@@ -1,0 +1,29 @@
+.callout {
+  margin: 3rem 0;
+  padding-top: 3rem;
+  border-top: 0.0625rem solid rgba($gray, 0.25);
+
+  @include mq(64em) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.callout__image {
+  margin-bottom: 1.5rem;
+
+  @include mq(64em) {
+    flex-shrink: 0;
+    width: 18.75rem;
+    max-width: 33.333%;
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+}
+
+.callout__content {
+  h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+}

@@ -1,0 +1,105 @@
+.info-active,
+.menu-active {
+  overflow: hidden;
+  @include mq(64em) {
+    overflow: visible;
+  }
+}
+
+.canvas {
+  overflow: hidden;
+}
+
+.container {
+  @include container;
+}
+
+.container > .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.container--clear {
+  @include clear;
+}
+
+.container--relative {
+  position: relative;
+}
+
+.container--narrow {
+  max-width: 800px;
+}
+
+.container--mid {
+  max-width: 1000px;
+  padding-top: 1rem;
+  padding-bottom: 6rem;
+}
+
+.container--beige {
+  background-color: $beige;
+}
+
+.container--black {
+  background-color: $black;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  p {
+    color: $white;
+  }
+}
+
+.container--red {
+  background-color: $red;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  p {
+    color: $white;
+  }
+}
+
+.container--white {
+  background-color: $white;
+}
+
+.container--border {
+  border-top: 1px solid rgba($gray, .25);
+  border-bottom: 1px solid rgba($gray, .25);
+}
+
+.container--border + .container--border {
+  border-top: 0;
+}
+
+.container--border-bottom {
+  border-bottom: 1px solid rgba($gray, .25);
+}
+
+.main {
+  @include mq(64em) {
+    margin-top: 2rem;
+  }
+}
+
+.main__content {
+  margin-bottom: 3rem;
+  @include mq(64em) {
+    margin-bottom: 0;
+    width: 60%;
+    float: left;
+    clear: left;
+  }
+}
+
+.main__sidebar {
+  @include mq(64em) {
+    width: 30%;
+    clear: right;
+    float: right;
+  }
+}
+
+.main__sidebar--alt {
+  margin-top: 2rem;
+}

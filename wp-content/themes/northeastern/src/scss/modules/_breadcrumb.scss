@@ -1,0 +1,51 @@
+.breadcrumb {
+  display: none;
+  @include mq(64em) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.breadcrumb,
+.breadcrumb__link,
+.breadcrumb__separator {
+  @include font-size(11);
+  color: $red;
+  font-weight: $bolder;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  @include font-smooth;
+  .hero & {
+    color: $white;
+  }
+}
+
+.breadcrumb__separator {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+
+.breadcrumb__icon {
+  color: $red;
+  width: 0.85rem;
+  display: block;
+  &:hover {
+    color: $gray-med;
+  }
+  .hero & {
+    color: $white;
+    &:hover {
+      color: $red;
+    }
+  }
+}
+
+.breadcrumb__link {
+  @include link($red);
+  .hero & {
+    @include link($white);
+  }
+}

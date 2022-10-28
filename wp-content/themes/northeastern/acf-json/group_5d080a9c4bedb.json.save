@@ -1,0 +1,288 @@
+{
+    "key": "group_5d080a9c4bedb",
+    "title": "Module - People Listing",
+    "fields": [
+        {
+            "key": "field_5d080e1d9d6c7",
+            "label": "Filter By Text",
+            "name": "filter_by_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5d080e3f9d6c8",
+            "label": "Apply Filters Text",
+            "name": "apply_filters_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5d080e569d6c9",
+            "label": "Reset Filters Text",
+            "name": "reset_filters_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5d080e769d6ca",
+            "label": "Search By Letter Text",
+            "name": "search_by_letter_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5d1b5909d609b",
+            "label": "Number",
+            "name": "number",
+            "type": "number",
+            "instructions": "Default number to display per page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_5d1b5575d6096",
+            "label": "Filters",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5d1b5589d6097",
+            "label": "Departments",
+            "name": "departments",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "6": "Bioengineering",
+                "7": "Chemical Engineering",
+                "8": "Civil &amp; Environmental Engineering",
+                "9": "Electrical &amp; Computer Engineering",
+                "10": "Mechanical &amp; Industrial Engineering",
+                "23": "Multidisciplinary Masters (IT Areas)"
+            },
+            "default_value": [],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5d1b579ad6098",
+            "label": "Department Theme",
+            "name": "department_theme",
+            "type": "taxonomy",
+            "instructions": "For use on college site only",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "department_themes",
+            "field_type": "select",
+            "allow_null": 1,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
+            "key": "field_5d1b58c2d609a",
+            "label": "Research Initiatives",
+            "name": "research_initiatives",
+            "type": "taxonomy",
+            "instructions": "For use on college site only",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "research_initiatives",
+            "field_type": "select",
+            "allow_null": 1,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
+            "key": "field_5d49992dbc205",
+            "label": "Position Type",
+            "name": "position_type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Tenure\/Tenure-Track Faculty": "Tenured\/Tenure-Track Faculty",
+                "Teaching Faculty": "Teaching Faculty",
+                "Affiliated Faculty": "Affiliated Faculty",
+                "Research Faculty": "Research Faculty",
+                "Professor of the Practice": "Professor of the Practice",
+                "Emeritus Faculty": "Emeritus Faculty",
+                "Co-op Coordinators": "Co-op Coordinators",
+                "Postdoctoral Associates": "Postdoctoral Associates",
+                "Research\/Technical Staff": "Research\/Technical Staff",
+                "Academic Advisors": "Academic Advisors",
+                "Administrative Staff": "Administrative Staff"
+            },
+            "default_value": [],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5d1b57ccd6099",
+            "label": "Type",
+            "name": "type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Faculty": "Faculty",
+                "Staff": "Staff"
+            },
+            "default_value": [],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5d80eeaf66bc8",
+            "label": "Hide Research Areas Filter",
+            "name": "hide_research_areas_filter",
+            "type": "true_false",
+            "instructions": "Checking this checkbox will hide the research areas filter in the directory.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1570134323
+}

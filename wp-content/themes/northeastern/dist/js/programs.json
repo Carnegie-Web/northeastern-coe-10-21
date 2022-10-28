@@ -1,0 +1,189 @@
+{
+  "programs": [
+    {
+      "title": "Architectural Engineering",
+      "level": [
+        "Minor"
+      ],
+      "department": [
+        "Mechanical & Industrial Engineering"
+      ],
+      "format": [],
+      "campus": [
+        "Seattle, WA",
+        "Silicon Valley, CA"
+      ]
+    },
+    {
+      "title": "Biochemical Engineering",
+      "level": [
+        "Minor"
+      ],
+      "department": [
+        "Bioengineering",
+        "Chemical Engineering"
+      ],
+      "format": [
+        "Online"
+      ],
+      "campus": [
+        "Silicon Valley, CA"
+      ]
+    },
+    {
+      "title": "Bioengineering",
+      "level": [
+        "BS",
+        "PlusOne",
+        "MS",
+        "PhD"
+      ],
+      "department": [
+        "Bioengineering"
+      ],
+      "format": [],
+      "campus": [
+        "Seattle, WA",
+        "Silicon Valley, CA"
+      ]
+    },
+    {
+      "title": "Bioengineering/Engineering Management",
+      "level": [
+        "PlusOne"
+      ],
+      "department": [
+        "Bioengineering"
+      ],
+      "format": [
+        "Online"
+      ],
+      "campus": [
+        "Seattle, WA"
+      ]
+    },
+    {
+      "title": "Biomechanical Engineering",
+      "level": [
+        "Minor"
+      ],
+      "department": [
+        "Bioengineering",
+        "Mechanical & Industrial Engineering"
+      ],
+      "format": [],
+      "campus": [
+        "Seattle, WA",
+        "Silicon Valley, CA"
+      ]
+    },
+    {
+      "title": "Biomedical Engineering",
+      "level": [
+        "Minor"
+      ],
+      "department": [
+        "Bioengineering"
+      ],
+      "format": [
+        "Online"
+      ],
+      "campus": [
+        "Seattle, WA"
+      ]
+    },
+    {
+      "title": "Broadband Wireless Systems",
+      "level": [
+        "Certificate"
+      ],
+      "department": [
+        "Electrical & Computer Engineering",
+        "Software, Data, and Network Systems"
+      ],
+      "format": [
+        "Online"
+      ],
+      "campus": [
+        "Seattle, WA",
+        "Silicon Valley, CA"
+      ]
+    },
+    {
+      "title": "Chemical Engineering",
+      "level": [
+        "BS",
+        "PlusOne",
+        "MS",
+        "PhD"
+      ],
+      "department": [
+        "Chemical Engineering"
+      ],
+      "format": [],
+      "campus": [
+        "Silicon Valley, CA"
+      ]
+    },
+    {
+      "title": "Chemical Engineering & Biochemistry",
+      "level": [
+        "BS"
+      ],
+      "department": [
+        "Chemical Engineering"
+      ],
+      "format": [],
+      "campus": [
+        "Seattle, WA",
+        "Silicon Valley, CA"
+      ]
+    },
+    {
+      "title": "Chemical Engineering & Physics",
+      "level": [
+        "BS"
+      ],
+      "department": [
+        "Chemical Engineering"
+      ],
+      "format": [],
+      "campus": [
+        "Seattle, WA"
+      ]
+    },
+    {
+      "title": "Chemical Engineering/Engineering Management",
+      "level": [
+        "PlusOne"
+      ],
+      "department": [
+        "Chemical Engineering"
+      ],
+      "format": [
+        "Online"
+      ],
+      "campus": [
+        "Seattle, WA",
+        "Silicon Valley, CA"
+      ]
+    },
+    {
+      "title": "Civil Engineering",
+      "level": [
+        "Minor",
+        "BS",
+        "PlusOne",
+        "MS",
+        "PhD"
+      ],
+      "department": [
+        "Civil & Environmental Engineering"
+      ],
+      "format": [],
+      "campus": [
+        "Silicon Valley, CA"
+      ]
+    }
+  ]
+}

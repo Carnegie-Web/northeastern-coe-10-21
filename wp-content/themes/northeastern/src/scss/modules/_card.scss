@@ -1,0 +1,264 @@
+.card__story--hide {
+  display: none;
+  @include mq(64em) {
+    display: flex;
+  }
+}
+
+.card--stories-first {
+  > div:first-child {
+    margin-left: 0;
+    flex-grow: 1;
+  }
+  > div:last-child {
+    flex-grow: 1;
+  }
+}
+
+.card__item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: box-shadow $transition;
+  &:hover,
+  &:focus {
+    box-shadow: $shadow;
+    .card__content {
+      color: $red;
+      border-color: $red;
+      background-color: $beige;
+      .container--beige & {
+        background-color: $white;
+      }
+      .card--stories & {
+        color: $black;
+      }
+    }
+    .card__image img {
+      transform: scale(1.1);
+    }
+    .button__text {
+      color: $red;
+      // box-shadow: none;
+      background-size: 0;
+    }
+  }
+}
+
+.card__item--absolute {
+  position: relative;
+  display: block;
+  height: auto;
+  &:hover,
+  &:focus {
+    .card__content {
+      background-color: transparent !important;
+      color: $white !important;
+    }
+  }
+}
+
+.card__item--horizontal {
+  flex-direction: row;
+}
+
+.card__image {
+  flex-shrink: 0;
+  overflow: hidden;
+  .card__item--horizontal & {
+    flex-shrink: 1;
+    min-width: 40%;
+  }
+  .card__item--absolute & {
+    position: relative;
+    &::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(37,36,36,0.50);
+      z-index: 1;
+    }
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+    transform: scale(1);
+    transition: transform $transition;
+  }
+}
+
+.card__content {
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-bottom: 4px solid rgba($gray-med, 0.14);
+  transition:
+  background-color $transition,
+  border $transition;
+  color: $black;
+  .card__item--absolute & {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-bottom: 0;
+    color: $white;
+    @include font-smooth;
+    z-index: 1;
+    padding-left: 1.625rem;
+    @include mq(80em) {
+      width: 50%;
+    }
+  }
+  .card__item--program & {
+    padding-bottom: 2rem;
+  }
+  .card--stories & {
+    padding-top: 2rem;
+  }
+  .card__item--horizontal & {
+    width: 100%;
+  }
+  h3, h4 {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.card__category {
+  font-weight: $bolder;
+  @include font-size(11);
+  color: $red;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.card__name,
+.card__title {
+  @include font-size(18);
+  line-height: 1.444;
+}
+
+.card__name {
+  font-weight: $bold;
+}
+
+.card__arrow__icon {
+  display: block;
+  color: $red;
+  width: 1.5rem;
+  margin-top: 0.5rem;
+  .card__item--absolute & {
+    color: $white;
+  }
+}
+
+.card__video__icon {
+  display: inline-block;
+  color: $red;
+  width: 1.25rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.card__video__text {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: $black;
+  font-weight: $bold;
+  @include font-size(14);
+  letter-spacing: 0.5px;
+  line-height: 1;
+  text-transform: uppercase;
+  vertical-align: middle;
+  @include underline($red, 95%);
+  .container--black & {
+    @extend .text-white;
+    @include underline($white, 95%)
+  }
+}
+
+a.card__video__group {
+  &:hover {
+    .card__video__text {
+      color: $red;
+      background-size: 100% 100%;
+      .container--black & {
+        color: $white;
+      }
+    }
+  }
+}
+
+.card__headline {
+  @extend .h3;
+  line-height: 1;
+  margin-bottom: 1rem;
+  .card__item--absolute & {
+    color: $white;
+  }
+}
+
+.card__bottom {
+  margin-top: auto;
+}
+
+.card__story--show {
+  @include mq($max: 64em) {
+    width: 100%;
+    margin-bottom: 1rem;
+    > div {
+      width: 100%;
+      margin: 0 0 1rem 0;
+    }
+    .card__headline {
+      @include fluid-type(font-size, $minSize, 1024px, 16px, 28px);
+      color: $red;
+      line-height: 1.18;
+      margin-bottom: 0.25rem;
+    }
+    .card__name,
+    .card__title {
+      @include font-size(14);
+      color: $black;
+    }
+    .card__arrow__icon {
+      display: none;
+    }
+    .card__image {
+      width: 40%;
+      flex-shrink: 0;
+      &::before {
+        content: none;
+      }
+    }
+    .card__content {
+      padding-top: 0;
+      position: static;
+      border-bottom: 4px solid rgba($gray-med, 0.14);
+    }
+    .card__item {
+      flex-direction: row;
+      align-items: flex-end;
+      &:hover {
+        background-color: $white;
+        .card__content {
+          background-color: transparent;
+        }
+      }
+    }
+    .card__bottom {
+      margin-top: 0;
+    }
+    .card__item--absolute {
+      display: flex;
+    }
+  }
+}

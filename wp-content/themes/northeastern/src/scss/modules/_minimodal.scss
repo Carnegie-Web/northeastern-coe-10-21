@@ -1,0 +1,116 @@
+
+/* minimodal */
+.minimodal {
+  transition: all 600ms ease;
+  opacity: 0;
+  z-index: 10;
+}
+.minimodal--active {
+  opacity: 1;
+}
+/* status */
+.minimodal__status {
+  transition: all 600ms ease;
+  opacity: 0;
+}
+.minimodal__item--loading .minimodal__status {
+  opacity: 1;
+}
+/* content */
+.minimodal__content {
+  transform: scale(0.5);
+  transition: all 600ms ease;
+  opacity: 0;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+.minimodal__item--loaded .minimodal__content {
+  transform: none;
+  opacity: 1;
+}
+.minimodal__item--removed--previous .minimodal__content,
+.minimodal__item--removed--next .minimodal__content {
+  transform: scale(0.5);
+}
+/* item */
+.minimodal__item {
+  transition: all 600ms ease;
+}
+/* item added, removed */
+.minimodal__item--added,
+.minimodal__item--removed {
+  opacity: 0;
+}
+/* item added previous, removed next */
+.minimodal__item--added--previous,
+.minimodal__item--removed--next {
+  transform: translateX(-100%);
+}
+/* item added next, removed previous */
+.minimodal__item--added--next,
+.minimodal__item--removed--previous {
+  transform: translateX(100%);
+}
+/* hidden */
+.hidden {
+  display: none;
+}
+/* iframe - styled for video */
+.minimodal__element--iframe {
+  max-width: calc(100vh * (16/9));
+}
+.minimodal__element--iframe::before {
+  display: block;
+  padding-bottom: 56.25%;
+  background: black;
+  content: '';
+}
+.minimodal__iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.minimodal__close {
+  background-color: transparent;
+  border: 0;
+  top: 3rem;
+  right: 1rem;
+}
+
+.minimodal__overlay {
+  background-color: rgba($black, .7);
+}
+
+
+.minimodal__viewport {
+  overflow: hidden;
+}
+
+
+.cross {
+  display: block;
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: $white;
+  &::before,
+  &::after {
+    position: absolute;
+    left: 50%;
+    height: 100%;
+    margin-left: -0.0625rem;
+    border-left: 0.25rem solid;
+    content: '';
+  }
+
+  &::before {
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+}

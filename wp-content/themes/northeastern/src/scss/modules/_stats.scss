@@ -1,0 +1,6 @@
+.stats__headline {
+  font-family: $serif;
+  @include font-size(80);
+  text-align: center;
+  line-height: 1;
+}

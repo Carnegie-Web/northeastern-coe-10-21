@@ -1,0 +1,884 @@
+{% set page = {
+  title: 'Landing Page'
+} %}
+
+{% extends "templates/default.html" %}
+
+{% block body %}
+
+<main id="main-content">
+  {% set hero = {landing: true, img: true} %}
+  {% include "modules/_hero.html" %}
+  <div class="main container container--clear">
+    <aside class="main__sidebar main__sidebar--alt">
+      {% include "modules/_subnav.html" %}
+    </aside>
+    <div class="main__content">
+      {% include "modules/_breadcrumb.html" %}
+      <h1 class="h2">
+        Learn from the best in interdisciplinary & experiential engineering education.
+      </h1>
+      <p class="p-intro">
+        We are relentlessly innovative scholars who collaborate across disciplines, industries, and international borders. As
+        educators, we build on the distinctive power of experiential learning to prepare our students for leadership in
+        engineering, business, and life.
+      </p>
+
+    </div>
+
+  </div>
+  <div class="container">
+    <hr class="block-med">
+  </div>
+  <section class="container" aria-label="explore programs">
+
+    <div class="block">
+      <div class="grid grid--2-3 grid--middle">
+        <div class="zero">
+          <h2>Explore Our Academic Programs</h2>
+          <p>
+            Optional text…Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet sapien ac eros pharetra
+            fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nulla nulla, consequat sed erat vel, cursus
+            ullamcorper ex.
+          </p>
+        </div>
+        <div class="button-text-right">
+          <a href="#" class="button button--black-red button--block">
+            <span class="button__text">View All Academic Programs</span>
+            <span class="button__arrow">
+              {{ svgstore('arrow') }}
+            </span>
+          </a>
+        </div>
+      </div>
+      <ul class="program__list">
+        <li class="program__item animate-In">
+          <a href="#" class="program__card">
+            <span class="program__image">
+              {{ ph('600') }}
+            </span>
+            <span class="button text-white">
+              <span class="button__text">Bioengineering</span>
+              <span class="button__arrow">
+                <span class="button__arrow">
+                  {{ svgstore('arrow') }}
+                </span>
+              </span>
+            </span>
+            <div class="program__gradient"></div>
+          </a>
+        </li>
+        <li class="program__item animate-In">
+          <a href="#" class="program__card">
+            <span class="program__image">
+              {{ ph('600') }}
+            </span>
+            <span class="button text-white">
+              <span class="button__text">Chemical Engineeringg</span>
+              <span class="button__arrow">
+                <span class="button__arrow">
+                  {{ svgstore('arrow') }}
+                </span>
+              </span>
+            </span>
+            <div class="program__gradient"></div>
+          </a>
+        </li>
+        <li class="program__item animate-In">
+          <a href="#" class="program__card">
+            <span class="program__image">
+              {{ ph('600') }}
+            </span>
+            <span class="button text-white">
+              <span class="button__text">Civil &amp; Environmental Engineering</span>
+              <span class="button__arrow">
+                <span class="button__arrow">
+                  {{ svgstore('arrow') }}
+                </span>
+              </span>
+            </span>
+            <div class="program__gradient"></div>
+          </a>
+        </li>
+        <li class="program__item animate-In">
+          <a href="#" class="program__card">
+            <span class="program__image">
+              {{ ph('600') }}
+            </span>
+            <span class="button text-white">
+              <span class="button__text">Electrical & Computer Engineering</span>
+              <span class="button__arrow">
+                <span class="button__arrow">
+                  {{ svgstore('arrow') }}
+                </span>
+              </span>
+            </span>
+            <div class="program__gradient"></div>
+          </a>
+        </li>
+        <li class="program__item animate-In">
+          <a href="#" class="program__card">
+            <span class="program__image">
+              {{ ph('600') }}
+            </span>
+            <span class="button text-white">
+              <span class="button__text">Mechanical & Industrial Engineering</span>
+              <span class="button__arrow">
+                <span class="button__arrow">
+                  {{ svgstore('arrow') }}
+                </span>
+              </span>
+            </span>
+            <div class="program__gradient"></div>
+          </a>
+        </li>
+        <li class="program__item animate-In">
+          <a href="#" class="program__card">
+            <span class="program__image">
+              {{ ph('600') }}
+            </span>
+            <span class="button text-white">
+              <span class="button__text">Multidisciplinary Engineering</span>
+              <span class="button__arrow">
+                <span class="button__arrow">
+                  {{ svgstore('arrow') }}
+                </span>
+              </span>
+            </span>
+            <div class="program__gradient"></div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <hr>
+  </section>
+
+  <section class="container" aria-label="Experiential Learning">
+    <div class="block-spacing">
+      <div class="grid grid--2-3">
+        <div class="zero">
+          <h2>Experiential Learning</h2>
+          <p>
+            Experiential learning, anchored by our signature cooperative education program, lies at the heart of a Northeastern
+            education. Our broad mix of experience-based education programs—including co-op, student research, service learning,
+            and global learning—will enrich your education and transform your life.
+          </p>
+        </div>
+        <div>
+          <div class="button-group">
+            <a href="#" class="button button--black-red">
+              <span class="button__text">Co-Op</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+            <a href="#" class="button button--black-red">
+              <span class="button__text">Global Experiences</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+            <a href="#" class="button button--black-red">
+              <span class="button__text">Student Organizations & Activities</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+            <a href="#" class="button button--black-red">
+              <span class="button__text">Service Learning</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+            <a href="#" class="button button--black-red">
+              <span class="button__text">Student Research</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature feature--slider">
+        {% set feature = {
+          video: true,
+          headline: '<h3 class="text-white">World-Renowned Cooperative Education</h3>',
+          red: true
+        } %}
+        {% include "modules/_feature.html" %}
+        {% set feature = {
+          video: false,
+          headline: '<h3 class="text-white">World-Renowned Cooperative Education</h3>',
+          red: true
+        } %}
+        {% include "modules/_feature.html" %}
+        {% include "modules/_feature.html" %}
+      </div>
+    </div>
+  </section>
+
+  <section class="container" aria-label="stats module">
+    <hr>
+    <div class="block">
+      <div class="container--narrow block-center text-center zero">
+        <h2>Optional Stats Module</h2>
+      </div>
+      <div class="block-small">
+        <div class="grid grid--4 grid--slider">
+          <div class="text-center animate-In">
+            <div class="stats__headline text-red">
+              17:1
+            </div>
+            <p class="text-red">
+              <strong>
+                Student-faculty ratio
+              </strong>
+            </p>
+          </div>
+          <div class="text-center animate-In">
+            <div class="stats__headline">
+              700+
+            </div>
+            <p>
+              <strong>
+                Co-op Employers
+              </strong>
+            </p>
+          </div>
+          <div class="text-center animate-In">
+            <div class="stats__headline text-red">
+              99%
+            </div>
+            <p class="text-red">
+              <strong>
+                Lorem Ipsum
+              </strong>
+            </p>
+          </div>
+          <div class="text-center animate-In">
+            <div class="stats__headline">
+              >100
+            </div>
+            <p>
+              <strong>
+                Lorem Ipsum
+              </strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </section>
+
+  <section class="container" aria-label="four column module">
+    <div class="block">
+      <h3>Four-Column Module</h3>
+      <div class="block-small-bottom">
+        <div class="grid grid--4">
+          <div>
+            <h4>Optional Subheading</h4>
+            {{ ph('600x400') }}
+            <p>
+              Aenean luctus dignissim sem, a posuere dui aliquam vel. Etiam finibus ante congue nisi efficitur, non auctor felis
+              viverra. Etiam sagittis volutpat magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi maximus enim
+              est, quis vestibulum est posuere eu. Vestibulum consequat neque in justo pellentesque, vel blandit justo rutrum.
+            </p>
+            <a href="#" class="button button--black-red button--inline-block">
+              <span class="button__text">Read More</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+            <br><br>
+            <a href="#" class="cta cta--gray">
+              Button Style
+            </a>
+          </div>
+          <div>
+            <h4>Optional Subheading</h4>
+            {{ ph('600x400') }}
+            <p>
+              Aenean luctus dignissim sem, a posuere dui aliquam vel. Etiam finibus ante congue nisi efficitur, non auctor felis
+              viverra. Etiam sagittis volutpat magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi maximus enim
+              est, quis vestibulum est posuere eu. Vestibulum consequat neque in justo pellentesque, vel blandit justo rutrum.
+            </p>
+            <a href="#" class="button button--black-red button--inline-block">
+              <span class="button__text">Read More</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+            <br><br>
+            <a href="#" class="cta cta--gray">
+              Button Style
+            </a>
+          </div>
+          <div>
+            <h4>Optional Subheading</h4>
+            {{ ph('600x400') }}
+            <p>
+              Aenean luctus dignissim sem, a posuere dui aliquam vel. Etiam finibus ante congue nisi efficitur, non auctor felis
+              viverra. Etiam sagittis volutpat magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi maximus enim
+              est, quis vestibulum est posuere eu. Vestibulum consequat neque in justo pellentesque, vel blandit justo rutrum.
+            </p>
+            <a href="#" class="button button--black-red button--inline-block">
+              <span class="button__text">Read More</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+            <br><br>
+            <a href="#" class="cta cta--gray">
+              Button Style
+            </a>
+          </div>
+          <div>
+            <h4>Optional Subheading</h4>
+            {{ ph('600x400') }}
+            <p>
+              Aenean luctus dignissim sem, a posuere dui aliquam vel. Etiam finibus ante congue nisi efficitur, non auctor felis
+              viverra. Etiam sagittis volutpat magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi maximus enim
+              est, quis vestibulum est posuere eu. Vestibulum consequat neque in justo pellentesque, vel blandit justo rutrum.
+            </p>
+            <a href="#" class="button button--black-red button--inline-block">
+              <span class="button__text">Read More</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+            <br><br>
+            <a href="#" class="cta cta--gray">
+              Button Style
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="container" aria-label="three column modules">
+    <div class="block">
+      <h3>Three-Column Module</h3>
+      <div class="block-small-bottom">
+        <div class="grid">
+          <div>
+            <h4>Optional Subheading</h4>
+            {{ ph('600x400') }}
+            <p>
+              Aenean luctus dignissim sem, a posuere dui aliquam vel. Etiam finibus ante congue nisi efficitur, non auctor felis
+              viverra. Etiam sagittis volutpat magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi maximus enim
+              est, quis vestibulum est posuere eu. Vestibulum consequat neque in justo pellentesque, vel blandit justo rutrum.
+            </p>
+            <a href="#" class="button button--black-red button--inline-block">
+              <span class="button__text">Read More</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+            <br><br>
+            <a href="#" class="cta cta--gray">
+              Button Style
+            </a>
+          </div>
+          <div>
+            <h4>Optional Subheading</h4>
+            {{ ph('600x400') }}
+            <p>
+              Aenean luctus dignissim sem, a posuere dui aliquam vel. Etiam finibus ante congue nisi efficitur, non auctor felis
+              viverra. Etiam sagittis volutpat magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi maximus enim
+              est, quis vestibulum est posuere eu. Vestibulum consequat neque in justo pellentesque, vel blandit justo rutrum.
+            </p>
+            <a href="#" class="button button--black-red button--inline-block">
+              <span class="button__text">Read More</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+            <br><br>
+            <a href="#" class="cta cta--gray">
+              Button Style
+            </a>
+          </div>
+          <div>
+            <h4>Optional Subheading</h4>
+            {{ ph('600x400') }}
+            <p>
+              Aenean luctus dignissim sem, a posuere dui aliquam vel. Etiam finibus ante congue nisi efficitur, non auctor felis
+              viverra. Etiam sagittis volutpat magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi maximus enim
+              est, quis vestibulum est posuere eu. Vestibulum consequat neque in justo pellentesque, vel blandit justo rutrum.
+            </p>
+            <a href="#" class="button button--black-red button--inline-block">
+              <span class="button__text">Read More</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+            <br><br>
+            <a href="#" class="cta cta--gray">
+              Button Style
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container" aria-label="two column modules">
+    <div class="block">
+      <h3>Two-Column Module</h3>
+      <div class="block-small-bottom">
+        <div class="grid grid--2">
+          <div>
+            <h4>Optional Subheading</h4>
+            {{ ph('600x400') }}
+            <p>
+              Aenean luctus dignissim sem, a posuere dui aliquam vel. Etiam finibus ante congue nisi efficitur, non auctor felis
+              viverra. Etiam sagittis volutpat magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi maximus enim
+              est, quis vestibulum est posuere eu. Vestibulum consequat neque in justo pellentesque, vel blandit justo rutrum.
+            </p>
+            <a href="#" class="button button--black-red button--inline-block">
+              <span class="button__text">Read More</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+            <br><br>
+            <a href="#" class="cta cta--gray">
+              Button Style
+            </a>
+          </div>
+          <div>
+            <h4>Optional Subheading</h4>
+            {{ ph('600x400') }}
+            <p>
+              Aenean luctus dignissim sem, a posuere dui aliquam vel. Etiam finibus ante congue nisi efficitur, non auctor felis
+              viverra. Etiam sagittis volutpat magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi maximus enim
+              est, quis vestibulum est posuere eu. Vestibulum consequat neque in justo pellentesque, vel blandit justo rutrum.
+            </p>
+            <a href="#" class="button button--black-red button--inline-block">
+              <span class="button__text">Read More</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+            <br><br>
+            <a href="#" class="cta cta--gray">
+              Button Style
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container--black" aria-label="featured student orgs">
+    <div class="container">
+      <div class="block-spacing">
+        <div class="container--narrow block-center text-center zero">
+          <h2 class="text-white">Featured Student Organizations (H2)</h2>
+        </div>
+        <div class="block--top">
+          <div class="grid grid--2">
+            <div class="grid__item__spacing">
+              {{ ph('600x400') }}
+              <h3>Two-Column Routing Component</h3>
+              <p class="text-white">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet sapien ac eros.
+              </p>
+              <div class="button-group">
+                <a href="#" class="button">
+                  <span class="button__text text-white">Link One</span>
+                  <span class="button__arrow">
+                    {{ svgstore('arrow') }}
+                  </span>
+                </a>
+                <a href="#" class="button">
+                  <span class="button__text text-white">Link Two</span>
+                  <span class="button__arrow">
+                    {{ svgstore('arrow') }}
+                  </span>
+                </a>
+                <a href="#" class="button">
+                  <span class="button__text text-white">Link Three</span>
+                  <span class="button__arrow">
+                    {{ svgstore('arrow') }}
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="grid__item__spacing">
+              {{ ph('600x400') }}
+              <h3>Two-Column Routing Component</h3>
+              <p class="text-white">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet sapien ac eros.
+              </p>
+              <div class="button-group">
+                <a href="#" class="button">
+                  <span class="button__text text-white">Link One</span>
+                  <span class="button__arrow">
+                    {{ svgstore('arrow') }}
+                  </span>
+                </a>
+                <a href="#" class="button">
+                  <span class="button__text text-white">Link Two</span>
+                  <span class="button__arrow">
+                    {{ svgstore('arrow') }}
+                  </span>
+                </a>
+                <a href="#" class="button">
+                  <span class="button__text text-white">Link Three</span>
+                  <span class="button__arrow">
+                    {{ svgstore('arrow') }}
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container--beige" aria-label="news">
+    <div class="container">
+      <div class="block-spacing">
+        <div class="grid grid--2-3 grid--center">
+          <div class="zero">
+            <h3 class="h2">Optional News Module</h3>
+          </div>
+
+          <div class="button-text-right">
+            <a href="#" class="button button--inline-block button--black-red">
+              <span class="button__text">More news</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="block--top">
+          <div class="grid grid--4 grid--slider">
+            <div>
+              {% set news = {category: true} %}
+              {% include "modules/_news.html" %}
+            </div>
+            <div>
+              {% include "modules/_news.html" %}
+            </div>
+            <div>
+              {% include "modules/_news.html" %}
+            </div>
+            <div>
+              {% include "modules/_news.html" %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container--border" aria-label="events">
+    <div class="container">
+      <div class="block-spacing">
+        <div class="grid grid--2-3 grid--center">
+          <div class="zero">
+            <div class="h2">Events</div>
+          </div>
+
+          <div class="button-text-right">
+            <a href="#" class="button button--inline-block button--black-red">
+              <span class="button__text">More Events</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="block--top">
+          <div class="grid grid--slider">
+            <div>
+              {% set events = {
+                title: "2018 Klein Lecture: Urban Engineering: New Designs for a Resilient and Sustainable Future"
+              } %}
+              {% include "modules/_events.html" %}
+            </div>
+            <div>
+              {% set events = {
+                title: "Visualizing our Choices and their Effect on the Environment"
+              } %}
+              {% include "modules/_events.html" %}
+            </div>
+            <div>
+              {% set events = {
+                title: "Left Brain, Right Brain: The Intersection of Metrics & Design"
+              } %}
+              {% include "modules/_events.html" %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container" aria-label="events with images">
+    <div class="block">
+      <div class="grid grid--2-3 grid--center">
+        <div class="zero">
+          <div class="h2">Events with Images</div>
+        </div>
+
+        <div class="button-text-right">
+          <a href="#" class="button button--inline-block button--black-red">
+            <span class="button__text">More Events</span>
+            <span class="button__arrow">
+              {{ svgstore('arrow') }}
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="block--top">
+        <div class="grid grid--slider">
+          <div>
+            {% set events = {
+              img: true,
+              title: "2018 Klein Lecture: Urban Engineering: New Designs for a Resilient and Sustainable Future"
+            } %}
+            {% include "modules/_events.html" %}
+          </div>
+          <div>
+            {% set events = {
+              img: true,
+              title: "Visualizing our Choices and their Effect on the Environment"
+            } %}
+            {% include "modules/_events.html" %}
+          </div>
+          <div>
+            {% set events = {
+              img: true,
+              title: "Left Brain, Right Brain: The Intersection of Metrics & Design"
+            } %}
+            {% include "modules/_events.html" %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container" aria-label="Research Cards with Descriptions">
+    <div class="block zero">
+      <div class="h2">Research Cards w/ Descriptions</div>
+      <div class="block-med">
+        <ul class="program__list">
+          <li class="program__item">
+            <a href="#" class="program__card">
+              <span class="program__image">
+                {{ ph('600') }}
+              </span>
+              <span class="button text-white">
+                <span class="button__text">Bioengineering</span>
+                <span class="button__arrow">
+                  <span class="button__arrow">
+                    {{ svgstore('arrow') }}
+                  </span>
+                </span>
+              </span>
+              <div class="program__gradient"></div>
+            </a>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquam ex ac ligula ultrices posuere mattis vitae neque.
+            </p>
+          </li>
+          <li class="program__item">
+            <a href="#" class="program__card">
+              <span class="program__image">
+                {{ ph('600') }}
+              </span>
+              <span class="button text-white">
+                <span class="button__text">Chemical Engineeringg</span>
+                <span class="button__arrow">
+                  <span class="button__arrow">
+                    {{ svgstore('arrow') }}
+                  </span>
+                </span>
+              </span>
+              <div class="program__gradient"></div>
+            </a>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquam ex ac ligula ultrices posuere mattis vitae neque.
+            </p>
+          </li>
+          <li class="program__item">
+            <a href="#" class="program__card">
+              <span class="program__image">
+                {{ ph('600') }}
+              </span>
+              <span class="button text-white">
+                <span class="button__text">Civil &amp; Environmental Engineering</span>
+                <span class="button__arrow">
+                  <span class="button__arrow">
+                    {{ svgstore('arrow') }}
+                  </span>
+                </span>
+              </span>
+              <div class="program__gradient"></div>
+            </a>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquam ex ac ligula ultrices posuere mattis vitae neque.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="program contacts" class="expand__container--contacts expand__container--white container--border">
+    <div class="container expand__container__group">
+      <div class="block-spacing">
+        <div class="grid grid--3-2">
+          <div class="zero">
+            <div class="h2">Program<br>Contacts</div>
+          </div>
+          <div>
+            {% include "modules/_contact.html" %}
+            {% include "modules/_contact.html" %}
+            {% include "modules/_contact.html" %}
+            {% include "modules/_contact.html" %}
+            {% include "modules/_contact.html" %}
+
+            <div class="block-small-top">
+              <a href="#" class="button button--black-red button--inline-block">
+                <span class="button__text">View all faculty</span>
+                <span class="button__arrow">
+                  {{ svgstore('arrow') }}
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="expand__btn expand__btn--contacts">
+      {{ svgstore('plus', 'Expand Section', 'expand__button--open') }}
+      {{ svgstore('minus', 'Collapse Section', 'expand__button--close') }}
+    </button>
+  </section>
+
+  <section class="container--beige" aria-label="blockquote slider">
+    <div class="container">
+      <div class="block--top">
+        <div class="block-spacing">
+          <div class="blockquote--slider">
+            <div class="blockquote__slide">
+              {% include "modules/_blockquote.html" %}
+            </div>
+            <div class="blockquote__slide">
+              {% include "modules/_blockquote.html" %}
+            </div>
+            <div class="blockquote__slide">
+              {% include "modules/_blockquote.html" %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="container" aria-label="table">
+    <div class="block">
+      <h5>Table Style</h5>
+      {% include "modules/_table.html" %}
+    </div>
+  </section>
+
+  <section class="container--beige" aria-label="contact section">
+    <div class="container">
+      <div class="block-spacing">
+        <div class="grid grid--3">
+          <div class="zero grid__item__spacing">
+            <h5>Graduate School of Engineering</h5>
+          </div>
+          <div class="vertical-line-desktop vertical-line-desktop--narrow zero grid__item__spacing">
+            <p class="caption">
+              130 Snell Engineering Center<br>
+              Northeastern University<br>
+              360 Huntington Avenue<br>
+              Boston, MA, USA
+            </p>
+          </div>
+          <div class="vertical-line-desktop vertical-line-desktop--narrow grid__item__spacing">
+            <div class="caption">
+              Phone: 617.373.2711<br>
+              Fax: 617.373.2501<br>
+              Email: <a href="#">contact@northeastern.edu</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="block">
+      <div class="grid grid--2-3 grid--middle">
+        <div class="zero">
+          <h2>
+            Join the next generation of<br><span class="text-black">engineering leaders.</span>
+          </h2>
+        </div>
+        <div>
+          <div class="button-group">
+            <a href="#" class="button button--black-red">
+              <span class="button__text">Request Info</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+            <a href="#" class="button button--black-red">
+              <span class="button__text">Visit Northeastern</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+            <a href="#" class="button button--black-red">
+              <span class="button__text">Apply to Northeastern</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container--beige pre-footer" aria-label="prefooter">
+    <div class="container">
+      <div class="block-spacing">
+        <div class="grid grid--2-3">
+          <div class="zero pre-footer__grid__item">
+            <h3>Group / Organization Social</h3>
+          </div>
+          <div class="pre-footer__grid__item">
+            <span class="category">Connect with COE</span>
+
+            <ul class="footer__social">
+              <li class="footer__social__item"><a href="#" class="footer__social__link">{{ svgstore('facebook', 'Facebook') }}</a></li>
+              <li class="footer__social__item"><a href="#" class="footer__social__link">{{ svgstore('twitter', 'Twitter') }}</a></li>
+              <li class="footer__social__item"><a href="#" class="footer__social__link">{{ svgstore('instagram', 'Instagram') }}</a></li>
+              <li class="footer__social__item"><a href="#" class="footer__social__link">{{ svgstore('linkedin', 'LinkedIn') }}</a></li>
+              <li class="footer__social__item"><a href="#" class="footer__social__link">{{ svgstore('youtube', 'YouTube') }}</a></li>
+              <li class="footer__social__item"><a href="#" class="footer__social__link">{{ svgstore('weibo', 'Weibo') }}</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+{% endblock %}

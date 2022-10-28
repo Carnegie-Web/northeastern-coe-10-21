@@ -1,0 +1,143 @@
+.subnav {
+  @include mq(64em) {
+    background-color: $beige;
+    padding: 1.5rem 2rem;
+  }
+}
+
+.subnav__toggle {
+  background-color: $black;
+  @extend .h5;
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  appearance: none;
+  border: 0;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  @include font-smooth;
+  color: $white;
+  @include mq(64em) {
+    display: none;
+  }
+}
+
+.subnav__toggle__icon--open {
+  display: block;
+  .subnav--active & {
+    display: none;
+  }
+}
+
+.subnav__toggle__icon--close {
+  display: none;
+  .subnav--active & {
+    display: block;
+  }
+}
+
+.subnav__toggle__icon {
+  color: $white;
+  width: 1rem;
+  margin-right: 1rem;
+}
+
+.subnav__list {
+  @include clean;
+  list-style: none;
+  display: none;
+  background-color: $beige;
+  padding: 1rem;
+  @include mq(64em) {
+    display: block;
+    padding: 0;
+  }
+  .subnav--active & {
+    display: block;
+  }
+}
+
+.subnav__list--sub {
+  padding-left: 0;
+  margin: 0.5rem 0 0;
+  list-style: none;
+  list-style: none;
+  max-height: 0;
+  visibility: hidden;
+  position: absolute;
+  left: -999rem;
+  opacity: 0;
+  transition:
+  opacity ease 500ms,
+  max-height ease 500ms;
+  @include mq(64em) {
+    padding-left: 1rem;
+  }
+  .subnav__item--active & {
+    opacity: 1;
+    visibility: visible;
+    max-height: 1200px;
+    position: static;
+    left: 0;
+  }
+}
+
+.subnav__item {
+  position: relative;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba($gray, 0.25);
+  margin-bottom: 0;
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.subnav__item--sub {
+  padding: 0.25rem 0;
+}
+
+[class^="subnav__link"] {
+  font-weight: $bold;
+  @include font-size(15);
+  color: $black;
+  letter-spacing: 0.68px;
+  line-height: 1.214;
+  &:hover {
+    color: $red;
+  }
+}
+
+.subnav__link {
+  .subnav__item--active & {
+    color: $red;
+  }
+}
+
+.subnav__item--flex {
+  display: flex;
+  align-items: center;
+}
+
+.page-template-page--tertiary .subnav__item--flex,
+.page-template-page--landing .subnav__item--flex {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-top: 1.25rem;
+}
+
+.subnav__link__toggle {
+  flex-shrink: 0;
+  align-self: stretch;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  appearance: none;
+  margin-left: auto;
+  width: 1.65rem;
+  color: $red;
+  .subnav__item--active & {
+    transform: rotate(180deg);
+  }
+}

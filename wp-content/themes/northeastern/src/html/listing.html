@@ -1,0 +1,20 @@
+{% set page = {
+  title: 'Listing Page'
+} %}
+
+{% extends "templates/default.html" %}
+
+{% block body %}
+
+<main id="main-content">
+  <div class="main container container--clear container--mid">
+    {% include "modules/_breadcrumb.html" %}
+    <h1>Content Listing</h1>
+    <p class="p-intro">Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam tortor urna, rutrum vitae consectetur sed, ornare quis massa. Nullam mollis vulputate purus et sollicitudin. Sed porttitor sagittis nisl, vel vulputate libero congue non. Proin iaculis hendrerit tortor. Nam vel porta urna, vel ultricies nisi.  </p>
+    {% set list = {date: true} %}
+    {% include "modules/_list.html" %}
+    {% include "modules/_pagination.html" %}
+  </div>
+</main>
+
+{% endblock %}

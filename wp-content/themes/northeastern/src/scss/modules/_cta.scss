@@ -1,0 +1,67 @@
+.cta {
+  display: inline-block;
+  text-align: center;
+  font-weight: $bold;
+  @include font-size(14);
+  letter-spacing: 0.68px;
+  color: $white;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid transparent;
+}
+
+.cta--red {
+  @include font-smooth;
+  background-color: $red;
+  transition: background $transition;
+  &:hover {
+    background-color: $maroon;
+  }
+}
+
+.cta--white {
+  color: $black;
+}
+
+.cta--black {
+  @include font-smooth;
+  border-color: $white;
+  background-color: $black;
+  transition: border $transition;
+  &:hover {
+    border-color: $red;
+  }
+}
+
+.cta--gray {
+  color: $black;
+  border-color: $gray;
+  background-color: transparent;
+  transition: background-color $transition;
+  &:hover {
+    background-color: $gray;
+  }
+}
+
+.cta__icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1rem;
+  margin-right: 0.5rem;
+}
+
+.cta-half {
+  width: calc(50% - 1rem);
+
+  @include mq(48em) {
+    width: auto;
+  }
+}
+
+.cta-full {
+  display: block;
+  width: 100%;
+  @include mq(48em) {
+    width: auto;
+    display: inline-block;
+  }
+}

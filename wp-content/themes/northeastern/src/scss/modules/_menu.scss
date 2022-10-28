@@ -1,0 +1,233 @@
+.menu {
+  padding: 1rem;
+  @include mq(64em) {
+    transition: margin $transition;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba($gray, 0.21);
+    background-color: $white;
+    z-index: 2;
+    .dept & {
+      display: block;
+      padding: 2rem;
+      border-bottom: 0;
+      background-color: transparent;
+    }
+  }
+}
+
+.menu__logo {
+  display: none;
+  @include mq(64em) {
+    color: $black;
+    width: 15.5rem;
+    display: inline-block;
+    [class*='svgstore--']::before {
+      padding-top: 20%;
+    }
+  }
+}
+
+.menu__list {
+  @include clean;
+  list-style: none;
+  @include mq(64em) {
+    display: flex;
+    width: calc(100% - 20rem);
+    .dept & {
+      align-items: baseline;
+      width: auto;
+    }
+  }
+}
+
+.menu__item {
+  border-top: 1px solid $red;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  &:last-child {
+    border-bottom: 1px solid $red;
+    @include mq(64em) {
+      border-bottom: 0;
+    }
+  }
+  @include mq(64em) {
+    position: relative;
+    border-top: 3px solid $red;
+    padding-bottom: 0;
+    width: 25%;
+    .dept & {
+      border-top: 0;
+      width: auto;
+    }
+    & + & {
+      margin-left: 1.5rem;
+      .dept & {
+        @include mq(72em) {
+          margin-left: 3.5rem;
+        }
+      }
+    }
+    &:hover,
+    &.active {
+      .menu__list--sub {
+        visibility: visible;
+        top: 100%;
+        height: auto;
+        max-height: 600px;
+        padding: 0.5rem 1.25rem;
+      }
+      .menu__btn__icon {
+        transform: rotate(180deg);
+      }
+      .menu__link__text {
+        color: $red;
+        box-shadow: 0 1px 0 0 $red;
+        .dept & {
+          color: $white;
+          box-shadow: 0 1px 0 0 $white;
+        }
+      }
+    }
+    &:last-child {
+      &:hover {
+        .menu__list--sub {
+          right: 0;
+        }
+      }
+    }
+    &::after {
+      position: absolute;
+      bottom: -20px;
+      left: 0;
+      content: '';
+      display: block;
+      width: 100%;
+      height: 20px;
+    }
+  }
+}
+
+.menu__link {
+  font-weight: $regular;
+  font-size: 20px;
+  @include font-size(20);
+  color: $white;
+  letter-spacing: -0.17px;
+  line-height: 1.25;
+  @include mq(64em) {
+    position: relative;
+    font-weight: $bold;
+    font-size: 0.825rem;
+    color: $black;
+    letter-spacing: 0.68px;
+    display: inline-block;
+    width: calc(100% - 1rem);
+    .dept & {
+      color: $white;
+      width: auto;
+    }
+  }
+  .break {
+    display: block;
+  }
+  &:hover {
+    .menu__link__text {
+      color: $red;
+      box-shadow: 0 1px 0 0 $red;
+    }
+  }
+}
+
+.menu__link__text {
+  box-shadow: 0 1px 0 0 transparent;
+  transition: box-shadow $transition;
+}
+
+.menu__btn {
+  display: none;
+  @include mq(64em) {
+    display: inline-block;
+    vertical-align: top;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    width: 0.75rem;
+    margin-top: 0.25rem;
+    color: $red;
+    .dept & {
+      vertical-align: middle;
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+.menu__list--sub {
+  padding-left: 0;
+  margin: 10px 0 0 0;
+  list-style: none;
+  position: absolute;
+  z-index: 2;
+  max-height: 0;
+  height: 0;
+  width: 150%;
+  background-color: $beige;
+  overflow: hidden;
+  transition: max-height 800ms;
+  visibility: hidden;
+  .dept & {
+    min-width: 300px;
+  }
+}
+
+.menu__item--sub {
+  padding: 0.5rem 0;
+  margin-bottom: 0;
+  & + & {
+    border-top: 1px solid rgba($gray, 0.25);
+  }
+}
+
+.menu__link--sub {
+  font-family: $sans-serif;
+  font-weight: $bold;
+  @include font-size(14);
+  color: $black;
+  letter-spacing: 0.5px;
+  line-height: 1.285;
+  &:hover {
+    color: $red;
+  }
+}
+
+.menu__headline {
+  display: none;
+  @include mq(48em) {
+    display: block;
+    font-family: $serif;
+    font-weight: $light;
+    @include fluid-type(font-size, $minSize, $maxSize, 34px, 42px);
+    line-height: 1.07;
+    margin: 0;
+    color: $white;
+  }
+}
+
+.menu__top__group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.menu__logo--dept {
+  display: none;
+  @include mq(64em) {
+    display: block;
+    width: 15rem;
+    [class*='svgstore--']::before {
+      padding-top: 25%;
+    }
+  }
+}

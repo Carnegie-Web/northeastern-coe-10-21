@@ -1,0 +1,207 @@
+.header {
+  margin-top: 45px;
+  @include mq(64em) {
+    margin-top: 45px;
+  }
+  .dept & {
+    //position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    @include mq(64em) {
+      position: static;
+    }
+  }
+  .home.dept & {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    @include mq(64em) {
+      position: static;
+    }
+  }
+  .menu-active & {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    z-index: 5;
+    @include mq(64em) {
+      position: static;
+      height: auto;
+    }
+  }
+}
+
+.header--alt {
+  border-bottom: 0.0625rem solid rgba($gray, 0.25);
+
+  @include mq(64em) {
+    border-bottom: 0;
+  }
+}
+
+.header__small {
+  height: 80px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $white;
+  .dept & {
+    background-color: rgba($black, .85);
+  }
+  .menu-active.dept & {
+    background-color: $black;
+  }
+  @include mq(64em) {
+    display: none;
+  }
+}
+
+.header__small__btn {
+  position: relative;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  appearance: none;
+
+  height: 1rem;
+  width: 1.45rem;
+  transition: all .6s ease-out;
+  &::before,
+  &::after,
+  span {
+    content: '';
+    position: absolute;
+    background: $red;
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    left: 0;
+    transition: all .2s ease-out;
+    transform: translateY(-50%);
+  }
+  &::before {
+    transform: translateY(-7px);
+  }
+  span {
+    width: 100%;
+  }
+  &::after {
+    transform: translateY(5px);
+  }
+  .menu-active & {
+    &::before {
+      width: 100%;
+      left: 0;
+      transform: translateY(-50%) rotate(45deg);
+    }
+    span {
+      opacity: 0;
+    }
+    &::after {
+      width: 100%;
+      right: 0;
+      transform: translateY(-50%) rotate(-45deg);
+    }
+  }
+}
+
+.header__small__btn--open {
+  display: block;
+  .menu-active & {
+    display: none;
+  }
+}
+
+.header__small__btn--close {
+  display: none;
+  .menu-active & {
+    display: block;
+  }
+}
+
+.header__menu {
+  display: none;
+  position: fixed;
+  width: 100%;
+  background-color: $black;
+  top: 125px;
+  max-height: calc(100vh - 125px);
+  overflow-y: auto;
+  padding-bottom: 3rem;
+  .menu-active & {
+    display: flex;
+  }
+  @include mq(64em) {
+    top: auto;
+    position: static;
+    display: block;
+    max-height: auto;
+    overflow: visible;
+    background-color: transparent;
+    padding-bottom: 0;
+    .dept & {
+      position: absolute;
+      z-index: 1;
+      background-color: rgba($black, .85);
+    }
+    .page-template-page--landing.dept &, 
+    .page-template-page--tertiary.dept &,
+    .page-template-page--faculty-subpage.dept &,
+    .single-news.dept &, .single-organization.dept &,
+    .page-template-page--listing.dept &,
+    .author.dept &,
+    .error404.dept & {
+      margin-top: 2.8rem;
+      position: static;
+    }
+  }
+}
+
+.header__menu__container {
+  height: 100%;
+  width: 100%;
+  @include mq(64em) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.header__logo {
+  display: block;
+  width: 15rem;
+  color: $black;
+  [class*='svgstore--']::before {
+    padding-top: 20%;
+  }
+  .dept & {
+    color: $white;
+    font-family: $serif;
+    @include font-size(21);
+    letter-spacing: -0.11px;
+    line-height: 1.14;
+  }
+}
+
+.header__logo--large {
+  .dept & {
+    color: $white;
+  }
+}
+
+
+.header__btn__icon {
+  color: $gray;
+  width: 0.65rem;
+}
+
+#nu__utility-nav img {
+  display: inline;
+}

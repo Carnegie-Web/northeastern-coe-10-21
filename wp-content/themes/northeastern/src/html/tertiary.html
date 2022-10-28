@@ -1,0 +1,334 @@
+{% set page = {
+  title: 'Tertiary Page'
+} %}
+
+{% extends "templates/default.html" %}
+
+{% block body %}
+
+<main id="main-content">
+  <div class="main container container--clear">
+
+    <aside class="main__sidebar main__sidebar--alt">
+      {% include "modules/_subnav.html" %}
+    </aside>
+    <div class="main__content">
+      {% include "modules/_breadcrumb.html" %}
+
+      <h1 class="h2">
+        Page Title (h1 with h2 style)
+      </h1>
+      <p class="p-intro">
+        Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam tortor urna, rutrum
+        vitae consectetur sed, ornare quis massa. Nullam mollis vulputate purus et sollicitudin. Sed porttitor sagittis nisl,
+        vel vulputate libero congue non. Proin iaculis hendrerit tortor. Nam vel porta urna, vel ultricies nisi.
+      </p>
+
+      <figure class="image__container">
+        <div class="image">
+          {{ ph('800x3:2') }}
+        </div>
+        <figcaption class="image__caption">
+          Optional Caption Information
+        </figcaption>
+      </figure>
+
+      <h2 class="h3">Headline (h2 with h3 style)</h2>
+      <div class="align-right zero">
+        <figure class="image__container">
+          <div class="image">
+            {{ ph('380x255') }}
+          </div>
+          <figcaption class="image__caption">
+            Optional Caption Information
+          </figcaption>
+        </figure>
+      </div>
+      <p>
+        This, of course, is not the real copy for this site. The real words will be written once we arrive at the content
+        creation phase. Rest assured, the words will expand the concept. With clarity. Conviction. And even a little wit.
+      </p>
+      <p>
+        This is a <a href="#">link style</a>. Because in today’s competitive environment, tlhe body copy of every page must lead the reader
+        through a series of disarmingly simple thoughts. All your supporting arguments must be communicated with simplicity and
+        charm. This is a hover style. And by the time your readers have reached this point in the finished copy, you will have
+        convinced them that you not only respect their intelligence, but you also understand their needs as prospects. As a
+        result of which, your site will repay your efforts. There’s every chance your competitors will wish they’d written this
+        content, not you. While your customers will have probably forgotten that your competitors even exist.
+      </p>
+      <div class="align-left zero">
+        <figure class="image__container">
+          <div class="image">
+            {{ ph('380x255') }}
+          </div>
+          <figcaption class="image__caption">
+            Optional Caption Information
+          </figcaption>
+        </figure>
+      </div>
+      <h3 class="h4">Subhead (h3 with h4 style)</h3>
+      <p>
+        Fact is, too much long body copy is dotted with such indulgent little phrases like truth is, fact is, and who’s to
+        blame you. Trust us: we guarantee, with a hand over our heart, that no such indulgent rubbish will appear in your
+        content. That’s why we have big blue pencils. So we can expunge every expedient example of low-witted waffle. For you,
+        the skies will be blue, the birds will sing, and your copy will be crafted by a dedicated individual dreaming of your
+        brand every single night. And so, while your dedicated reader, enslaved to each mellifluous paragraph, clutches his mouse with increasing
+        interest, you can count all your increased profits and take pots of money to your bank. Sadly, this is not the real
+        copy for this page. But it could well be.
+      </p>
+      <p>
+        And by the time your readers have reached this point in the finished copy, you will have convinced them that you not
+        only respect their intelligence, but you also understand their needs as prospects. As a result of which, your site will
+        repay your efforts.
+      </p>
+      <a href="#" class="cta__link">
+        {{ svgstore('download', '', 'cta__link__icon') }}
+        <span>DOWNLOAD Fact SHEET</span>
+      </a>
+
+      <div class="block">
+        <div class="container--beige">
+          <div class="block__inner">
+            <h3>Headline Goes Here</h3>
+            <p>Tadipiscing elit. Integer purus mauris, commodo sed massa ultricies, pharetra facilisis elit. In in elit venenatis,
+              commodo felis nec libero.
+            </p>
+            <a href="#" class="button button--inline-block button--black-red">
+              <span class="button__text">Call to Action</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="block-small zero">
+        <h4 class="h5">
+          Video (h4 with h5 style)
+        </h4>
+        <figure class="image__container media__image">
+          <div class="image">
+            {{ ph('800x3:2') }}
+            <a href="https://www.youtube.com/watch?v=Uy6xjAK_jb8" class="media__btn" data-minimodal>
+              {{ svgstore('play', 'Play Video', 'media__btn__icon') }}
+            </a>
+          </div>
+          <figcaption class="image__caption">
+            Optional Caption Information
+          </figcaption>
+        </figure>
+      </div>
+      <div class="block-small zero">
+        <h5>Two-Column Style</h5>
+        <div class="grid grid--2">
+          <div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet sapien ac eros pharetra fringilla. Lorem
+              ipsum dolor sit amet, consectetur adipiscing elit. Morbi nulla nulla, consequat sed erat vel, cursus ullamcorper ex.
+              Sed faucibus pulvinar porttitor. Ut ex lacus, eleifend vel metus id, blandit blandit eros. Integer vel dolor tincidunt,
+              efficitur dolor ut, euismod enim.
+            </p>
+          </div>
+          <div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet sapien ac eros pharetra fringilla. Lorem
+              ipsum dolor sit amet, consectetur adipiscing elit. Morbi nulla nulla, consequat sed erat vel, cursus ullamcorper ex.
+              Sed faucibus pulvinar porttitor. Ut ex lacus, eleifend vel metus id, blandit blandit eros. Integer vel dolor
+              tincidunt,
+              efficitur dolor ut, euismod enim.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="block-small zero">
+        <h5>Three-Column Style</h5>
+        <div class="grid">
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet sapien ac eros pharetra fringilla. Lorem
+              ipsum dolor sit amet, consectetur adipiscing elit. Morbi nulla nulla.
+            </p>
+          </div>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet sapien ac eros pharetra fringilla. Lorem
+              ipsum dolor sit amet, consectetur adipiscing elit. Morbi nulla nulla.
+            </p>
+          </div>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet sapien ac eros pharetra fringilla. Lorem
+              ipsum dolor sit amet, consectetur adipiscing elit. Morbi nulla nulla.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="block zero">
+        {% include "modules/_blockquote.html" %}
+      </div>
+      <div class="block-small zero">
+        <hr>
+        <div class="h5">Table Style</div>
+        {% include "modules/_table.html" %}
+        <hr>
+      </div>
+      <div class="block-small zero">
+        <div class="h5">List Styles</div>
+        <div class="grid grid--2">
+          <div>
+            <ol>
+              <li>Lorem ipsum dolor sit amet calculato</li>
+              <li>Lorem ipsum dolor sit amet calculato</li>
+              <li>Lorem ipsum dolor sit amet calculato</li>
+              <li>Lorem ipsum dolor sit amet calculato</li>
+            </ol>
+          </div>
+          <div>
+            <ul>
+              <li>Lorem ipsum dolor sit amet calculato</li>
+              <li>Lorem ipsum dolor sit amet calculato</li>
+              <li>Lorem ipsum dolor sit amet calculato</li>
+              <li>Lorem ipsum dolor sit amet calculato</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="block-small zero">
+        <div class="h5">Accordion Styles</div>
+        <div class="accordion-group">
+          {% set accordion = {active: true} %}
+          {% include "modules/_accordion.html" %}
+          {% set accordion = {active: false} %}
+          {% include "modules/_accordion.html" %}
+          {% include "modules/_accordion.html" %}
+          {% include "modules/_accordion.html" %}
+        </div>
+      </div>
+      <div class="block-small zero">
+        <div class="h5">Tab Styles</div>
+        {% include "modules/_tabbed.html" %}
+      </div>
+      <div class="block-spacing-bottom">
+        <section aria-label="program contacts" class="expand__container--contacts container--border-bottom expand__container--white">
+          <div class="expand__container__group">
+            <div class="block-small zero">
+              <h2>Program Contacts</h2>
+              {% include "modules/_contact.html" %}
+              {% include "modules/_contact.html" %}
+              {% include "modules/_contact.html" %}
+              {% include "modules/_contact.html" %}
+              {% include "modules/_contact.html" %}
+
+              <div class="block-small-top">
+                <a href="#" class="button button--black-red button--inline-block">
+                  <span class="button__text">View all faculty</span>
+                  <span class="button__arrow">
+                    {{ svgstore('arrow') }}
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <button class="expand__btn expand__btn--contacts">
+            {{ svgstore('plus', 'Expand Section', 'expand__button--open') }}
+            {{ svgstore('minus', 'Collapse Section', 'expand__button--close') }}
+          </button>
+        </section>
+      </div>
+    </div>
+
+    <div class="main__sidebar">
+      <div class="block-small">
+        <div class="button-group">
+          <a href="#" class="button button--black-red">
+            <span class="button__text">Request Info</span>
+            <span class="button__arrow">
+              {{ svgstore('arrow') }}
+            </span>
+          </a>
+          <a href="#" class="button button--black-red">
+            <span class="button__text">Visit Northeastern</span>
+            <span class="button__arrow">
+              {{ svgstore('arrow') }}
+            </span>
+          </a>
+          <a href="#" class="button button--black-red">
+            <span class="button__text">Apply to Northeastern</span>
+            <span class="button__arrow">
+              {{ svgstore('arrow') }}
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="sidebar__panel">
+        {{ ph('318x212') }}
+        <h3>Featured Sidebar Headline</h3>
+        <p>
+          Tadipiscing elit. Integer purus mauris, commodo sed massa ultricies, pharetra facilisis elit. In in elit venenatis,
+          commodo felis nec libero.
+        </p>
+        <a href="#" class="button button--inline-block button--black-red">
+          <span class="button__text">Learn More</span>
+          <span class="button__arrow">
+            {{ svgstore('arrow') }}
+          </span>
+        </a>
+      </div>
+      <div class="block">
+        <div class="h5">Sidebar panel</div>
+        <p class="caption">
+          This sidebar is dedicated for information relevant to the internal page.
+          <br><br>
+          Info: <a href="#">email@email.com</a><br>
+          Phone: 555.555.5555
+        </p>
+        <hr>
+      </div>
+      <div class="block">
+        <div class="sidebar__share">
+          <span class="sidebar__share__label">Share</span>
+          <a href="#" data-network="facebook" class="st-custom-button sidebar__share__link">{{ svgstore('facebook', 'facebook') }}</a>
+          <a href="#" data-network="twitter" class="sidebar__share__link">{{ svgstore('twitter', 'twitter') }}</a>
+          <a href="#" data-network="instagram" class="sidebar__share__link">{{ svgstore('instagram', 'instagram') }}</a>
+          <a href="#" data-network="linkedin" class="sidebar__share__link">{{ svgstore('linkedin', 'linkedin') }}</a>
+        </div>
+        <hr>
+      </div>
+      <div class="block">
+        <a href="#" class="cta cta--gray">Button Style</a><br><br>
+        <a href="#" class="cta cta--red">Button Style</a><br><br>
+        <a href="#" class="cta cta--black">Button Style</a>
+      </div>
+      <div class="block">
+        <a href="#" class="cta__link">
+          {{ svgstore('download', '', 'cta__link__icon') }}
+          <span>DOWNLOAD Fact SHEET</span>
+        </a>
+        <hr>
+      </div>
+      <div class="block">
+        {% include "modules/_blockquote.html" %}
+      </div>
+      <div class="block">
+        <div class="container--beige">
+          <div class="block__inner">
+            <h3>Headline Goes Here</h3>
+            <p>Tadipiscing elit. Integer purus mauris, commodo sed massa ultricies, pharetra facilisis elit. In in elit
+              venenatis,
+              commodo felis nec libero.
+            </p>
+            <a href="#" class="button button--inline-block button--black-red">
+              <span class="button__text">Call to Action</span>
+              <span class="button__arrow">
+                {{ svgstore('arrow') }}
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</main>
+
+{% endblock %}

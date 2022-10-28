@@ -1,0 +1,54 @@
+.flickity-button {
+  height: 5rem;
+  width: 2.5rem;
+  padding: 0;
+  border-radius: 0;
+  background-color: $black;
+  z-index: 1;
+  &:hover,
+  &:focus {
+    background-color: $black;
+  }
+  &:disabled {
+    opacity: .26;
+  }
+  &.previous {
+    margin-left: calc(50% - 50vw);
+  }
+
+  &.next {
+    margin-right: calc(50% - 50vw);
+  }
+}
+.flickity-prev-next-button .flickity-button-icon {
+  left: 25%;
+  top: 20%;
+  width: 45%;
+  height: 60%;
+  fill: $white;
+}
+
+.flickity-enabled {
+  .previous {
+    left: 0;
+  }
+  .next {
+    right: 0;
+  }
+}
+
+.flickity-page-dots {
+  .dot {
+    background-color: $gray;
+    opacity: 1;
+    border-radius: 0;
+    width: 14px;
+    height: 6px;
+    .container--red & {
+      background-color: $white;
+    }
+    &.is-selected {
+      background-color: $black;
+    }
+  }
+}

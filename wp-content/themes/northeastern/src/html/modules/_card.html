@@ -1,0 +1,85 @@
+<a href="{% if card.video %}https://www.youtube.com/watch?v=Uy6xjAK_jb8{% else %}#{% endif %}" class="card__item
+{% if card.program %} card__item--program{% endif %}
+{% if card.absolute %} card__item--absolute {% endif %}
+{% if card.horizontal %} card__item--horizontal{% endif %}"
+{% if card.video %} data-minimodal{% endif %}>
+<div class="card__image">
+  {% if card.rectangle %}
+  {{ ph('600x3:2') }}
+  {% elif card.rectangleAlt %}
+  <picture>
+    <source srcset="//placehold.mstoner.com/600x285" media="(min-width: 64em)" />
+    {{ ph('600') }}
+  </picture>
+
+  {% else %}
+  {{ ph('600') }}
+  {% endif %}
+</div>
+<div class="card__content">
+
+  {% if card.program %}
+  <div class="button button--black-red">
+    <span class="button__text">{{ card.button }}</span>
+    <span class="button__arrow">
+      {{ svgstore('arrow') }}
+    </span>
+  </div>
+  {% endif %}
+
+  {% if card.stories %}
+
+  {% if card.horizontal %}
+  <div class="card__bottom">
+    <div class="card__headline">{{ card.headline }}</div>
+    <div class="card__name">{{ card.name }}</div>
+    <div class="card__title">{{ card.title }}</div>
+    {% if card.video %}
+    <div class="card__video__group">
+      {{ svgstore('video', '', 'card__video__icon') }}
+      <span class="card__video__text">Watch</span>
+    </div>
+    {% endif %}
+
+    {% if card.arrow %}
+    {{ svgstore('arrow', '', 'card__arrow__icon') }}
+    {% endif %}
+  </div>
+  {% else %}
+  <div class="card__headline">{{ card.headline }}</div>
+  <div class="card__bottom">
+    <div class="card__name">{{ card.name }}</div>
+    <div class="card__title">{{ card.title }}</div>
+    {% if card.video %}
+    <div class="card__video__group">
+      {{ svgstore('video', '', 'card__video__icon') }}
+      <span class="card__video__text">Watch</span>
+    </div>
+    {% endif %}
+
+    {% if card.arrow %}
+    {{ svgstore('arrow', '', 'card__arrow__icon') }}
+    {% endif %}
+  </div>
+  {% endif %}
+  {% endif %}
+
+  {% if card.profile %}
+  <div class="card__category">{{ card.category }}</div>
+  <div class="card__name">{{ card.name }}</div>
+  <div class="card__title">{{ card.title }}</div>
+  {% if card.video %}
+  <div class="card__video__group">
+    {{ svgstore('video', '', 'card__video__icon') }}
+    <span class="card__video__text">Watch</span>
+  </div>
+  {% endif %}
+
+  {% if card.arrow %}
+  {{ svgstore('arrow', '', 'card__arrow__icon') }}
+  {% endif %}
+  {% endif %}
+
+
+</div>
+</a>

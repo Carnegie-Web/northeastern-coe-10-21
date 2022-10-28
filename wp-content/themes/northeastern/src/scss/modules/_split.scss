@@ -1,0 +1,32 @@
+.split {
+  margin-top: 2rem;
+  border-top: 0.0625rem solid rgba($gray, 0.25);
+
+  @include mq(64em) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.split__side {
+
+  @include mq(64em) {
+    width: 50%;
+    padding-top: 2rem;
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    margin-bottom: 1rem;
+  }
+
+  :first-child {
+    @include mq(64em) {
+      margin-top: 0;
+    }
+  }
+}

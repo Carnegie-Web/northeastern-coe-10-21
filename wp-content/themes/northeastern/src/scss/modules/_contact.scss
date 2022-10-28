@@ -1,0 +1,45 @@
+.contact__item {
+
+
+  @include mq(32em) {
+    padding: 0.25rem 1rem 2rem 1rem;
+    min-height: 200px;
+    transition: background-color $transition,
+    box-shadow $transition;
+  }
+  &:hover {
+    @include mq(32em) {
+      box-shadow: $shadow;
+      background-color: $beige;
+    }
+  }
+}
+
+.contact__image {
+  max-width: 110px;
+  @include mq(32em) {
+    float: left;
+  }
+}
+
+.contact__content {
+  @include zero;
+  padding-top: 1rem;
+  @include mq(32em) {
+    overflow: hidden;
+    padding: 0 1rem;
+  }
+}
+
+.contact__name {
+  @extend .h5;
+  @include link($red);
+}
+
+.contact__title {
+  font-weight: $bold;
+  color: $red;
+  @include link($red);
+  text-decoration: none;
+  @include font-size(15);
+}
