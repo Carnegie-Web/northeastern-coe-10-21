@@ -70,7 +70,6 @@ const browserSync = new BrowserSyncPlugin(
             {
               loader: "html-loader",
               options: {
-                minimize: false,
                 conservativeCollapse: false,
                 removeAttributeQuotes: false
               }
@@ -116,7 +115,6 @@ const browserSync = new BrowserSyncPlugin(
               {
                 loader: "css-loader",
                 options: {
-                  minimize: false,
                   importLoaders: 2
                 }
               },
@@ -130,9 +128,6 @@ const browserSync = new BrowserSyncPlugin(
               },
               {
                 loader: "sass-loader",
-                options: {
-                  minimize: false
-                }
               }
             ]
           })

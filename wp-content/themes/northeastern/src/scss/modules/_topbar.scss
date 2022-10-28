@@ -201,12 +201,12 @@
   padding-top: 1px;
   padding-bottom: 1px;
   // transition: box-shadow $transition;
-  @include underline($white, 95%)
+  @include underline($white, 95%);
   @include mq(64em) {
     @include font-size(12);
     @include underline($black, 95%);
     .dept & {
-      @include underline(#9B9B9B, 95%)
+      @include underline(#9B9B9B, 95%);
       color: $white;
     }
     &:hover,
@@ -256,4 +256,3 @@
     vertical-align: middle;
   }
 }
-
